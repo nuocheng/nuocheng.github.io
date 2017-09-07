@@ -260,6 +260,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/顺序栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/07/顺序栈/" itemprop="url">顺序栈</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T17:55:22+08:00">
+                2017-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>/*</p>
+<p>###栈的几种基本运算如下：<br>    InitStack(&amp;s)：初始化栈。构造一个空栈s。<br>    DestroyStack(&amp;s):销毁栈，释放栈S占用的存储空间<br>    StackEmpty(s):判断栈是否为空：若栈s为空，则返回值为真，否则返回值为假<br>    Push(&amp;s,e):进栈。将元素e插入到栈S中作为栈顶元素<br>    Pop(&amp;s,&amp;e):出栈，重栈s中退出栈顶元素，并将其值赋给e<br>    GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋给e<br>*/</p>
+<p>####代码块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">//顺序栈类型</div><div class="line">typedef struct &#123;</div><div class="line">    int data[maxsize];</div><div class="line">    int top;</div><div class="line">&#125;SqStack;</div><div class="line">/*</div><div class="line">top总是指向栈顶元素，初始值为<span class="number">-1</span></div><div class="line">当top=maxsize<span class="number">-1</span>时不能再进栈（栈满）</div><div class="line">进栈时top+<span class="number">1</span>，出栈时top<span class="number">-1</span></div><div class="line">*/</div><div class="line"></div><div class="line">//初始化栈</div><div class="line">void InitStack(SqStack *&amp;s)</div><div class="line">&#123;</div><div class="line">    s=(SqStack *)malloc(sizeof(SqStack));</div><div class="line">    s-&gt;top=-1;</div><div class="line">&#125;</div><div class="line">//销毁栈</div><div class="line">void DestroyStack(SqStack *&amp;s)</div><div class="line">&#123;</div><div class="line">    free(s);</div><div class="line">&#125;</div><div class="line">//判断一个栈是否为一个空栈</div><div class="line">bool StackEmpty(SqStack *s)</div><div class="line">&#123;</div><div class="line">    return(s-&gt;top==-1);</div><div class="line">&#125;</div><div class="line">//进栈</div><div class="line">bool Push(SqStack *&amp;s,int e)</div><div class="line">&#123;</div><div class="line">    if(s-&gt;top==maxsize)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    s-&gt;top++;</div><div class="line">    s-&gt;data[s-&gt;top]=e;</div><div class="line">    <span class="keyword">return</span> true;</div><div class="line">&#125;</div><div class="line">//出栈</div><div class="line">bool Pop(SqStack *&amp;s,int &amp;e)</div><div class="line">&#123;</div><div class="line">    if(s-&gt;top==-1)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    e=s-&gt;data[s-&gt;top];</div><div class="line">    s-&gt;top--;</div><div class="line">    <span class="keyword">return</span> true;</div><div class="line">&#125;</div><div class="line">//取栈顶元素</div><div class="line">bool GetTop(SqStack *s,int &amp;e)</div><div class="line">&#123;</div><div class="line">    if(s-&gt;top==-1)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    e=s-&gt;data[s-&gt;top];</div><div class="line">    <span class="keyword">return</span> true;</div><div class="line">&#125;</div><div class="line">//判断字符串是否为对称串</div><div class="line">bool symmetry(int str[])</div><div class="line">&#123;</div><div class="line">    int i;</div><div class="line">    int e;</div><div class="line">    SqStack *st;</div><div class="line">    InitStack(st);</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;str[i]!=<span class="string">'\0'</span>;i++)</div><div class="line">    &#123;</div><div class="line">        Push(st,str[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;str[i]!=<span class="string">'\0'</span>;i++)</div><div class="line">    &#123;</div><div class="line">        Pop(st,e);</div><div class="line">        <span class="keyword">if</span>(str[i]!=e)</div><div class="line">        &#123;</div><div class="line">            DestroyStack(st);</div><div class="line">            <span class="keyword">return</span> false;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    DestroyStack(st);</div><div class="line">    <span class="keyword">return</span> true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/设置头像/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -760,7 +904,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7a7gawg0001yg2fgnvmadee"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7aa9fq80001ys2fodl4u91x"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -768,7 +912,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7a7gawg0001yg2fgnvmadee"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7aa9fq80001ys2fodl4u91x"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -996,7 +1140,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1007,7 +1151,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1018,7 +1162,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
