@@ -260,6 +260,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/链栈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/09/链栈/" itemprop="url">链栈</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-09T09:28:54+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>栈空的条件：s-&gt;next=NULL<br>栈满的条件：不考虑<br>进栈操作：将包含e的结点插入到头节点之后<br>退栈操作：取出头节点之后节点的元素并删除</p>
+<p>###代码块<br>‘’’python<br>typedef struct linknode<br>{<br>    ElementType data;<br>    struct linknode <em>next;<br>}LiStack;<br>//初始化<br>void (LiStack </em>&amp;s)<br>{<br>    s=(LiStack <em>)malloc(sizeof(LiStack));<br>    s-&gt;next=NULL;<br>}<br>//销毁栈<br>void DestroyStack (LiStack </em>&amp;s)<br>{<br>    LiStack <em>p=s,</em>q=s-&gt;next;<br>    while(q!=NULL)<br>    {<br>        free(p);<br>        p=q;<br>        q=p-&gt;next;<br>    }<br>    free(p);<br>}<br>//栈是否为空<br>bool StackEmpty(LiStack <em>s)<br>{<br>    return(s-&gt;next==NULL);<br>}<br>//进栈<br>void Push(LiStack </em>&amp;s,Element e)<br>{<br>    LiStack <em>p;<br>    p=(LiStack </em>)malloc(sizeof(LiStack));<br>    p-&gt;data=e;<br>    p-&gt;next=s-&gt;next;<br>    s-&gt;next=p;<br>}<br>//出栈<br>bool Pop(LiStack <em>&amp;s,Element &amp;e)<br>{<br>    LiStack </em>p;<br>    if(s-&gt;next==NULL)<br>    {<br>        return false;<br>    }<br>    p=s-&gt;next;<br>    e=p-&gt;data;<br>    s-&gt;next=p-&gt;next;<br>    free(p);<br>}<br>//取栈顶元素<br>bool GetTop(LiStack *s,Element &amp;e)<br>{<br>    if(s-&gt;next==NULL)<br>        return false;<br>    e=s-&gt;next-&gt;data;<br>    return true;<br>}<br>‘’’</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/顺序栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -904,7 +1047,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7bkhqkl00001c2fxa844bph"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7cn2q130000ro2f7v44m6df"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -912,7 +1055,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7bkhqkl00001c2fxa844bph"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7cn2q130000ro2f7v44m6df"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -1163,7 +1306,7 @@ scaffolds 里面有三个文件分别对应草稿。页面。文章。建议都�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
