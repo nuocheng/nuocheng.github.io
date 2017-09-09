@@ -260,6 +260,335 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/环形队/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/09/环形队/" itemprop="url">环形队</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-09T17:23:31+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>/*<br>环形队列<br>通过逻辑方式实现环形队列，也就是将rear++和front++<br>改为<br>    rear=(rear+1)%maxsize;<br>    front=(front+1)%maxsize<br>队满的条件<br>    (rear+1)%maxsize=front;</p>
+<p>队空条件：front=rear;<br>队满条件：(rear+1)%maxsize=front;<br>进队操作：rear=(rear+1)%maxsize<br>出队操作：front=(front+1)%maxsize;</p>
+<p>已知front,rear求队中元素个数count<br>count=(rear-front+maxsize)%maxsize</p>
+<p>已知front、count，求rear<br>rear=(front+count)%maxsize;</p>
+<p>已知rear、count、求front<br>front=(rear-count+maxsize)%maxsize;<br>*/<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">typedef struct</div><div class="line">&#123;</div><div class="line">    ElemType data[maxsize];</div><div class="line">    int front;</div><div class="line"></div><div class="line">    int count;</div><div class="line">&#125;QuType;</div><div class="line"></div><div class="line">//初始化</div><div class="line">void InitQueue(QuType *&amp;qu)</div><div class="line">&#123;</div><div class="line">    qu=(QuType *)malloc(sizeof(QuType)):</div><div class="line">        qu-&gt;front=0;</div><div class="line">        qu-&gt;count=0;</div><div class="line">&#125;</div><div class="line">//进队</div><div class="line">bool EnQueue(QuType *&amp;qu,ElemType x)</div><div class="line">&#123;</div><div class="line">    int rear;</div><div class="line">    if(qu-&gt;count==maxsize)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">            rear=(qu-&gt;front+qu-&gt;count)%maxsize;//求队尾位置</div><div class="line">            rear=(rear+<span class="number">1</span>)%maxsize  //尾队循环增<span class="number">1</span></div><div class="line">            qu-&gt;data[rear]=x;</div><div class="line">            qu-&gt;count++;   //元素个数增1；</div><div class="line">            <span class="keyword">return</span> true;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//出队</div><div class="line">bool DeQueue(QuType *&amp;qu,ElemType &amp;x)</div><div class="line">&#123;</div><div class="line">    if(qu-&gt;count==0)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        qu-&gt;front=(qu-&gt;front+1)%maxsize;  //队头循环增1</div><div class="line">        x=qu-&gt;data[qu-&gt;front];</div><div class="line">        qu-&gt;count--;                       //元素个数减1</div><div class="line">        <span class="keyword">return</span> true;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/顺序队/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/09/顺序队/" itemprop="url">顺序队</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-09T17:21:08+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>/*</p>
+<h3 id="顺序队"><a href="#顺序队" class="headerlink" title="顺序队"></a>顺序队</h3><h3 id="队空条件：front-rear"><a href="#队空条件：front-rear" class="headerlink" title="队空条件：front=rear;"></a>队空条件：front=rear;</h3><h3 id="队满条件：rear-maxsize-1"><a href="#队满条件：rear-maxsize-1" class="headerlink" title="队满条件：rear=maxsize-1"></a>队满条件：rear=maxsize-1</h3><h3 id="元素进队：rear-data-rear-e"><a href="#元素进队：rear-data-rear-e" class="headerlink" title="元素进队：rear++;data[rear]=e;"></a>元素进队：rear++;data[rear]=e;</h3><h3 id="元素出队：front-e-data-front"><a href="#元素出队：front-e-data-front" class="headerlink" title="元素出队：front++;e=data[front]"></a>元素出队：front++;e=data[front]</h3><h3 id="初始时：front-rear-1"><a href="#初始时：front-rear-1" class="headerlink" title="初始时：front=rear=-1;"></a>初始时：front=rear=-1;</h3><p>*/</p>
+<pre><code class="python">typedef struct
+{
+    ElementType data[maxsize];
+    int front,rear;
+}SqQueue;
+//初始化队列
+void InitQueue(SqStack *&amp;q)
+{
+    q=(SqQueue *)malloc(sizeof(SqQueue));
+    q-&gt;front=q-&gt;rear=-1;
+}
+//销毁队列
+void DestroyQueue(SqQueue *&amp;q)
+{
+    free(q);
+}
+//判断是否为空
+bool QueueEmpty(SqQueue *q)
+{
+    return (q-&gt;front==q-&gt;rear);
+}
+//进队
+bool enQueue(SqQueue *&amp;q,ElemType e)
+{
+    if(q-&gt;rear==maxsize-1)
+        <span class="keyword">return</span> false;
+    q-&gt;rear++;
+    q-&gt;data[q-&gt;rear]=e;
+    <span class="keyword">return</span> true;
+}
+//出队
+bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
+{
+    if(q-&gt;front==q-&gt;rear)
+        <span class="keyword">return</span> false;
+    q-&gt;front++;
+    e=q-&gt;data[q-&gt;front];
+    <span class="keyword">return</span> true;
+}
+</code></pre>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/链栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1047,7 +1376,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7d3lpn30001fc2f8qhrwdvh"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7d3u2nx0002a42fyk1rb85q"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -1055,7 +1384,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7d3lpn30001fc2f8qhrwdvh"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7d3u2nx0002a42fyk1rb85q"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -1306,7 +1635,7 @@ scaffolds 里面有三个文件分别对应草稿。页面。文章。建议都�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
