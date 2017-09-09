@@ -353,9 +353,10 @@
       
         
           
-            <p>/*<br>环形队列<br>通过逻辑方式实现环形队列，也就是将rear++和front++<br>改为<br>    rear=(rear+1)%maxsize;<br>    front=(front+1)%maxsize<br>队满的条件<br>    (rear+1)%maxsize=front;</p>
-<p>队空条件：front=rear;<br>队满条件：(rear+1)%maxsize=front;<br>进队操作：rear=(rear+1)%maxsize<br>出队操作：front=(front+1)%maxsize;</p>
-<p>已知front,rear求队中元素个数count<br>count=(rear-front+maxsize)%maxsize</p>
+            <p>/*</p>
+<h3 id="环形队列"><a href="#环形队列" class="headerlink" title="环形队列"></a>环形队列</h3><p>通过逻辑方式实现环形队列，也就是将rear++和front++<br>改为<br>    rear=(rear+1)%maxsize;<br>    front=(front+1)%maxsize</p>
+<h3 id="队满的条件"><a href="#队满的条件" class="headerlink" title="队满的条件"></a>队满的条件</h3><pre><code>(rear+1)%maxsize=front;
+</code></pre><h3 id="队空条件：front-rear"><a href="#队空条件：front-rear" class="headerlink" title="队空条件：front=rear;"></a>队空条件：front=rear;</h3><h3 id="队满条件：-rear-1-maxsize-front"><a href="#队满条件：-rear-1-maxsize-front" class="headerlink" title="队满条件：(rear+1)%maxsize=front;"></a>队满条件：(rear+1)%maxsize=front;</h3><h3 id="进队操作：rear-rear-1-maxsize"><a href="#进队操作：rear-rear-1-maxsize" class="headerlink" title="进队操作：rear=(rear+1)%maxsize"></a>进队操作：rear=(rear+1)%maxsize</h3><h3 id="出队操作：front-front-1-maxsize"><a href="#出队操作：front-front-1-maxsize" class="headerlink" title="出队操作：front=(front+1)%maxsize;"></a>出队操作：front=(front+1)%maxsize;</h3><p>已知front,rear求队中元素个数count<br>count=(rear-front+maxsize)%maxsize</p>
 <p>已知front、count，求rear<br>rear=(front+count)%maxsize;</p>
 <p>已知rear、count、求front<br>front=(rear-count+maxsize)%maxsize;<br>*/<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">typedef struct</div><div class="line">&#123;</div><div class="line">    ElemType data[maxsize];</div><div class="line">    int front;</div><div class="line"></div><div class="line">    int count;</div><div class="line">&#125;QuType;</div><div class="line"></div><div class="line">//初始化</div><div class="line">void InitQueue(QuType *&amp;qu)</div><div class="line">&#123;</div><div class="line">    qu=(QuType *)malloc(sizeof(QuType)):</div><div class="line">        qu-&gt;front=0;</div><div class="line">        qu-&gt;count=0;</div><div class="line">&#125;</div><div class="line">//进队</div><div class="line">bool EnQueue(QuType *&amp;qu,ElemType x)</div><div class="line">&#123;</div><div class="line">    int rear;</div><div class="line">    if(qu-&gt;count==maxsize)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">            rear=(qu-&gt;front+qu-&gt;count)%maxsize;//求队尾位置</div><div class="line">            rear=(rear+<span class="number">1</span>)%maxsize  //尾队循环增<span class="number">1</span></div><div class="line">            qu-&gt;data[rear]=x;</div><div class="line">            qu-&gt;count++;   //元素个数增1；</div><div class="line">            <span class="keyword">return</span> true;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//出队</div><div class="line">bool DeQueue(QuType *&amp;qu,ElemType &amp;x)</div><div class="line">&#123;</div><div class="line">    if(qu-&gt;count==0)</div><div class="line">        <span class="keyword">return</span> false;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        qu-&gt;front=(qu-&gt;front+1)%maxsize;  //队头循环增1</div><div class="line">        x=qu-&gt;data[qu-&gt;front];</div><div class="line">        qu-&gt;count--;                       //元素个数减1</div><div class="line">        <span class="keyword">return</span> true;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
@@ -1376,7 +1377,7 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7d3u2nx0002a42fyk1rb85q"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7d3x28f0001tg2fkhddtv8q"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -1384,7 +1385,7 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7d3u2nx0002a42fyk1rb85q"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7d3x28f0001tg2fkhddtv8q"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
