@@ -260,6 +260,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/二叉树的知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/10/二叉树的知识点/" itemprop="url">二叉树的知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T16:37:00+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>typedef struct node<br>{<br>    ElemType data;<br>    struct node <em>leftchild;<br>    struct node </em>rightchild;<br>}tree;</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="/创建/"></a>/<em>创建</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">void creat(tree *&amp;t)</div><div class="line">&#123;</div><div class="line">    ElemType data;</div><div class="line">    data=getchar();</div><div class="line">    <span class="keyword">if</span>(data==<span class="string">'#'</span>)</div><div class="line">        t=NULL;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        t=(tree *)malloc(sizeof(tree));</div><div class="line">        t-&gt;data=data;</div><div class="line">        creat(t-&gt;leftchild);</div><div class="line">        creat(t-&gt;righthcild);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="/遍历/"></a>/<em>遍历</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">void preordertraverse(tree *t)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        printf("%c",t-&gt;data);</div><div class="line">        preordertraverse(t-&gt;leftchild);</div><div class="line">        preordertraverse(t-&gt;rightchild);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void inordertraverse(tree *t)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        inordertraverse(t-&gt;leftchild);</div><div class="line">        printf("%c",t-&gt;data);</div><div class="line">        inordertraverse(t-&gt;rightchild);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void posordertraverse(tree *t)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        posordertraverse(t-&gt;leftchild);</div><div class="line">        posordertraverse(t-&gt;rightchild);</div><div class="line">        printf("%c",t-&gt;data);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二叉树的深度"><a href="#二叉树的深度" class="headerlink" title="/二叉树的深度/"></a>/<em>二叉树的深度</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">in</span> depthoftree(tree *t)</div><div class="line">&#123;</div><div class="line">    int leftdepth;</div><div class="line">    int rightdepth;</div><div class="line">    <span class="keyword">if</span>(!t)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    leftdepth=depthoftree(tree-&gt;leftchild);</div><div class="line">    rightdepth=depthoftree(tree-&gt;rightchild);</div><div class="line">    return (leftdepth&gt;=rightdepth)?(leftdepth+1):(rightdepth+1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二叉树的节点的个数"><a href="#二叉树的节点的个数" class="headerlink" title="/二叉树的节点的个数/"></a>/<em>二叉树的节点的个数</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int leafcount(tree *t,int num)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        if(!t-&gt;leftchild&amp;&amp;!t-&gt;rightchild)</div><div class="line">            num++;</div><div class="line">        leafcount(t-&gt;leftchild);</div><div class="line">        leafcount(t-&gt;rightchild);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="求另一种遍"><a href="#求另一种遍" class="headerlink" title="/求另一种遍/"></a>/<em>求另一种遍</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">struct node *ans(int len,char *st1,char *st2)</div><div class="line">&#123;</div><div class="line">    tree *root;</div><div class="line">    int i;</div><div class="line">    <span class="keyword">if</span>(len==<span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> NULL;</div><div class="line">    &#125;</div><div class="line">    root=(struct node *)malloc(sizeof(struct node));</div><div class="line">    root-&gt;data=st1[0];</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</div><div class="line">    &#123;</div><div class="line">        if(st2[i]==root-&gt;data)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    root-&gt;leftchild=ans(i,st1+1,st2);</div><div class="line">    root-&gt;rightchild=ans(len-i-1,st1+i+1,st2+i+1);</div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/环形队/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1377,7 +1523,7 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7ed06tb0000682fno9j7sdz"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj7ehojgc0000dw2fhr6cilyc"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -1385,7 +1531,7 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7ed06tb0000682fno9j7sdz"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj7ehojgc0000dw2fhr6cilyc"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -1636,7 +1782,7 @@ scaffolds 里面有三个文件分别对应草稿。页面。文章。建议都�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

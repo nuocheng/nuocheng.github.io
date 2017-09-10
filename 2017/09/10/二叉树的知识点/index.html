@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="/* 顺序队队空条件：front=rear;队满条件：rear=maxsize-1元素进队：rear++;data[rear]=e;元素出队：front++;e=data[front]初始时：front=rear=-1;*/ typedef struct {     ElementType data[maxsize];     int front,rear; }SqQueue; //初始化队列 v">
+<meta name="description" content="typedef struct node{    ElemType data;    struct node leftchild;    struct node rightchild;}tree; /创建/12345678910111213void creat(tree *&amp;amp;t)&amp;#123;    ElemType data;    data=getchar();    if(data==&apos;">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="顺序队">
-<meta property="og:url" content="http://yoursite.com/2017/09/09/顺序队/index.html">
+<meta property="og:title" content="二叉树的知识点">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/二叉树的知识点/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="/* 顺序队队空条件：front=rear;队满条件：rear=maxsize-1元素进队：rear++;data[rear]=e;元素出队：front++;e=data[front]初始时：front=rear=-1;*/ typedef struct {     ElementType data[maxsize];     int front,rear; }SqQueue; //初始化队列 v">
+<meta property="og:description" content="typedef struct node{    ElemType data;    struct node leftchild;    struct node rightchild;}tree; /创建/12345678910111213void creat(tree *&amp;amp;t)&amp;#123;    ElemType data;    data=getchar();    if(data==&apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-09T09:22:33.124Z">
+<meta property="og:updated_time" content="2017-09-10T08:39:54.032Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="顺序队">
-<meta name="twitter:description" content="/* 顺序队队空条件：front=rear;队满条件：rear=maxsize-1元素进队：rear++;data[rear]=e;元素出队：front++;e=data[front]初始时：front=rear=-1;*/ typedef struct {     ElementType data[maxsize];     int front,rear; }SqQueue; //初始化队列 v">
+<meta name="twitter:title" content="二叉树的知识点">
+<meta name="twitter:description" content="typedef struct node{    ElemType data;    struct node leftchild;    struct node rightchild;}tree; /创建/12345678910111213void creat(tree *&amp;amp;t)&amp;#123;    ElemType data;    data=getchar();    if(data==&apos;">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/09/顺序队/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/10/二叉树的知识点/"/>
 
 
 
 
 
-  <title>顺序队 | 诺铖的博客</title>
+  <title>二叉树的知识点 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/顺序队/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/二叉树的知识点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">顺序队</h1>
+          <h1 class="post-title" itemprop="name headline">二叉树的知识点</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-09T17:21:08+08:00">
-                2017-09-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T16:37:00+08:00">
+                2017-09-10
               </time>
             
 
@@ -352,49 +352,12 @@
       
 
       
-        <p>/*</p>
-<h3 id="顺序队"><a href="#顺序队" class="headerlink" title="顺序队"></a>顺序队</h3><h3 id="队空条件：front-rear"><a href="#队空条件：front-rear" class="headerlink" title="队空条件：front=rear;"></a>队空条件：front=rear;</h3><h3 id="队满条件：rear-maxsize-1"><a href="#队满条件：rear-maxsize-1" class="headerlink" title="队满条件：rear=maxsize-1"></a>队满条件：rear=maxsize-1</h3><h3 id="元素进队：rear-data-rear-e"><a href="#元素进队：rear-data-rear-e" class="headerlink" title="元素进队：rear++;data[rear]=e;"></a>元素进队：rear++;data[rear]=e;</h3><h3 id="元素出队：front-e-data-front"><a href="#元素出队：front-e-data-front" class="headerlink" title="元素出队：front++;e=data[front]"></a>元素出队：front++;e=data[front]</h3><h3 id="初始时：front-rear-1"><a href="#初始时：front-rear-1" class="headerlink" title="初始时：front=rear=-1;"></a>初始时：front=rear=-1;</h3><p>*/</p>
-<pre><code class="python">typedef struct
-{
-    ElementType data[maxsize];
-    int front,rear;
-}SqQueue;
-//初始化队列
-void InitQueue(SqStack *&amp;q)
-{
-    q=(SqQueue *)malloc(sizeof(SqQueue));
-    q-&gt;front=q-&gt;rear=-1;
-}
-//销毁队列
-void DestroyQueue(SqQueue *&amp;q)
-{
-    free(q);
-}
-//判断是否为空
-bool QueueEmpty(SqQueue *q)
-{
-    return (q-&gt;front==q-&gt;rear);
-}
-//进队
-bool enQueue(SqQueue *&amp;q,ElemType e)
-{
-    if(q-&gt;rear==maxsize-1)
-        <span class="keyword">return</span> false;
-    q-&gt;rear++;
-    q-&gt;data[q-&gt;rear]=e;
-    <span class="keyword">return</span> true;
-}
-//出队
-bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
-{
-    if(q-&gt;front==q-&gt;rear)
-        <span class="keyword">return</span> false;
-    q-&gt;front++;
-    e=q-&gt;data[q-&gt;front];
-    <span class="keyword">return</span> true;
-}
-</code></pre>
-
+        <p>typedef struct node<br>{<br>    ElemType data;<br>    struct node <em>leftchild;<br>    struct node </em>rightchild;<br>}tree;</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="/创建/"></a>/<em>创建</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">void creat(tree *&amp;t)</div><div class="line">&#123;</div><div class="line">    ElemType data;</div><div class="line">    data=getchar();</div><div class="line">    <span class="keyword">if</span>(data==<span class="string">'#'</span>)</div><div class="line">        t=NULL;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        t=(tree *)malloc(sizeof(tree));</div><div class="line">        t-&gt;data=data;</div><div class="line">        creat(t-&gt;leftchild);</div><div class="line">        creat(t-&gt;righthcild);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="/遍历/"></a>/<em>遍历</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">void preordertraverse(tree *t)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        printf("%c",t-&gt;data);</div><div class="line">        preordertraverse(t-&gt;leftchild);</div><div class="line">        preordertraverse(t-&gt;rightchild);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void inordertraverse(tree *t)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        inordertraverse(t-&gt;leftchild);</div><div class="line">        printf("%c",t-&gt;data);</div><div class="line">        inordertraverse(t-&gt;rightchild);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void posordertraverse(tree *t)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        posordertraverse(t-&gt;leftchild);</div><div class="line">        posordertraverse(t-&gt;rightchild);</div><div class="line">        printf("%c",t-&gt;data);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二叉树的深度"><a href="#二叉树的深度" class="headerlink" title="/二叉树的深度/"></a>/<em>二叉树的深度</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">in</span> depthoftree(tree *t)</div><div class="line">&#123;</div><div class="line">    int leftdepth;</div><div class="line">    int rightdepth;</div><div class="line">    <span class="keyword">if</span>(!t)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    leftdepth=depthoftree(tree-&gt;leftchild);</div><div class="line">    rightdepth=depthoftree(tree-&gt;rightchild);</div><div class="line">    return (leftdepth&gt;=rightdepth)?(leftdepth+1):(rightdepth+1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二叉树的节点的个数"><a href="#二叉树的节点的个数" class="headerlink" title="/二叉树的节点的个数/"></a>/<em>二叉树的节点的个数</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">int leafcount(tree *t,int num)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(t)</div><div class="line">    &#123;</div><div class="line">        if(!t-&gt;leftchild&amp;&amp;!t-&gt;rightchild)</div><div class="line">            num++;</div><div class="line">        leafcount(t-&gt;leftchild);</div><div class="line">        leafcount(t-&gt;rightchild);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="求另一种遍"><a href="#求另一种遍" class="headerlink" title="/求另一种遍/"></a>/<em>求另一种遍</em>/</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">struct node *ans(int len,char *st1,char *st2)</div><div class="line">&#123;</div><div class="line">    tree *root;</div><div class="line">    int i;</div><div class="line">    <span class="keyword">if</span>(len==<span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> NULL;</div><div class="line">    &#125;</div><div class="line">    root=(struct node *)malloc(sizeof(struct node));</div><div class="line">    root-&gt;data=st1[0];</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</div><div class="line">    &#123;</div><div class="line">        if(st2[i]==root-&gt;data)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    root-&gt;leftchild=ans(i,st1+1,st2);</div><div class="line">    root-&gt;rightchild=ans(len-i-1,st1+i+1,st2+i+1);</div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -424,8 +387,8 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/09/链栈/" rel="next" title="链栈">
-                <i class="fa fa-chevron-left"></i> 链栈
+              <a href="/2017/09/09/环形队/" rel="next" title="环形队">
+                <i class="fa fa-chevron-left"></i> 环形队
               </a>
             
           </div>
@@ -433,10 +396,6 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/09/环形队/" rel="prev" title="环形队">
-                环形队 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -569,7 +528,7 @@ bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序队"><span class="nav-number">1.</span> <span class="nav-text">顺序队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队空条件：front-rear"><span class="nav-number">2.</span> <span class="nav-text">队空条件：front=rear;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队满条件：rear-maxsize-1"><span class="nav-number">3.</span> <span class="nav-text">队满条件：rear=maxsize-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素进队：rear-data-rear-e"><span class="nav-number">4.</span> <span class="nav-text">元素进队：rear++;data[rear]=e;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素出队：front-e-data-front"><span class="nav-number">5.</span> <span class="nav-text">元素出队：front++;e=data[front]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始时：front-rear-1"><span class="nav-number">6.</span> <span class="nav-text">初始时：front=rear=-1;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">1.</span> <span class="nav-text">/创建/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历"><span class="nav-number">2.</span> <span class="nav-text">/遍历/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的深度"><span class="nav-number">3.</span> <span class="nav-text">/二叉树的深度/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的节点的个数"><span class="nav-number">4.</span> <span class="nav-text">/二叉树的节点的个数/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求另一种遍"><span class="nav-number">5.</span> <span class="nav-text">/求另一种遍/</span></a></li></ol></div>
             
 
           </div>
