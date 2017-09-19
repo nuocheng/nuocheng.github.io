@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="嵌入HTML时php用的标记4种&amp;lt;?php ?&amp;gt; &amp;lt;? ?&amp;gt;（需要开启short_open_tag）&amp;lt;% %&amp;gt;（需要开启asp_tags&amp;gt; PHP的注释有三种//，#，/**/. 解析一个文件时，php会寻找其实和结束标记，也就是&amp;lt;?php ?&amp;gt;,这告诉php开始和停止解析两者之间的代码这种解析方式使得php可以被嵌入到二中不同的文档中，而任何">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T12:06:33.023Z">
+<meta property="og:updated_time" content="2017-09-19T12:33:40.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP基础篇(1)">
 <meta name="twitter:description" content="嵌入HTML时php用的标记4种&amp;lt;?php ?&amp;gt; &amp;lt;? ?&amp;gt;（需要开启short_open_tag）&amp;lt;% %&amp;gt;（需要开启asp_tags&amp;gt; PHP的注释有三种//，#，/**/. 解析一个文件时，php会寻找其实和结束标记，也就是&amp;lt;?php ?&amp;gt;,这告诉php开始和停止解析两者之间的代码这种解析方式使得php可以被嵌入到二中不同的文档中，而任何">
@@ -409,6 +409,9 @@ int(9494)
 <h3 id="当字符串很长的解决方法；"><a href="#当字符串很长的解决方法；" class="headerlink" title="当字符串很长的解决方法；"></a>当字符串很长的解决方法；</h3><p>/*<br>&lt;?php<br>$string1=&lt;&lt;&lt;GOD<br>我有一只小毛驴，我从来也不骑。<br>有一天我心血来潮，骑着去赶集。<br>我手里拿着小皮鞭，我心里正得意。<br>不知怎么哗啦啦啦啦，我摔了一身泥.<br>GOD;</p>
 <p>echo $string1;<br>?&gt;<br>*/</p>
 <p>在复制符号后，输入定界符&lt;&lt;&lt;,接着是标识符GOD</p>
+<p>PHP第一种特殊类型——资源<br>资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）<br>/<em><br>&lt;?php<br>$file=fopen(“f.txt”,”r”);     //打开文件<br>$con=mysql_connect(“localhost”,”root”,”root”); //连接数据库<br>$img=imagecreate(100,100);<br>?&gt;
+</em>/</p>
+<h2 id="嘘！咱偷窥一个小文件！"><a href="#嘘！咱偷窥一个小文件！" class="headerlink" title="嘘！咱偷窥一个小文件！"></a>嘘！咱偷窥一个小文件！</h2><p>假设在服务器上，你发现了一个文件，是不是很好奇，想看看里面写了啥。嘿嘿，PHP可以做到哦（但是千万记住，如果是隐私文件，可不能偷窥哦，就像偷窥陈冠<em>的照片一样，要坐牢滴！）。假设服务器上有个文件为“f.txt”，这时候，我们就需要用到资源这种特殊的数据类型。<br>/</em><br>&lt;?php<br>//首先采用fopen函数打开文件，得到返回值的就是资源类型。<br>$file_handle=fopen(“/data/webroot/resource/php/f.txt”,”r”);;<br>if($file_handle){<br>    //然后采用循环一行一行的读取文件，然后输出每行的文字<br>    while(!feof($file_handle)){   //判断是否到最后一行<br>        $line=fgets($file_handle));   //读取一行文本<br>        echo $line;                //出入一行文本<br>        echo “<br>“;                //换行<br>    }<br>}<br>fclose($file_handle);       //关闭文件<br>?&gt;</p>
 
       
     </div>
@@ -448,6 +451,10 @@ int(9494)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/19/PHP特殊类型/" rel="prev" title="PHP特殊类型">
+                PHP特殊类型 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -547,7 +554,7 @@ int(9494)
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -603,7 +610,7 @@ int(9494)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌入HTML时php用的标记4种"><span class="nav-number">1.</span> <span class="nav-text">嵌入HTML时php用的标记4种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP的注释有三种"><span class="nav-number">2.</span> <span class="nav-text">PHP的注释有三种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAMPServer集成环境下载和安装"><span class="nav-number">3.</span> <span class="nav-text">WAMPServer集成环境下载和安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站根目录的自定义"><span class="nav-number">4.</span> <span class="nav-text">网站根目录的自定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number"></span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-number">1.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-这个命令是告诉服务器，打印一串字符；"><span class="nav-number">2.</span> <span class="nav-text">echo 这个命令是告诉服务器，打印一串字符；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串用双引号括起来；"><span class="nav-number">3.</span> <span class="nav-text">字符串用双引号括起来；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-关键字与字符串之间至少要有一个空格"><span class="nav-number">4.</span> <span class="nav-text">echo 关键字与字符串之间至少要有一个空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把连个字符用-连接起来"><span class="nav-number">5.</span> <span class="nav-text">把连个字符用 . 连接起来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在php编程中需要在每条语句的末尾加入分号"><span class="nav-number">6.</span> <span class="nav-text">在php编程中需要在每条语句的末尾加入分号;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP变量"><span class="nav-number">7.</span> <span class="nav-text">PHP变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量命名规则："><span class="nav-number">8.</span> <span class="nav-text">变量命名规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-dump函数，输出数据类型；"><span class="nav-number">9.</span> <span class="nav-text">var_dump函数，输出数据类型；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单引号双引号"><span class="nav-number">10.</span> <span class="nav-text">单引号双引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当字符串很长的解决方法；"><span class="nav-number">11.</span> <span class="nav-text">当字符串很长的解决方法；</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌入HTML时php用的标记4种"><span class="nav-number">1.</span> <span class="nav-text">嵌入HTML时php用的标记4种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP的注释有三种"><span class="nav-number">2.</span> <span class="nav-text">PHP的注释有三种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAMPServer集成环境下载和安装"><span class="nav-number">3.</span> <span class="nav-text">WAMPServer集成环境下载和安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站根目录的自定义"><span class="nav-number">4.</span> <span class="nav-text">网站根目录的自定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number"></span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-number">1.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-这个命令是告诉服务器，打印一串字符；"><span class="nav-number">2.</span> <span class="nav-text">echo 这个命令是告诉服务器，打印一串字符；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串用双引号括起来；"><span class="nav-number">3.</span> <span class="nav-text">字符串用双引号括起来；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-关键字与字符串之间至少要有一个空格"><span class="nav-number">4.</span> <span class="nav-text">echo 关键字与字符串之间至少要有一个空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把连个字符用-连接起来"><span class="nav-number">5.</span> <span class="nav-text">把连个字符用 . 连接起来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在php编程中需要在每条语句的末尾加入分号"><span class="nav-number">6.</span> <span class="nav-text">在php编程中需要在每条语句的末尾加入分号;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP变量"><span class="nav-number">7.</span> <span class="nav-text">PHP变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量命名规则："><span class="nav-number">8.</span> <span class="nav-text">变量命名规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-dump函数，输出数据类型；"><span class="nav-number">9.</span> <span class="nav-text">var_dump函数，输出数据类型；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单引号双引号"><span class="nav-number">10.</span> <span class="nav-text">单引号双引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当字符串很长的解决方法；"><span class="nav-number">11.</span> <span class="nav-text">当字符串很长的解决方法；</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嘘！咱偷窥一个小文件！"><span class="nav-number"></span> <span class="nav-text">嘘！咱偷窥一个小文件！</span></a></div>
             
 
           </div>
