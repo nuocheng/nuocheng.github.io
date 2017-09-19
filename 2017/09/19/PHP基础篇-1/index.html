@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="嵌入HTML时php用的标记4种&amp;lt;?php ?&amp;gt; &amp;lt;? ?&amp;gt;（需要开启short_open_tag）&amp;lt;% %&amp;gt;（需要开启asp_tags&amp;gt; PHP的注释有三种//，#，/**/. 解析一个文件时，php会寻找其实和结束标记，也就是&amp;lt;?php ?&amp;gt;,这告诉php开始和停止解析两者之间的代码这种解析方式使得php可以被嵌入到二中不同的文档中，而任何">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T12:41:00.610Z">
+<meta property="og:updated_time" content="2017-09-19T12:47:50.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP基础篇(1)">
 <meta name="twitter:description" content="嵌入HTML时php用的标记4种&amp;lt;?php ?&amp;gt; &amp;lt;? ?&amp;gt;（需要开启short_open_tag）&amp;lt;% %&amp;gt;（需要开启asp_tags&amp;gt; PHP的注释有三种//，#，/**/. 解析一个文件时，php会寻找其实和结束标记，也就是&amp;lt;?php ?&amp;gt;,这告诉php开始和停止解析两者之间的代码这种解析方式使得php可以被嵌入到二中不同的文档中，而任何">
@@ -380,32 +380,15 @@
 <h3 id="echo-这个命令是告诉服务器，打印一串字符；"><a href="#echo-这个命令是告诉服务器，打印一串字符；" class="headerlink" title="echo 这个命令是告诉服务器，打印一串字符；"></a>echo 这个命令是告诉服务器，打印一串字符；</h3><h3 id="字符串用双引号括起来；"><a href="#字符串用双引号括起来；" class="headerlink" title="字符串用双引号括起来；"></a>字符串用双引号括起来；</h3><h3 id="echo-关键字与字符串之间至少要有一个空格"><a href="#echo-关键字与字符串之间至少要有一个空格" class="headerlink" title="echo 关键字与字符串之间至少要有一个空格"></a>echo 关键字与字符串之间至少要有一个空格</h3><p>&lt;?php echo 23+6;?&gt;   会显示29</p>
 <h3 id="把连个字符用-连接起来"><a href="#把连个字符用-连接起来" class="headerlink" title="把连个字符用 . 连接起来"></a>把连个字符用 . 连接起来</h3><p>&lt;?php echo ‘hi，’.’world’;?&gt;  显示的是hi，world； </p>
 <h3 id="在php编程中需要在每条语句的末尾加入分号"><a href="#在php编程中需要在每条语句的末尾加入分号" class="headerlink" title="在php编程中需要在每条语句的末尾加入分号;"></a>在php编程中需要在每条语句的末尾加入分号;</h3><h3 id="PHP变量"><a href="#PHP变量" class="headerlink" title="PHP变量"></a>PHP变量</h3><pre><code>定义变量：
-/*
-&lt;?php 
-$var_name=&quot;苹果&quot;;
-$n=10;
-?&gt;
-*/
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php </div><div class="line">$var_name=<span class="string">"苹果"</span>;</div><div class="line">$n=<span class="number">10</span>;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+
 在“=”左边的是变量名，右边是变量值，完成定义变量后需要一个;
 其中变量名必须通过$符号标识；
 </code></pre><h3 id="变量命名规则："><a href="#变量命名规则：" class="headerlink" title="变量命名规则："></a>变量命名规则：</h3><pre><code>（1）、变量名必须以字母或下划线开头，不能使汉字或者是数字
 （2）、变量名只能由字母、数字、以及下划线，还能包含汉字。
 （3）、变量名不允许包含空格
-</code></pre><h3 id="var-dump函数，输出数据类型；"><a href="#var-dump函数，输出数据类型；" class="headerlink" title="var_dump函数，输出数据类型；"></a>var_dump函数，输出数据类型；</h3><pre><code>/*
-&lt;?php
-$string=&quot;就是就是&quot;;
-var_dump($string);
-$string=9494;
-var_dump($string);
-?&gt;
-*/
-输入的是
-string(12) &quot;就是就是&quot;
-int(9494)
-</code></pre><h3 id="单引号双引号"><a href="#单引号双引号" class="headerlink" title="单引号双引号"></a>单引号双引号</h3><p>/*<br>    &lt;?php<br>    $love = “I love you!”;<br>    $string1=”MM，$love”;<br>    $string2=’MM,$love’;<br>    echo $string1;</p>
-<pre><code>echo $string2;
-?&gt;
-</code></pre><p>*/<br>输入的是<br>MM，I love you!MM,$love<br>当双引号中包含变量时，变量会与双引号中的美容连接在一起；<br>当单引号中包含变量时，变量会被当做字符串输出；</p>
+</code></pre><h3 id="var-dump函数，输出数据类型；"><a href="#var-dump函数，输出数据类型；" class="headerlink" title="var_dump函数，输出数据类型；"></a>var_dump函数，输出数据类型；</h3><pre><code><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">	&lt;?php</div><div class="line">	$string=<span class="string">"就是就是"</span>;</div><div class="line">	var_dump($string);</div><div class="line">	$string=<span class="number">9494</span>;</div><div class="line">	var_dump($string);</div><div class="line">	?&gt;</div><div class="line">	``` </div><div class="line">	输入的是</div><div class="line">	string(<span class="number">12</span>) <span class="string">"就是就是"</span></div><div class="line">	int(<span class="number">9494</span>)</div><div class="line">	</div><div class="line">	</div><div class="line"><span class="comment">### 单引号双引号</span></div><div class="line">``` python</div><div class="line">	&lt;?php </div><div class="line">	$love = <span class="string">"I love you!"</span>; </div><div class="line">	$string1=<span class="string">"MM，$love"</span>;</div><div class="line">	$string2=<span class="string">'MM,$love'</span>;</div><div class="line">	echo $string1;</div><div class="line">	</div><div class="line">	echo $string2;</div><div class="line">	?&gt;</div></pre></td></tr></table></figure>
+</code></pre><p>输入的是<br>MM，I love you!MM,$love<br>当双引号中包含变量时，变量会与双引号中的美容连接在一起；<br>当单引号中包含变量时，变量会被当做字符串输出；</p>
 <h3 id="当字符串很长的解决方法；"><a href="#当字符串很长的解决方法；" class="headerlink" title="当字符串很长的解决方法；"></a>当字符串很长的解决方法；</h3><p>/*<br>&lt;?php<br>$string1=&lt;&lt;&lt;GOD<br>我有一只小毛驴，我从来也不骑。<br>有一天我心血来潮，骑着去赶集。<br>我手里拿着小皮鞭，我心里正得意。<br>不知怎么哗啦啦啦啦，我摔了一身泥.<br>GOD;</p>
 <p>echo $string1;<br>?&gt;<br>*/</p>
 <p>在复制符号后，输入定界符&lt;&lt;&lt;,接着是标识符GOD</p>
@@ -607,7 +590,7 @@ int(9494)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌入HTML时php用的标记4种"><span class="nav-number">1.</span> <span class="nav-text">嵌入HTML时php用的标记4种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP的注释有三种"><span class="nav-number">2.</span> <span class="nav-text">PHP的注释有三种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAMPServer集成环境下载和安装"><span class="nav-number">3.</span> <span class="nav-text">WAMPServer集成环境下载和安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站根目录的自定义"><span class="nav-number">4.</span> <span class="nav-text">网站根目录的自定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number"></span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-number">1.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-这个命令是告诉服务器，打印一串字符；"><span class="nav-number">2.</span> <span class="nav-text">echo 这个命令是告诉服务器，打印一串字符；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串用双引号括起来；"><span class="nav-number">3.</span> <span class="nav-text">字符串用双引号括起来；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-关键字与字符串之间至少要有一个空格"><span class="nav-number">4.</span> <span class="nav-text">echo 关键字与字符串之间至少要有一个空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把连个字符用-连接起来"><span class="nav-number">5.</span> <span class="nav-text">把连个字符用 . 连接起来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在php编程中需要在每条语句的末尾加入分号"><span class="nav-number">6.</span> <span class="nav-text">在php编程中需要在每条语句的末尾加入分号;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP变量"><span class="nav-number">7.</span> <span class="nav-text">PHP变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量命名规则："><span class="nav-number">8.</span> <span class="nav-text">变量命名规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-dump函数，输出数据类型；"><span class="nav-number">9.</span> <span class="nav-text">var_dump函数，输出数据类型；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单引号双引号"><span class="nav-number">10.</span> <span class="nav-text">单引号双引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当字符串很长的解决方法；"><span class="nav-number">11.</span> <span class="nav-text">当字符串很长的解决方法；</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌入HTML时php用的标记4种"><span class="nav-number">1.</span> <span class="nav-text">嵌入HTML时php用的标记4种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP的注释有三种"><span class="nav-number">2.</span> <span class="nav-text">PHP的注释有三种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WAMPServer集成环境下载和安装"><span class="nav-number">3.</span> <span class="nav-text">WAMPServer集成环境下载和安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站根目录的自定义"><span class="nav-number">4.</span> <span class="nav-text">网站根目录的自定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number"></span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo"><span class="nav-number">1.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-这个命令是告诉服务器，打印一串字符；"><span class="nav-number">2.</span> <span class="nav-text">echo 这个命令是告诉服务器，打印一串字符；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串用双引号括起来；"><span class="nav-number">3.</span> <span class="nav-text">字符串用双引号括起来；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-关键字与字符串之间至少要有一个空格"><span class="nav-number">4.</span> <span class="nav-text">echo 关键字与字符串之间至少要有一个空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把连个字符用-连接起来"><span class="nav-number">5.</span> <span class="nav-text">把连个字符用 . 连接起来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在php编程中需要在每条语句的末尾加入分号"><span class="nav-number">6.</span> <span class="nav-text">在php编程中需要在每条语句的末尾加入分号;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP变量"><span class="nav-number">7.</span> <span class="nav-text">PHP变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量命名规则："><span class="nav-number">8.</span> <span class="nav-text">变量命名规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-dump函数，输出数据类型；"><span class="nav-number">9.</span> <span class="nav-text">var_dump函数，输出数据类型；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当字符串很长的解决方法；"><span class="nav-number">10.</span> <span class="nav-text">当字符串很长的解决方法；</span></a></li></ol></div>
             
 
           </div>
