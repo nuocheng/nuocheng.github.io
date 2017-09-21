@@ -951,7 +951,7 @@ PHP的注释有三种//，#，/**/.
           
           Initlist(&amp;L);  为什么要加&amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时
 候要对本身引用才能够改变值。
-int Initlist(Sqlist *&amp;L)如果是这样定义的，调用的时候应该可以Initlist(
+int Initlist(Sqlist &amp;L)如果是这样定义的，调用的时候应该可以Initlist(L
           ...
           <!--noindex-->
           <div class="post-button text-center">
