@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Initlist(&amp;amp;L);  为什么要加&amp;amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时 候要对本身引用才能够改变值。 int Initlist(Sqlist &amp;amp;L)如果是这样定义的，调用的时候应该可以Initlist(L); sqlist l;eacher(l);void eacher(&amp;amp;l)使用 .* sql">
+<meta name="description" content="Initlist(&amp;amp;L);  为什么要加&amp;amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时 候要对本身引用才能够改变值。 int Initlist(Sqlist &amp;amp;L)如果是这样定义的，调用的时候应该可以Initlist(L); sqlist l;eacher(l);void eacher(&amp;amp;l)使用 .* *sq">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="主函数中用到&amp;">
-<meta property="og:url" content="http://yoursite.com/2017/09/17/主函数用到/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/主函数用到/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="Initlist(&amp;amp;L);  为什么要加&amp;amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时 候要对本身引用才能够改变值。 int Initlist(Sqlist &amp;amp;L)如果是这样定义的，调用的时候应该可以Initlist(L); sqlist l;eacher(l);void eacher(&amp;amp;l)使用 .* sql">
+<meta property="og:description" content="Initlist(&amp;amp;L);  为什么要加&amp;amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时 候要对本身引用才能够改变值。 int Initlist(Sqlist &amp;amp;L)如果是这样定义的，调用的时候应该可以Initlist(L); sqlist l;eacher(l);void eacher(&amp;amp;l)使用 .* *sq">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-22T11:51:00.844Z">
+<meta property="og:updated_time" content="2017-09-22T12:08:45.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="主函数中用到&amp;">
-<meta name="twitter:description" content="Initlist(&amp;amp;L);  为什么要加&amp;amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时 候要对本身引用才能够改变值。 int Initlist(Sqlist &amp;amp;L)如果是这样定义的，调用的时候应该可以Initlist(L); sqlist l;eacher(l);void eacher(&amp;amp;l)使用 .* sql">
+<meta name="twitter:description" content="Initlist(&amp;amp;L);  为什么要加&amp;amp;？ 因为你在构造表的时候，只是定义了int Initlist(Sqlist *L)空指针，在调用的时 候要对本身引用才能够改变值。 int Initlist(Sqlist &amp;amp;L)如果是这样定义的，调用的时候应该可以Initlist(L); sqlist l;eacher(l);void eacher(&amp;amp;l)使用 .* *sq">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/17/主函数用到/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/22/主函数用到/"/>
 
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/主函数用到/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/主函数用到/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T17:15:08+08:00">
-                2017-09-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T20:08:08+08:00">
+                2017-09-22
               </time>
             
 
@@ -356,8 +356,8 @@
 <p>候要对本身引用才能够改变值。</p>
 <p>int Initlist(Sqlist <em>&amp;L)如果是这样定义的，<br>调用的时候应该可以Initlist(L);
 </em><br>sqlist l;<br>eacher(l);<br>void eacher(&amp;l)<br>使用 .<br>*</p>
-<p><em><br>sqlist l;<br>eacher(&amp;l);<br>void eacher(l);    ###l前是带有星号的<br>使用的是 -&gt;
-</em></p>
+<p>*<br>sqlist l;<br>eacher(&amp;l);<br>void eacher(l);    </p>
+<h3 id="上面的l前是带有星号的"><a href="#上面的l前是带有星号的" class="headerlink" title="上面的l前是带有星号的"></a>上面的l前是带有星号的</h3><p>使用的是 -&gt;<br>*</p>
 <p><em><br>sqlist </em>l;<br>eacher(l);<br>void eacher(<em>&amp;l);<br>使用的是 -&gt;
 </em></p>
 
@@ -390,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/14/Python2/" rel="next" title="Python2">
-                <i class="fa fa-chevron-left"></i> Python2
+              <a href="/2017/09/22/Python-list知识点总结/" rel="next" title="Python list知识点总结">
+                <i class="fa fa-chevron-left"></i> Python list知识点总结
               </a>
             
           </div>
@@ -399,10 +399,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/17/丢失hexo文件的做法/" rel="prev" title="丢失hexo文件的做法">
-                丢失hexo文件的做法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initlist-amp-L-为什么要加-amp-？"><span class="nav-number">1.</span> <span class="nav-text">Initlist(&L);  为什么要加&？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initlist-amp-L-为什么要加-amp-？"><span class="nav-number">1.</span> <span class="nav-text">Initlist(&L);  为什么要加&？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上面的l前是带有星号的"><span class="nav-number">2.</span> <span class="nav-text">上面的l前是带有星号的</span></a></li></ol></div>
             
 
           </div>
