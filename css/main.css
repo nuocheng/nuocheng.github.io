@@ -1825,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e8e8a3;
+  background: #d5ffba;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2972,9 +2972,9 @@ hr {
   margin-bottom: 42px;
 }
 .links-of-author {
-  color: moon #00f;
+  color: #00e3e3;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 25px;
   margin-bottom: 58px;
 }
 .sidebar-inner {
