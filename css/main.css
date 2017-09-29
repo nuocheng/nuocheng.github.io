@@ -1655,7 +1655,7 @@ pre .javascript .function {
   width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  background: url("http://ow7ncmjow.bkt.clouddn.com/2.png");
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
@@ -1825,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4471fa;
+  background: #1846a8;
 }
 .links-of-blogroll {
   font-size: 13px;
