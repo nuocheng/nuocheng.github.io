@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C++," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="/*类的友元友元关系提供了不同类或对象的成员函数之间、类的成员函数与一般函数之间进行数据共享的机制 */123456789101112131415161718192021222324252627282930313233343536class A&amp;#123;public:    void display()&amp;#123;cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;endl;&amp;#125;    int g">
-<meta name="keywords" content="C++">
+<meta name="description" content="调用函数Python内置了很多有用的函数，可以直接调用 调用一个函数，需要知道函数的名称和产生参数1、abs()绝对值函数  直接使用abs(-20) 2、比较函数cmp()    直接使用cmp(x,y) 如果xy，返回值为1； 3、int()函数可以把其他数据类型转换为整数int(‘123’)        输出的是123int(12.34)        输出的是12 4、sum()求和函数">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类的友元">
-<meta property="og:url" content="http://yoursite.com/2017/09/27/类的友元/index.html">
+<meta property="og:title" content="Python之函数">
+<meta property="og:url" content="http://yoursite.com/2017/10/07/Python之什么是函数/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="/*类的友元友元关系提供了不同类或对象的成员函数之间、类的成员函数与一般函数之间进行数据共享的机制 */123456789101112131415161718192021222324252627282930313233343536class A&amp;#123;public:    void display()&amp;#123;cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;endl;&amp;#125;    int g">
+<meta property="og:description" content="调用函数Python内置了很多有用的函数，可以直接调用 调用一个函数，需要知道函数的名称和产生参数1、abs()绝对值函数  直接使用abs(-20) 2、比较函数cmp()    直接使用cmp(x,y) 如果xy，返回值为1； 3、int()函数可以把其他数据类型转换为整数int(‘123’)        输出的是123int(12.34)        输出的是12 4、sum()求和函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T12:54:46.216Z">
+<meta property="og:updated_time" content="2017-10-07T12:40:13.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类的友元">
-<meta name="twitter:description" content="/*类的友元友元关系提供了不同类或对象的成员函数之间、类的成员函数与一般函数之间进行数据共享的机制 */123456789101112131415161718192021222324252627282930313233343536class A&amp;#123;public:    void display()&amp;#123;cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;endl;&amp;#125;    int g">
+<meta name="twitter:title" content="Python之函数">
+<meta name="twitter:description" content="调用函数Python内置了很多有用的函数，可以直接调用 调用一个函数，需要知道函数的名称和产生参数1、abs()绝对值函数  直接使用abs(-20) 2、比较函数cmp()    直接使用cmp(x,y) 如果xy，返回值为1； 3、int()函数可以把其他数据类型转换为整数int(‘123’)        输出的是123int(12.34)        输出的是12 4、sum()求和函数">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/27/类的友元/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/07/Python之什么是函数/"/>
 
 
 
 
 
-  <title>类的友元 | 诺铖的博客</title>
+  <title>Python之函数 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/类的友元/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/Python之什么是函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">类的友元</h1>
+          <h1 class="post-title" itemprop="name headline">Python之函数</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T20:46:11+08:00">
-                2017-09-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T19:44:11+08:00">
+                2017-10-07
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -352,9 +352,22 @@
       
 
       
-        <p>/*类的友元<br>友元关系提供了不同类或对象的成员函数之间、类的成员函数与一般函数之间进行数据共享的机制</p>
-<p>*/<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">public:</div><div class="line">    void display()&#123;cout&lt;&lt;x&lt;&lt;endl;&#125;</div><div class="line">    int getX()&#123;<span class="keyword">return</span> x;&#125;</div><div class="line">private:</div><div class="line">    int x;</div><div class="line">&#125;;</div><div class="line">class B&#123;</div><div class="line">public:</div><div class="line">    void set(int i);</div><div class="line">    void display();</div><div class="line">private:</div><div class="line">    A a;</div><div class="line">&#125;;</div><div class="line">``` </div><div class="line">/*</div><div class="line">这是类组合的情况，类B中内嵌了类A的对象，但是B的成员函数却无法直接访问A的私有成员x。</div><div class="line"></div><div class="line">友元函数是在类中用关键字friend修饰的非成员函数</div><div class="line">*/</div><div class="line"></div><div class="line">``` python </div><div class="line">class point&#123;</div><div class="line">public:</div><div class="line">    point(int x=<span class="number">0</span>,int y=<span class="number">0</span>):x(x),y(y)&#123;&#125;</div><div class="line"></div><div class="line">    friend float dist(point &amp;p1,point &amp;p2);     //友元函数声明</div><div class="line">private:</div><div class="line">    int x,y;</div><div class="line">&#125;;</div><div class="line">float dist(point &amp;p1,point &amp;p2)</div><div class="line">&#123;</div><div class="line">    double x=p1.x-p2.x;</div><div class="line">    double y=p1.y-p2.y;</div><div class="line">    <span class="keyword">return</span> static_cast&lt;float&gt;(sqrt(x*x+y*y));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><p>友元函数是在类中用关键词friend修饰的非成员函数，声明的友元函数可以访问的类的私有和保护成员；<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#include &lt;iostream&gt;</span></div><div class="line"><span class="comment">#include &lt;cmath&gt;</span></div><div class="line">using namespace std;</div><div class="line">class point&#123;</div><div class="line">public:</div><div class="line">    point(int x=<span class="number">0</span>,int y=<span class="number">0</span>):x(x),y(y)&#123;&#125;</div><div class="line">   /* int getX()&#123;<span class="keyword">return</span> x;&#125;</div><div class="line">    int getY()&#123;<span class="keyword">return</span> y;&#125;*/</div><div class="line">    friend float dist(point &amp;p1,point &amp;p2);</div><div class="line">private:</div><div class="line">    int x,y;</div><div class="line">&#125;;</div><div class="line">float dist(point &amp;p1,point &amp;p2)</div><div class="line">&#123;</div><div class="line">    double x=p1.x-p2.x;</div><div class="line">    double y=p1.y-p2.y;</div><div class="line">    <span class="keyword">return</span> static_cast&lt;float&gt;(sqrt(x*x+y*y));</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    point myp1(<span class="number">1</span>,<span class="number">1</span>),myp2(<span class="number">4</span>,<span class="number">5</span>);</div><div class="line">    cout&lt;&lt;<span class="string">"The distance is:"</span>;</div><div class="line">    cout&lt;&lt;dist(myp1,myp2)&lt;&lt;endl;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">``` </div><div class="line"><span class="comment">### 友元类</span></div><div class="line">若A类为B类的友元类， 则A类的所有成员函数都是B类的友元类，都可以访问B类的私有和保护成员</div><div class="line"></div><div class="line">*/</div><div class="line">class B&#123;</div><div class="line">………………              //B类的成员声明</div><div class="line">friend class A;     //声明A为B的友元类</div><div class="line">………………</div><div class="line">&#125;;</div><div class="line"></div><div class="line">源程序：</div><div class="line">``` python </div><div class="line"></div><div class="line">class A&#123;</div><div class="line">public:</div><div class="line">    void display()&#123;count&lt;&lt;x&lt;&lt;endl;&#125;</div><div class="line">    itn getX()&#123;<span class="keyword">return</span> x;&#125;</div><div class="line">    friend class B;               //B类是A 类的友元类；</div><div class="line">private:</div><div class="line">    int x;</div><div class="line">&#125;;</div><div class="line">class B&#123;</div><div class="line">public:</div><div class="line">    void set(int i);</div><div class="line">    void display();</div><div class="line">private:</div><div class="line">    A a;</div><div class="line">&#125;;</div><div class="line">void B::set(int i)</div><div class="line">&#123;</div><div class="line">    a.x=i;                        //由于B是A 的友元，所以在B的成员函数中可以访问A类对象的私有成员；</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><p>Python内置了很多有用的函数，可以直接调用</p>
+<p>调用一个函数，需要知道函数的名称和产生参数<br>1、abs()绝对值函数  直接使用abs(-20)</p>
+<p>2、比较函数cmp()    直接使用cmp(x,y) 如果x<y，返回值为-1；如果x==y，返回值为0；如果x>y，返回值为1；</y，返回值为-1；如果x==y，返回值为0；如果x></p>
+<p>3、int()函数可以把其他数据类型转换为整数<br>int(‘123’)        输出的是123<br>int(12.34)        输出的是12</p>
+<p>4、sum()求和函数<br>例如<br>sum()函数接受一个list作为参数，并返回list所有元素之和。<br>请计算 1<em>1 + 2</em>2 + 3<em>3 + … + 100</em>100。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">l=[]</div><div class="line">x=<span class="number">1</span></div><div class="line"><span class="keyword">while</span> x&lt;=<span class="number">100</span>:</div><div class="line">	l.append(x*x)</div><div class="line">	x=x+<span class="number">1</span></div><div class="line"><span class="keyword">print</span> sum(l)</div></pre></td></tr></table></figure>
+<h3 id="编写函数"><a href="#编写函数" class="headerlink" title="编写函数"></a>编写函数</h3><p>在Python中，定义一个函数要使用def语句，<br>以此写出函数名、括号、括号中的参数和冒号：<br>然后在缩进块中编写函数体，函数的返回值用return语句返回<br>例如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_abs</span><span class="params">(x)</span>:</span></div><div class="line">	<span class="keyword">if</span> x&gt;=<span class="number">0</span>:</div><div class="line">		<span class="keyword">return</span> x</div><div class="line">	<span class="keyword">else</span>:</div><div class="line">		<span class="keyword">return</span> -x</div></pre></td></tr></table></figure>
+<p>定义一个 square_of_sum 函数，它接受一个list，返回list中每个元素平方的和。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">square_of_sum</span><span class="params">(l)</span>:</span></div><div class="line">	sum=<span class="number">0</span></div><div class="line">	<span class="keyword">for</span> x <span class="keyword">in</span> l:</div><div class="line">		sum=sum+x*x</div><div class="line">	<span class="keyword">return</span> sum</div><div class="line"><span class="keyword">print</span> square_of_sum([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</div><div class="line"><span class="keyword">print</span> square_of_sum([<span class="number">-5</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">15</span>,<span class="number">25</span>])</div></pre></td></tr></table></figure>
+<h3 id="返回多值"><a href="#返回多值" class="headerlink" title="返回多值"></a>返回多值</h3><p>math包提供了sin() cos()函数，先用import引用它：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(x,y,step,angle)</span>:</span></div><div class="line">	nx=x+step*math.cos(angle)</div><div class="line">	ny=y-step*math.sin(angle)</div><div class="line">	<span class="keyword">return</span> nx,ny</div></pre></td></tr></table></figure>
+<p>一元二次方程的定义是：ax² + bx + c = 0<br>编写一个函数，返回一元二次方程的两个解。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">quadratic</span><span class="params">(a,b,c)</span>:</span></div><div class="line">	t=math.sqrt(b*b<span class="number">-4</span>*a*c)</div><div class="line">	<span class="keyword">return</span> (-b + t) / (<span class="number">2</span> * a),( -b - t )/ (<span class="number">2</span> * a)</div><div class="line"><span class="keyword">print</span> quadratic(<span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>)</div><div class="line"><span class="keyword">print</span> quadratic(<span class="number">1</span>, <span class="number">-6</span>, <span class="number">5</span>)</div></pre></td></tr></table></figure>
+<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>求阶乘 n！  用fact（n）表示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span> <span class="params">(n,a,b,c)</span>:</span></div><div class="line">	<span class="keyword">if</span> n==<span class="number">1</span>:</div><div class="line">		<span class="keyword">print</span> a,<span class="string">'--&gt;'</span>,c</div><div class="line">		<span class="keyword">return</span> </div><div class="line">	move(n<span class="number">-1</span>,a,c,b)</div><div class="line">	<span class="keyword">print</span> a,<span class="string">'--&gt;'</span>,c</div><div class="line">	move(n<span class="number">-1</span>,b,a,c)</div><div class="line">move(<span class="number">4</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -372,7 +385,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -385,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/27/戴尔新版本的BIOS项的设置/" rel="next" title="戴尔新版本的BIOS项的设置">
-                <i class="fa fa-chevron-left"></i> 戴尔新版本的BIOS项的设置
+              <a href="/2017/10/07/hosts文件修复/" rel="next" title="hosts文件修复">
+                <i class="fa fa-chevron-left"></i> hosts文件修复
               </a>
             
           </div>
@@ -394,10 +407,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/27/共享数据的保护const/" rel="prev" title="共享数据的保护const">
-                共享数据的保护const <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#友元函数"><span class="nav-number">1.</span> <span class="nav-text">友元函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数"><span class="nav-number">1.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写函数"><span class="nav-number">2.</span> <span class="nav-text">编写函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回多值"><span class="nav-number">3.</span> <span class="nav-text">返回多值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归函数"><span class="nav-number">4.</span> <span class="nav-text">递归函数</span></a></li></ol></div>
             
 
           </div>
