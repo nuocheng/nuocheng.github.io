@@ -353,7 +353,7 @@
       
         
           
-          1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;stdio.h&gt;int arr[1123456];int main()&#123;    int t;    scanf("
+          1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;stdio.h&gt;int arr[1123456];int main()&#123;    int t;    scanf("%d",&amp;t);    while(t--)    &#123;        int n,
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -502,7 +502,7 @@
         
           
           hexo本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
-1、从官网Git下载git，在新电脑上安装，因为https速度慢，而且每次都要输入口令，常用的是使用ssh。使用下面方法创建：（1）打开git bash，在用户主目录下运行：ssh-keygen -t rsa
+1、从官网Git下载git，在新电脑上安装，因为https速度慢，而且每次都要输入口令，常用的是使用ssh。使用下面方法创建：（1）打开git bash，在用户主目录下运行：ssh-keygen -t rsa -C “youremail@example.com” 把其中的邮件地址换成自己的邮件地址，然后一路
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -651,7 +651,7 @@
         
           
           逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。
-关系运算可以通过逻辑运算符 and
+关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -805,7 +805,9 @@ ctrl +D 退出直接在终端上print
 2、脚本文件（Vim编辑器）在终端上输入 vim helloworld.py(创建Python文件)
 然后按i键进出输入模式
 然后开始输入代码了
-    在开始的第一行代码中要
+    在开始的第一行代码中要输入文件的位置
+        例如：#！/user/bin/env python3
+       
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -954,7 +956,8 @@ ctrl +D 退出直接在终端上print
         
           
           电脑误删资料恢复，并且还把回收站清空了，咋办
-1、单机“开始—-运行”，然后输入regedit（打开注册表）2、依次展开HEKEY----LOCAL----MACHIME/SOFTWARE/microsoft/WINDOWS/CURRENTVERSION/EXPLORER/DESKTOP/NAMES
+1、单机“开始—-运行”，然后输入regedit（打开注册表）2、依次展开HEKEY----LOCAL----MACHIME/SOFTWARE/microsoft/WINDOWS/CURRENTVERSION/EXPLORER/DESKTOP/NAMESPACE在左边空白外点击“新建”
+选择：    “主键（项）“，把他命名为    ”645FFO40
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1103,7 +1106,7 @@ ctrl +D 退出直接在终端上print
         
           
           typedef struct node{    ElemType data;    struct node leftchild;    struct node rightchild;}tree;
-/创建/12345678910111213void creat(tree *&amp;t)&#123; 
+/创建/12345678910111213void creat(tree *&amp;t)&#123;    ElemType data;    data=getchar();    if(data=='
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1253,7 +1256,7 @@ ctrl +D 退出直接在终端上print
           
           环形队列通过逻辑方式实现环形队列，也就是将rear++和front++改为    rear=(rear+1)%maxsize;    front=(front+1)%maxsize
 队满的条件(rear+1)%maxsize=front;
-队空条件：front=rear;队满条件：(rear+1)%
+队空条件：front=rear;队满条件：(rear+1)%maxsize=front;进队操作：rear=(rear+1)%maxsize出队操作：front
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1404,7 +1407,12 @@ ctrl +D 退出直接在终端上print
           /*
 顺序队队空条件：front=rear;队满条件：rear=maxsize-1元素进队：rear++;data[rear]=e;元素出队：front++;e=data[front]初始时：front=rear=-1;typedef struct
 {
-    ElementType data[ma
+    ElementType data[maxsize];
+    int front,rear;
+}SqQueue;
+
+/初始化队列/
+voi
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1553,7 +1561,8 @@ ctrl +D 退出直接在终端上print
         
           
           栈空的条件：s-&gt;next=NULL栈满的条件：不考虑进栈操作：将包含e的结点插入到头节点之后退栈操作：取出头节点之后节点的元素并删除
-###代码块12345typedef struct linknode&#123;    ElementType data;    struct linknod
+###代码块12345typedef struct linknode&#123;    ElementType data;    struct linknode *next;&#125;LiStack;
+/初始化/12345void (LiStack *&a
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1705,7 +1714,8 @@ ctrl +D 退出直接在终端上print
 栈的几种基本运算如下：InitStack(&amp;s)：初始化栈。构造一个空栈s。
 DestroyStack(&amp;s):销毁栈，释放栈S占用的存储空间
 StackEmpty(s):判断栈是否为空：若栈s为空，则返回值为真，否则返回值为假
-Push(&amp;s,e):进栈。将元素e插入
+Push(&amp;s,e):进栈。将元素e插入到栈S中作为栈顶元素
+Pop(&amp;s,&amp;e):出栈，重栈s中退出栈顶元素，并将其值赋给
           ...
           <!--noindex-->
           <div class="post-button text-center">
