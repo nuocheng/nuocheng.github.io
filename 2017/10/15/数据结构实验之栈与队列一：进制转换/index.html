@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。 关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中">
-<meta name="keywords" content="Python">
+<meta name="description" content="今天在acm中提交了无数遍的这个题全都是WA 生气啊 生气啊   生气啊     后来把进制转换的pop换成了traverse就AC了   至今不知道为什么 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python2">
-<meta property="og:url" content="http://yoursite.com/2017/09/14/Python2/index.html">
+<meta property="og:title" content="数据结构实验之栈与队列一：进制转换">
+<meta property="og:url" content="http://yoursite.com/2017/10/15/数据结构实验之栈与队列一：进制转换/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。 关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中">
+<meta property="og:description" content="今天在acm中提交了无数遍的这个题全都是WA 生气啊 生气啊   生气啊     后来把进制转换的pop换成了traverse就AC了   至今不知道为什么 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-14T01:21:28.037Z">
+<meta property="og:updated_time" content="2017-10-15T12:36:33.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python2">
-<meta name="twitter:description" content="逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。 关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中">
+<meta name="twitter:title" content="数据结构实验之栈与队列一：进制转换">
+<meta name="twitter:description" content="今天在acm中提交了无数遍的这个题全都是WA 生气啊 生气啊   生气啊     后来把进制转换的pop换成了traverse就AC了   至今不知道为什么 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/14/Python2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/15/数据结构实验之栈与队列一：进制转换/"/>
 
 
 
 
 
-  <title>Python2 | 诺铖的博客</title>
+  <title>数据结构实验之栈与队列一：进制转换 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/Python2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/15/数据结构实验之栈与队列一：进制转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python2</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构实验之栈与队列一：进制转换</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T09:20:06+08:00">
-                2017-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-15T20:29:43+08:00">
+                2017-10-15
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
                   </a>
                 </span>
 
@@ -352,58 +352,11 @@
       
 
       
-        <h3 id="逻辑运算符-and-和-or-也称作短路运算符："><a href="#逻辑运算符-and-和-or-也称作短路运算符：" class="headerlink" title="逻辑运算符 and 和 or 也称作短路运算符："></a>逻辑运算符 and 和 or 也称作短路运算符：</h3><p>它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。</p>
-<p>关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中，not 具有最高的优先级，or 优先级最低，所以 A and not B or C 等于 (A and (notB)) or C。当然，括号也可以用于比较表达式。</p>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><pre><code>1、/*for 循环*/
-for i in range(1,11):
+        <p>今天在acm中提交了无数遍的这个题全都是WA</p>
+<p>生气啊 生气啊   生气啊    </p>
+<p>后来把进制转换的pop换成了traverse就AC了   至今不知道为什么</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#include &lt;stdio.h&gt;</span></div><div class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></div><div class="line"><span class="comment">#include &lt;math.h&gt;</span></div><div class="line">//建立节点</div><div class="line">typedef struct node</div><div class="line">&#123;</div><div class="line">    int data;</div><div class="line">    struct node *next;</div><div class="line">&#125;node ,*pnode;</div><div class="line">//建立栈</div><div class="line">typedef struct Stack</div><div class="line">&#123;</div><div class="line">    pnode top;</div><div class="line">    pnode bottom;</div><div class="line">&#125;Stack ,*pstack;</div><div class="line">//栈的初始化</div><div class="line">void initstack(pstack s)</div><div class="line">&#123;</div><div class="line">    s-&gt;top=(pnode)malloc(sizeof(node));</div><div class="line">    s-&gt;bottom=s-&gt;top;</div><div class="line">    s-&gt;top-&gt;next=NULL;</div><div class="line">    <span class="keyword">return</span> ;</div><div class="line">&#125;</div><div class="line">//压栈</div><div class="line">void push(pstack s,int e)</div><div class="line">&#123;</div><div class="line">    pnode p;</div><div class="line">    p=(pnode)malloc(sizeof(node));</div><div class="line">    p-&gt;data=e;</div><div class="line">    p-&gt;next=s-&gt;top;</div><div class="line">    s-&gt;top=p;</div><div class="line"></div><div class="line">&#125;</div><div class="line">//判断栈是否为空</div><div class="line">int empty(pstack s)</div><div class="line">&#123;</div><div class="line">    if(s-&gt;top==s-&gt;bottom)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">//出栈</div><div class="line">bool  pop(pstack s,int *e)</div><div class="line">&#123;</div><div class="line">   <span class="keyword">if</span>(empty(s))</div><div class="line">   &#123;</div><div class="line">       <span class="keyword">return</span> false;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">else</span></div><div class="line">   &#123;</div><div class="line">       pnode p=s-&gt;top;</div><div class="line">       *e=p-&gt;data;</div><div class="line">       s-&gt;top=p-&gt;next;</div><div class="line">       free(p);</div><div class="line">       p=NULL;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">void traverse(pstack s)</div><div class="line">&#123;</div><div class="line">    pnode p=s-&gt;top;</div><div class="line">    while(p!=s-&gt;bottom)</div><div class="line">    &#123;</div><div class="line">        printf("%d",p-&gt;data);</div><div class="line">        p=p-&gt;next;</div><div class="line">    &#125;</div><div class="line">    printf(<span class="string">"\n"</span>);</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    Stack s;</div><div class="line">    initstack(&amp;s);</div><div class="line">    int n,m;</div><div class="line">    int i;</div><div class="line">    scanf(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</div><div class="line">    <span class="keyword">while</span>(n&gt;=m)</div><div class="line">    &#123;</div><div class="line">        push(&amp;s,n%m);</div><div class="line">        n=n/m;</div><div class="line">    &#125;</div><div class="line">    push(&amp;s,n);</div><div class="line">    int cou;</div><div class="line">    traverse(&amp;s);</div><div class="line">&#125;</div><div class="line"> /*    <span class="keyword">while</span>(pop(&amp;s,&amp;cou))</div><div class="line">        &#123;</div><div class="line">            printf(<span class="string">"%d"</span>,cou);</div><div class="line">        &#125;</div><div class="line">        printf(<span class="string">"\n"</span>);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        printf(<span class="string">"0\n"</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(n&gt;<span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;n;i++)</div><div class="line">        &#123;</div><div class="line">            push(&amp;s,n%m);</div><div class="line">            n=n/m;</div><div class="line">        &#125;</div><div class="line">        int c=i;</div><div class="line">        int cou;</div><div class="line">        <span class="keyword">while</span>(pop(&amp;s,&amp;cou))</div><div class="line">        &#123;</div><div class="line">            printf(<span class="string">"%d"</span>,cou);</div><div class="line">        &#125;</div><div class="line">        printf(<span class="string">"\n"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">*/</div><div class="line">/*</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    Stack s;</div><div class="line">    initstack(&amp;s);</div><div class="line">    int i;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)</div><div class="line">    &#123;</div><div class="line">        push(&amp;s,i);</div><div class="line">    &#125;</div><div class="line">    int cou;</div><div class="line">    <span class="keyword">while</span>(pop(&amp;s,&amp;cou))</div><div class="line">    &#123;</div><div class="line">        printf(<span class="string">"%d "</span>,cou);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">*/</div></pre></td></tr></table></figure>
 
-    range()函数
-    list(range(1, 15, 3))
-    显示：[1, 4, 7, 10, 13]  表示的是从1---15  每隔3个数字取一个数
-    &gt;&gt;&gt; list(range(4, 15, 2))
-    显示：[4, 6, 8, 10, 12, 14]
-如果用到数学上的知识的时候
-    import math
-    math.sqrt()
-    math.pow()
-
-2、/*while循环*/
-while condition：
-    statement1
-    statement2
-
-
-a,b=b,a+b(等效于）
-a=b
-b=a(原值)+b
-print(&quot;#&quot;*8)
-会打印出来8个#
-
-
-3、/*列表*/
-a=[1,323,223,&apos;india&apos;,&apos;fedora&apos;]
-访问的时候使用a[i]的形式访问
-（1）如果是a[负数]将会从列表的末尾开始计数
-    如a[-1]=&apos;fedora&apos;
-
-（2）也可以进行数据的分割：
-    如a[1:-1]=[323,223,&apos;india&apos;]
-    第一个数字是开始的位置：第二个数字是结束的位置后的一个数字
-
-（3）a[1::2]=[323,&apos;india&apos;]
-它表示的是从1到列表末尾，每隔两个元素取值。
-
-（4）a+[36, 49, 64, 81, 100]
-其表示的是[1,323,223,&apos;india&apos;,&apos;fedora&apos;, 36, 49, 64, 81, 100]
-
-（5）列表允许修改元素
-如：&gt;&gt;&gt; cubes = [1, 8, 27, 65, 125]
-&gt;&gt;&gt; cubes[3] = 64
-此时cubes=[1, 8, 27, 64, 125]
-
-
-len(a)可以判断a的长度
-</code></pre>
       
     </div>
     
@@ -420,7 +373,7 @@ len(a)可以判断a的长度
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
         </div>
       
@@ -433,8 +386,8 @@ len(a)可以判断a的长度
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/12/python小知识/" rel="next" title="Python小知识">
-                <i class="fa fa-chevron-left"></i> Python小知识
+              <a href="/2017/10/14/指针/" rel="next" title="指针">
+                <i class="fa fa-chevron-left"></i> 指针
               </a>
             
           </div>
@@ -442,10 +395,6 @@ len(a)可以判断a的长度
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/17/丢失hexo文件的做法/" rel="prev" title="丢失hexo文件的做法">
-                丢失hexo文件的做法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,17 +469,8 @@ len(a)可以判断a的长度
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/2.jpg"
@@ -591,22 +531,6 @@ len(a)可以判断a的长度
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符-and-和-or-也称作短路运算符："><span class="nav-number">1.</span> <span class="nav-text">逻辑运算符 and 和 or 也称作短路运算符：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">2.</span> <span class="nav-text">循环</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
