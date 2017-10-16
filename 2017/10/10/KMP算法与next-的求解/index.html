@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="这仅仅是自己对KMP算法的理解 T前缀和后缀中有n个元素匹配，j就变为n+1; 如果：S： s s s s s s s x T:  s s s s b   0 1 2 3 4 5 此时的前缀和后缀都是3  所以从第4个元素开始匹配 （简单的记法就是如果不匹配的位置前的元素都相同，有几个就在第几个位置开始匹配） 例如：T：  a b a b a a a b a  j: 0 1 2 3 4 5 6 7">
+<meta name="description" content="这仅仅是自己对KMP算法的理解 T前缀和后缀中有n个元素匹配，j就变为n+1; 如果：S： s s s s s s s x T:  s s s s b   0 1 2 3 4 5 此时的前缀和后缀都是3  所以从第4个元素开始匹配 例如：T：  a b a b a a a b a  j: 0 1 2 3 4 5 6 7 8 9 k:   0 1 1 2 3 4 2 2 3 如果只有一个前缀那只能从">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP算法与next[]的求解">
 <meta property="og:url" content="http://yoursite.com/2017/10/10/KMP算法与next-的求解/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="这仅仅是自己对KMP算法的理解 T前缀和后缀中有n个元素匹配，j就变为n+1; 如果：S： s s s s s s s x T:  s s s s b   0 1 2 3 4 5 此时的前缀和后缀都是3  所以从第4个元素开始匹配 （简单的记法就是如果不匹配的位置前的元素都相同，有几个就在第几个位置开始匹配） 例如：T：  a b a b a a a b a  j: 0 1 2 3 4 5 6 7">
+<meta property="og:description" content="这仅仅是自己对KMP算法的理解 T前缀和后缀中有n个元素匹配，j就变为n+1; 如果：S： s s s s s s s x T:  s s s s b   0 1 2 3 4 5 此时的前缀和后缀都是3  所以从第4个元素开始匹配 例如：T：  a b a b a a a b a  j: 0 1 2 3 4 5 6 7 8 9 k:   0 1 1 2 3 4 2 2 3 如果只有一个前缀那只能从">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-11T13:22:30.592Z">
+<meta property="og:updated_time" content="2017-10-16T12:55:43.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KMP算法与next[]的求解">
-<meta name="twitter:description" content="这仅仅是自己对KMP算法的理解 T前缀和后缀中有n个元素匹配，j就变为n+1; 如果：S： s s s s s s s x T:  s s s s b   0 1 2 3 4 5 此时的前缀和后缀都是3  所以从第4个元素开始匹配 （简单的记法就是如果不匹配的位置前的元素都相同，有几个就在第几个位置开始匹配） 例如：T：  a b a b a a a b a  j: 0 1 2 3 4 5 6 7">
+<meta name="twitter:description" content="这仅仅是自己对KMP算法的理解 T前缀和后缀中有n个元素匹配，j就变为n+1; 如果：S： s s s s s s s x T:  s s s s b   0 1 2 3 4 5 此时的前缀和后缀都是3  所以从第4个元素开始匹配 例如：T：  a b a b a a a b a  j: 0 1 2 3 4 5 6 7 8 9 k:   0 1 1 2 3 4 2 2 3 如果只有一个前缀那只能从">
 
 
 
@@ -358,7 +358,6 @@
 T:  s s s s b
   0 1 2 3 4 5
 此时的前缀和后缀都是3  所以从第4个元素开始匹配
-（简单的记法就是如果不匹配的位置前的元素都相同，有几个就在第几个位置开始匹配）
 </code></pre><h3 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h3><pre><code>T：  a b a b a a a b a 
 j: 0 1 2 3 4 5 6 7 8 9
 k:   0 1 1 2 3 4 2 2 3
