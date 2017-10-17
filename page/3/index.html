@@ -353,7 +353,8 @@
       
         
           
-          PHP第一种特殊类型——资源资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）12345&lt;?php$file=fopen("f.txt","r");     //打开文件$con=mysql_connect("localhost","root","root"); //连接数据库$img=imagecreate(100,100);?
+          PHP第一种特殊类型——资源资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）12345&lt;?php$file=fopen("f.txt","r");     //打开文件$con=mysql_connect("localhost","root","root"); //连接数据库$img=imagecreate(100,100);?&gt;
+嘘！咱偷窥一个小文件！假设在服务器上，你发现了一个文件，是不是很好奇，想看看里面写了啥。嘿嘿，PHP可以做到哦（但是千万记住，如果是隐私文件，可不能偷窥哦，就像偷窥陈冠*的照片一样，要坐牢滴
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -504,7 +505,8 @@
           嵌入HTML时php用的标记4种&lt;?php ?&gt;
 &lt;? ?&gt;（需要开启short_open_tag）&lt;% %&gt;（需要开启asp_tags&gt;
 PHP的注释有三种//，#，/**/.
-解析一个文件时，php会寻找其实和结束标记，也就是&lt;?php ?&gt;,这告诉php开始和停止解析两者之间的代码这种解析方式使得php可以被嵌入到二中不同的文档中，而任何
+解析一个文件时，php会寻找其实和结束标记，也就是&lt;?php ?&gt;,这告诉php开始和停止解析两者之间的代码这种解析方式使得php可以被嵌入到二中不同的文档中，而任何起始和结束标记之外的部分会被php解析器忽略掉。
+如果文件内容是纯php代码，最好在文件的末尾删除php结束标记，这样可以避免php结束标记之后万一意外加入了空格或者换行符，会导致php开始输出这些空
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -652,7 +654,7 @@ PHP的注释有三种//，#，/**/.
       
         
           
-          1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;stdio.h&gt;int arr[1123456];int main()&#123;    int t;    scanf("%d",&amp;t);    while(t--)    &#123;        int n,
+          1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;stdio.h&gt;int arr[1123456];int main()&#123;    int t;    scanf("%d",&amp;t);    while(t--)    &#123;        int n,m;        scanf("%d%d",&amp;n,&amp;m);        for(int i=0;i&lt;n;i++)        &#123;            scanf
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -801,7 +803,7 @@ PHP的注释有三种//，#，/**/.
         
           
           hexo本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：
-1、从官网Git下载git，在新电脑上安装，因为https速度慢，而且每次都要输入口令，常用的是使用ssh。使用下面方法创建：（1）打开git bash，在用户主目录下运行：ssh-keygen -t rsa -C “youremail@example.com” 把其中的邮件地址换成自己的邮件地址，然后一路
+1、从官网Git下载git，在新电脑上安装，因为https速度慢，而且每次都要输入口令，常用的是使用ssh。使用下面方法创建：（1）打开git bash，在用户主目录下运行：ssh-keygen -t rsa -C “youremail@example.com” 把其中的邮件地址换成自己的邮件地址，然后一路回车（2）最后完成后，会在用户主目录下生成.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH key密钥对，id_rsa是私钥，千万不能泄露出去，id_rsa.pub是公
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -950,7 +952,9 @@ PHP的注释有三种//，#，/**/.
         
           
           逻辑运算符 and 和 or 也称作短路运算符：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 A 和 C 为真而 B 为假，A and B and C 不会解析 C 。作用于一个普通的非逻辑值时，短路运算符的返回值通常是能够最先确定结果的那个操作数。
-关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中
+关系运算可以通过逻辑运算符 and 和 or 组合，比较的结果可以用 not 来取反意。逻辑运算符的优先级又低于关系运算符，在它们之中，not 具有最高的优先级，or 优先级最低，所以 A and not B or C 等于 (A and (notB)) or C。当然，括号也可以用于比较表达式。
+循环1、/*for 循环*/
+fo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1106,7 +1110,10 @@ ctrl +D 退出直接在终端上print
 然后开始输入代码了
     在开始的第一行代码中要输入文件的位置
         例如：#！/user/bin/env python3
-       
+                前面一定要有#！
+        然后按esc键退出插入模式
+再键入 ：wq回车，这时候vim就会保存文件并退出
+然后为该文件一个打开的权限：chmod +x helloworld.
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1256,8 +1263,9 @@ ctrl +D 退出直接在终端上print
           
           电脑误删资料恢复，并且还把回收站清空了，咋办
 1、单机“开始—-运行”，然后输入regedit（打开注册表）2、依次展开HEKEY----LOCAL----MACHIME/SOFTWARE/microsoft/WINDOWS/CURRENTVERSION/EXPLORER/DESKTOP/NAMESPACE在左边空白外点击“新建”
-选择：    “主键（项）“，把他命名为    ”645FFO40
-          ...
+选择：    “主键（项）“，把他命名为    ”645FFO40—5081—101B—9F08—00AA002F954E再把右边的“默认”的主键的键值设置为“回收站”然后退出注册表。就OK
+3、重新启动计算机
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/11/电脑小知识/#more" rel="contents">
@@ -1405,7 +1413,7 @@ ctrl +D 退出直接在终端上print
         
           
           typedef struct node{    ElemType data;    struct node leftchild;    struct node rightchild;}tree;
-/创建/12345678910111213void creat(tree *&amp;t)&#123;    ElemType data;    data=getchar();    if(data=='
+/创建/12345678910111213void creat(tree *&amp;t)&#123;    ElemType data;    data=getchar();    if(data=='#')        t=NULL;    else&#123;        t=(tree *)malloc(sizeof(tree));        t-&gt;data=data;     
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1555,7 +1563,8 @@ ctrl +D 退出直接在终端上print
           
           环形队列通过逻辑方式实现环形队列，也就是将rear++和front++改为    rear=(rear+1)%maxsize;    front=(front+1)%maxsize
 队满的条件(rear+1)%maxsize=front;
-队空条件：front=rear;队满条件：(rear+1)%maxsize=front;进队操作：rear=(rear+1)%maxsize出队操作：front
+队空条件：front=rear;队满条件：(rear+1)%maxsize=front;进队操作：rear=(rear+1)%maxsize出队操作：front=(front+1)%maxsize;已知front,rear求队中元素个数countcount=(rear-front+maxsize)%maxsize
+已知front、count，求rearrea
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1711,7 +1720,10 @@ ctrl +D 退出直接在终端上print
 }SqQueue;
 
 /初始化队列/
-voi
+void InitQueue(SqStack *&amp;q)
+{
+    q=(SqQueue *)malloc(sizeof(SqQueue));
+    q-&gt;front=q-&gt;rear=
           ...
           <!--noindex-->
           <div class="post-button text-center">
