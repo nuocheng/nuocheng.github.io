@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="一、有关数据库的命令：1、查看数据库： show databasese； 2、添加数据库： create database 库名； 3、删除数据库： drop database 库名； 4、使用某数据库： use 库名； 5、查看该库下表： show tables； 二、库下的表添加，删除，修改：1、添加数据库： create table 表名（     列1名 类型，     列2名 类型，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T09:01:29.316Z">
+<meta property="og:updated_time" content="2017-12-22T08:20:53.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL的知识点">
 <meta name="twitter:description" content="一、有关数据库的命令：1、查看数据库： show databasese； 2、添加数据库： create database 库名； 3、删除数据库： drop database 库名； 4、使用某数据库： use 库名； 5、查看该库下表： show tables； 二、库下的表添加，删除，修改：1、添加数据库： create table 表名（     列1名 类型，     列2名 类型，">
@@ -403,7 +403,17 @@ select *from 表名 where 列=“” and 列名=‘’” or 列名&gt;xx
 select * from 表名 where 列名 is not null ;
 </code></pre><h3 id="select-distinct去掉重复查询结果"><a href="#select-distinct去掉重复查询结果" class="headerlink" title="select distinct去掉重复查询结果"></a>select distinct去掉重复查询结果</h3><pre><code>select distinct 列名，列名，列名……from 表名；
 </code></pre><h3 id="表内数据排序"><a href="#表内数据排序" class="headerlink" title="表内数据排序"></a>表内数据排序</h3><pre><code>select * from 表名 order by 列名asc||desc，列名asc||desc，……；
-</code></pre>
+</code></pre><h3 id="数据的筛选"><a href="#数据的筛选" class="headerlink" title="数据的筛选"></a>数据的筛选</h3><pre><code>select * from 表名 [where子句][order by句子] limit[offset],rowCount;
+
+代表的意思：
+offset：查询结果的起始位置，，第一条记录的其实是0
+rowcount：从offset位置开始，获取的记录条数；
+
+注意：
+limit rowCount = limit 0,rowCount;
+</code></pre><h3 id="insert和select组合使用："><a href="#insert和select组合使用：" class="headerlink" title="insert和select组合使用："></a>insert和select组合使用：</h3><pre><code>insert into 表名 select 列1 ，列2，…… from 表名2；
+</code></pre><h3 id="更新数据库："><a href="#更新数据库：" class="headerlink" title="更新数据库："></a>更新数据库：</h3><p> 修改单列：<br> update 表名 set 列名=“” where ;<br> 修改多列：<br> update 表名 set 列1= ，列2=…… where ;</p>
+
       
     </div>
     
@@ -601,7 +611,7 @@ select * from 表名 where 列名 is not null ;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、有关数据库的命令："><span class="nav-number">1.</span> <span class="nav-text">一、有关数据库的命令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、库下的表添加，删除，修改："><span class="nav-number">2.</span> <span class="nav-text">二、库下的表添加，删除，修改：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、表内列的命令"><span class="nav-number">3.</span> <span class="nav-text">三、表内列的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、查看表的数据"><span class="nav-number">4.</span> <span class="nav-text">四、查看表的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null字段的判断"><span class="nav-number">5.</span> <span class="nav-text">null字段的判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-distinct去掉重复查询结果"><span class="nav-number">6.</span> <span class="nav-text">select distinct去掉重复查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表内数据排序"><span class="nav-number">7.</span> <span class="nav-text">表内数据排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、有关数据库的命令："><span class="nav-number">1.</span> <span class="nav-text">一、有关数据库的命令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、库下的表添加，删除，修改："><span class="nav-number">2.</span> <span class="nav-text">二、库下的表添加，删除，修改：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、表内列的命令"><span class="nav-number">3.</span> <span class="nav-text">三、表内列的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、查看表的数据"><span class="nav-number">4.</span> <span class="nav-text">四、查看表的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null字段的判断"><span class="nav-number">5.</span> <span class="nav-text">null字段的判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-distinct去掉重复查询结果"><span class="nav-number">6.</span> <span class="nav-text">select distinct去掉重复查询结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表内数据排序"><span class="nav-number">7.</span> <span class="nav-text">表内数据排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据的筛选"><span class="nav-number">8.</span> <span class="nav-text">数据的筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert和select组合使用："><span class="nav-number">9.</span> <span class="nav-text">insert和select组合使用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新数据库："><span class="nav-number">10.</span> <span class="nav-text">更新数据库：</span></a></li></ol></div>
             
 
           </div>
