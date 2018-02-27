@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="Python3," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="对象的使用&amp;lt;?php    class person{        var $name;        function say(){            echo “DDING FOO”;            }    }    $p=new person;    $p-&amp;gt;name=”TOM”;    $p-&amp;gt;say();?&amp;gt; 获取资源/fopen()函数以写的方式">
-<meta name="keywords" content="PHP">
+<meta name="description" content="登录表达后的信息（实现表单交互requests的post方法）：import requests url=”https://www.douban.com/accounts/login“ params={    ‘source’:’index_nav’,    ‘form_email’:’‘,    ‘form_password’:’*‘}html=requests.post(url,params)">
+<meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP基础篇（4）">
-<meta property="og:url" content="http://yoursite.com/2017/09/26/PHP基础篇（4）/index.html">
+<meta property="og:title" content="爬虫之表单交互与模拟登陆">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/爬虫之表单交互与模拟登陆/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="对象的使用&amp;lt;?php    class person{        var $name;        function say(){            echo “DDING FOO”;            }    }    $p=new person;    $p-&amp;gt;name=”TOM”;    $p-&amp;gt;say();?&amp;gt; 获取资源/fopen()函数以写的方式">
+<meta property="og:description" content="登录表达后的信息（实现表单交互requests的post方法）：import requests url=”https://www.douban.com/accounts/login“ params={    ‘source’:’index_nav’,    ‘form_email’:’‘,    ‘form_password’:’*‘}html=requests.post(url,params)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-26T02:36:10.222Z">
+<meta property="og:updated_time" content="2018-02-27T12:38:45.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP基础篇（4）">
-<meta name="twitter:description" content="对象的使用&amp;lt;?php    class person{        var $name;        function say(){            echo “DDING FOO”;            }    }    $p=new person;    $p-&amp;gt;name=”TOM”;    $p-&amp;gt;say();?&amp;gt; 获取资源/fopen()函数以写的方式">
+<meta name="twitter:title" content="爬虫之表单交互与模拟登陆">
+<meta name="twitter:description" content="登录表达后的信息（实现表单交互requests的post方法）：import requests url=”https://www.douban.com/accounts/login“ params={    ‘source’:’index_nav’,    ‘form_email’:’‘,    ‘form_password’:’*‘}html=requests.post(url,params)">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/26/PHP基础篇（4）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/27/爬虫之表单交互与模拟登陆/"/>
 
 
 
 
 
-  <title>PHP基础篇（4） | 诺铖的博客</title>
+  <title>爬虫之表单交互与模拟登陆 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/PHP基础篇（4）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/爬虫之表单交互与模拟登陆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHP基础篇（4）</h1>
+          <h1 class="post-title" itemprop="name headline">爬虫之表单交互与模拟登陆</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T10:21:17+08:00">
-                2017-09-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T20:36:01+08:00">
+                2018-02-27
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/Python3/" itemprop="url" rel="index">
+                    <span itemprop="name">Python3</span>
                   </a>
                 </span>
 
@@ -352,12 +352,22 @@
       
 
       
-        <h3 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h3><p>&lt;?php<br>    class person{<br>        var $name;<br>        function say(){<br>            echo “DDING FOO”;<br>            }<br>    }<br>    $p=new person;<br>    $p-&gt;name=”TOM”;<br>    $p-&gt;say();<br>?&gt;</p>
-<h3 id="获取资源"><a href="#获取资源" class="headerlink" title="获取资源"></a>获取资源</h3><p>/<em>fopen()函数以写的方式打开本目录下的文件</em>/<br>$file_handld=fopen(“info.txt”,”w”);</p>
-<p>/<em>opendir()函数打开Windows系统下的c://windows//font 目录</em>/<br>$dir_handle=opendir(“c://windows//fonts”);</p>
-<p>/<em>使用mysql_connect()函数连接本机的MySQL管理系统</em>/<br>$link=mysql_connect(“localhost”,”root”,”123456”);</p>
-<p>/<em>使用imagecreate()创建一个100</em>50的画板*/<br>$im_hand=imagecreat(100,50);</p>
-<p>/<em>使用xml_parser_create创建xml解析器</em>/<br>$xml_parser_create(可选。规定输出代码);</p>
+        <h3 id="登录表达后的信息（实现表单交互requests的post方法）："><a href="#登录表达后的信息（实现表单交互requests的post方法）：" class="headerlink" title="登录表达后的信息（实现表单交互requests的post方法）："></a>登录表达后的信息（实现表单交互requests的post方法）：</h3><p>import requests</p>
+<p>url=”<a href="https://www.douban.com/accounts/login" target="_blank" rel="external">https://www.douban.com/accounts/login</a>“</p>
+<p>params={<br>    ‘source’:’index_nav’,<br>    ‘form_email’:’<strong><strong>‘,<br>    ‘form_password’:’*</strong></strong>‘<br>}<br>html=requests.post(url,params)</p>
+<p>print(html.text)</p>
+<h3 id="含有验证码的表单提交使用cookie模拟登录："><a href="#含有验证码的表单提交使用cookie模拟登录：" class="headerlink" title="含有验证码的表单提交使用cookie模拟登录："></a>含有验证码的表单提交使用cookie模拟登录：</h3><h3 id="在豆瓣网上使用cookies直接进入："><a href="#在豆瓣网上使用cookies直接进入：" class="headerlink" title="在豆瓣网上使用cookies直接进入："></a>在豆瓣网上使用cookies直接进入：</h3><p>import requests<br>url=’<a href="https://www.douban.com" target="_blank" rel="external">https://www.douban.com</a>‘<br>headers={<br>    ‘Cookies’:’<strong>*</strong>‘</p>
+<p>}</p>
+<p>html=requests.get(url,headers=headers)</p>
+<p>print(html.text)</p>
+<h3 id="爬取拉勾网的相关信息："><a href="#爬取拉勾网的相关信息：" class="headerlink" title="爬取拉勾网的相关信息："></a>爬取拉勾网的相关信息：</h3><p>import json<br>import math<br>import time<br>import random<br>import pymongo<br>import requests</p>
+<p>headers = {<br>    ‘Accept’: ‘application/json, text/javascript, <em>/</em>; q=0.01’,<br>    ‘Accept-Encoding’: ‘gzip, deflate, br’,<br>    ‘Accept-Language’: ‘zh-CN,zh;q=0.8’,<br>    ‘Connection’: ‘keep-alive’,<br>    ‘Content-Length’: ‘26’,<br>    ‘Content-Type’: ‘application/x-www-form-urlencoded; charset=UTF-8’,<br>    ‘Cookie’: ‘<strong><strong><strong><em>**</em></strong></strong></strong>‘,<br>    ‘Host’: ‘www.lagou.com’,<br>    ‘Origin’: ‘<a href="https://www.lagou.com" target="_blank" rel="external">https://www.lagou.com</a>‘,<br>    ‘Referer’: ‘<a href="https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=" target="_blank" rel="external">https://www.lagou.com/jobs/list_python?labelWords=&amp;fromSearch=true&amp;suginput=</a>‘,<br>    ‘User-Agent’: ‘Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36’,<br>    ‘X-Anit-Forge-Code’: ‘0’,<br>    ‘X-Anit-Forge-Token’: ‘None’,<br>    ‘X-Requested-With’: ‘XMLHttpRequest’<br>}<br>def get_page(url,params):<br>    html = requests.post(url,data=params,headers=headers)<br>    json_data = json.loads(html.text)<br>    total_count = json_data[‘content’][‘positionResult’][‘totalCount’]<br>    page_number = math.ceil(total_count/15) if math.ceil(total_count/15)&lt;30 else 30<br>    get_info(url,page_number)</p>
+<p>def get_info(url, page):<br>    for pn in range(1,page+1):<br>        params = {<br>            ‘first’:’false’,<br>            ‘pn’:str(pn),<br>            ‘kd’:’Python’<br>        }<br>        try:<br>            html = requests.post(url,data=params,headers=headers)<br>            json_data = json.loads(html.text)<br>            results = json_data[‘content’][‘positionResult’][‘result’]<br>            for result in results:<br>                infos = {<br>                    ‘businessZones’: result[‘businessZones’],<br>                    ‘city’: result[‘city’],<br>                    ‘companyFullName’: result[‘companyFullName’],<br>                    ‘companyLabelList’: result[‘companyLabelList’],<br>                    ‘companySize’: result[‘companySize’],<br>                    ‘district’: result[‘district’],<br>                    ‘education’: result[‘education’],<br>                    ‘explain’: result[‘explain’],<br>                    ‘financeStage’: result[‘financeStage’],<br>                    ‘firstType’: result[‘firstType’],<br>                    ‘formatCreateTime’: result[‘formatCreateTime’],<br>                    ‘gradeDescription’: result[‘gradeDescription’],<br>                    ‘imState’: result[‘imState’],<br>                    ‘industryField’: result[‘industryField’],<br>                    ‘jobNature’: result[‘jobNature’],<br>                    ‘positionAdvantage’: result[‘positionAdvantage’],<br>                    ‘salary’: result[‘salary’],<br>                    ‘secondType’: result[‘secondType’],<br>                    ‘workYear’: result[‘workYear’]<br>                }<br>                print(‘——————‘)<br>                print(infos)</p>
+<pre><code>        time.sleep(random.randint(1,10))
+    time.sleep(random.randint(1, 10))
+except requests.exceptions.ConnectionError:
+    pass
+</code></pre><p>if <strong>name</strong> == “<strong>main</strong>“:<br>    url = ‘<a href="https://www.lagou.com/jobs/positionAjax.json" target="_blank" rel="external">https://www.lagou.com/jobs/positionAjax.json</a>‘<br>    params = {<br>        ‘first’: ‘true’,<br>        ‘pn’: ‘1’,<br>        ‘kd’: ‘python’<br>    }<br>    get_page(url, params)</p>
 
       
     </div>
@@ -375,7 +385,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag"><i class="fa fa-tag"></i> PHP</a>
+            <a href="/tags/Python3/" rel="tag"><i class="fa fa-tag"></i> Python3</a>
           
         </div>
       
@@ -388,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/24/JavaScript定时器/" rel="next" title="JavaScript定时器">
-                <i class="fa fa-chevron-left"></i> JavaScript定时器
+              <a href="/2018/02/21/多进程爬虫/" rel="next" title="多进程爬虫">
+                <i class="fa fa-chevron-left"></i> 多进程爬虫
               </a>
             
           </div>
@@ -397,10 +407,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/26/JavaScript实现透明度的改变/" rel="prev" title="JavaScript实现透明度的改变">
-                JavaScript实现透明度的改变 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的使用"><span class="nav-number">1.</span> <span class="nav-text">对象的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取资源"><span class="nav-number">2.</span> <span class="nav-text">获取资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#登录表达后的信息（实现表单交互requests的post方法）："><span class="nav-number">1.</span> <span class="nav-text">登录表达后的信息（实现表单交互requests的post方法）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含有验证码的表单提交使用cookie模拟登录："><span class="nav-number">2.</span> <span class="nav-text">含有验证码的表单提交使用cookie模拟登录：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在豆瓣网上使用cookies直接进入："><span class="nav-number">3.</span> <span class="nav-text">在豆瓣网上使用cookies直接进入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬取拉勾网的相关信息："><span class="nav-number">4.</span> <span class="nav-text">爬取拉勾网的相关信息：</span></a></li></ol></div>
             
 
           </div>
