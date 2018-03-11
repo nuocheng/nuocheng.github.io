@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="每次在做一个简单的小网页的时候，就经常出现单个背景的，看多的时候就会很烦 很无聊 今天上网的时候发现了一个能更换背景图片的方法      就是定时器还有数组的使用(以前只是单纯的认为数组，只是用来存储数据的，现在才明白，还可以存储地址 下面就是用JavaScript来进行背景图片的更换  假设有一个叫images的文件夹, 里面有我们需要的三个图片: image1.png, image2.png,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-21T01:31:16.916Z">
+<meta property="og:updated_time" content="2018-03-11T03:03:14.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页中背景图片的自动更换">
 <meta name="twitter:description" content="每次在做一个简单的小网页的时候，就经常出现单个背景的，看多的时候就会很烦 很无聊 今天上网的时候发现了一个能更换背景图片的方法      就是定时器还有数组的使用(以前只是单纯的认为数组，只是用来存储数据的，现在才明白，还可以存储地址 下面就是用JavaScript来进行背景图片的更换  假设有一个叫images的文件夹, 里面有我们需要的三个图片: image1.png, image2.png,">
@@ -357,13 +357,13 @@
 
     就是定时器还有数组的使用(以前只是单纯的认为数组，只是用来存储数据的，现在才明白，还可以存储地址
 </code></pre><p>下面就是用JavaScript来进行背景图片的更换</p>
-<pre><code class="python">
+<pre><code class="bash">
 假设有一个叫images的文件夹, 里面有我们需要的三个图片: image1.png, image2.png, image3.png.
 
     var imgSrcs = [<span class="string">"images/image1.png"</span>, <span class="string">"images/image2.png"</span>, <span class="string">"images/image.png"</span>];   //数组存储的路径
-    setInterval(function() {
-        $(<span class="string">"body"</span>).css(<span class="string">"background"</span>, <span class="string">"url("</span> + imgSrcs[imgSrcs.push(imgSrcs.shift())<span class="number">-1</span>] + <span class="string">")"</span>);
-    }, <span class="number">5000</span>); // 每<span class="number">5</span>秒自动切换背景图片
+    setInterval(<span class="function"><span class="title">function</span></span>() {
+        $(<span class="string">"body"</span>).css(<span class="string">"background"</span>, <span class="string">"url("</span> + imgSrcs[imgSrcs.push(imgSrcs.shift())-1] + <span class="string">")"</span>);
+    }, 5000); // 每5秒自动切换背景图片
 </code></pre>
 
       
@@ -498,7 +498,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -540,7 +540,7 @@
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 

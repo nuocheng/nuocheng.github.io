@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="用到的知识点是    1、构造函数的初始化    2、拷贝构造函数，形参为对象的常引用 #include &amp;lt;iostream&amp;gt; using namespace std; class Rect { private:     double len;     double wid; public:     Rect(double x=0,double y=0);     Rect(const">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-11T11:23:29.603Z">
+<meta property="og:updated_time" content="2018-03-11T03:03:15.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算长方形的周长和面积">
 <meta name="twitter:description" content="用到的知识点是    1、构造函数的初始化    2、拷贝构造函数，形参为对象的常引用 #include &amp;lt;iostream&amp;gt; using namespace std; class Rect { private:     double len;     double wid; public:     Rect(double x=0,double y=0);     Rect(const">
@@ -353,27 +353,27 @@
 
       
         <p>用到的知识点是<br>    1、构造函数的初始化<br>    2、拷贝构造函数，形参为对象的常引用</p>
-<pre><code class="python"><span class="comment">#include &lt;iostream&gt;</span>
+<pre><code class="bash"><span class="comment">#include &lt;iostream&gt;</span>
 using namespace std;
-<span class="class"><span class="keyword">class</span> <span class="title">Rect</span></span>
+class Rect
 {
 private:
     double len;
     double wid;
 public:
-    Rect(double x=<span class="number">0</span>,double y=<span class="number">0</span>);
+    Rect(double x=0,double y=0);
     Rect(const Rect &amp;b);              //拷贝构造函数，形参为对象的常引用
     const void display()
     {
         cout&lt;&lt;<span class="string">"the length and width of r1 is:"</span>&lt;&lt;len&lt;&lt;<span class="string">","</span>&lt;&lt;wid&lt;&lt;endl;
-        cout&lt;&lt;<span class="string">"the perimeter of r1 is:"</span>&lt;&lt;(len+wid)*<span class="number">2</span>&lt;&lt;endl;
+        cout&lt;&lt;<span class="string">"the perimeter of r1 is:"</span>&lt;&lt;(len+wid)*2&lt;&lt;endl;
         cout&lt;&lt;<span class="string">"the area of r1 is:"</span>&lt;&lt;len*wid&lt;&lt;endl;
 
     }
     const void display1()
     {
         cout &lt;&lt; <span class="string">"the length and width of r2 is:"</span> &lt;&lt; len &lt;&lt; <span class="string">','</span> &lt;&lt; wid&lt;&lt; endl;
-        cout &lt;&lt; <span class="string">"the perimeter of r2 is:"</span> &lt;&lt; (len + wid) * <span class="number">2</span> &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"the perimeter of r2 is:"</span> &lt;&lt; (len + wid) * 2 &lt;&lt; endl;
         cout &lt;&lt; <span class="string">"the area of r2 is:"</span> &lt;&lt; len * wid &lt;&lt; endl;
     }
 };
@@ -391,16 +391,16 @@ int main()
 {
     double x,y;
     cin&gt;&gt;x&gt;&gt;y;
-    <span class="keyword">if</span>(x&lt;<span class="number">0</span>||y&lt;<span class="number">0</span>)
+    <span class="keyword">if</span>(x&lt;0||y&lt;0)
     {
-        x=<span class="number">0</span>;
-        y=<span class="number">0</span>;
+        x=0;
+        y=0;
     }
     Rect rect(x,y);
     Rect rect1=rect;
     rect.display();
     rect1.display1();
-    <span class="keyword">return</span> <span class="number">0</span>;
+    <span class="built_in">return</span> 0;
 }
 </code></pre>
 
@@ -536,7 +536,7 @@ int main()
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -578,7 +578,7 @@ int main()
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 

@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="PHP第一种特殊类型——资源资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）12345&amp;lt;?php$file=fopen(&quot;f.txt&quot;,&quot;r&quot;);     //打开文件$con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;); //连接数据库$img=imagecreate(100,100);?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-19T12:51:22.421Z">
+<meta property="og:updated_time" content="2018-03-11T03:03:18.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP特殊类型">
 <meta name="twitter:description" content="PHP第一种特殊类型——资源资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）12345&amp;lt;?php$file=fopen(&quot;f.txt&quot;,&quot;r&quot;);     //打开文件$con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;); //连接数据库$img=imagecreate(100,100);?">
@@ -352,9 +352,9 @@
       
 
       
-        <p>PHP第一种特殊类型——资源<br>资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$file=fopen(<span class="string">"f.txt"</span>,<span class="string">"r"</span>);     //打开文件</div><div class="line">$con=mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>); //连接数据库</div><div class="line">$img=imagecreate(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+        <p>PHP第一种特殊类型——资源<br>资源是由专门的函数来建立和使用的，例如打开文件，数据连接，图形画布。我们都可以对资源进行操作（创建、使用和释放）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"><span class="variable">$file</span>=fopen(<span class="string">"f.txt"</span>,<span class="string">"r"</span>);     //打开文件</div><div class="line"><span class="variable">$con</span>=mysql_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"root"</span>); //连接数据库</div><div class="line"><span class="variable">$img</span>=imagecreate(100,100);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="嘘！咱偷窥一个小文件！"><a href="#嘘！咱偷窥一个小文件！" class="headerlink" title="嘘！咱偷窥一个小文件！"></a>嘘！咱偷窥一个小文件！</h2><p>假设在服务器上，你发现了一个文件，是不是很好奇，想看看里面写了啥。嘿嘿，PHP可以做到哦（但是千万记住，如果是隐私文件，可不能偷窥哦，就像偷窥陈冠*的照片一样，要坐牢滴！）。假设服务器上有个文件为“f.txt”，这时候，我们就需要用到资源这种特殊的数据类型。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">//首先采用fopen函数打开文件，得到返回值的就是资源类型。</div><div class="line">$file_handle=fopen(<span class="string">"/data/webroot/resource/php/f.txt"</span>,<span class="string">"r"</span>);;</div><div class="line"><span class="keyword">if</span>($file_handle)&#123;</div><div class="line">	//然后采用循环一行一行的读取文件，然后输出每行的文字</div><div class="line">	<span class="keyword">while</span>(!feof($file_handle))&#123;   //判断是否到最后一行</div><div class="line">		$line=fgets($file_handle));   //读取一行文本</div><div class="line">		echo $line;                //出入一行文本</div><div class="line">				</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fclose($file_handle);       //关闭文件</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">//首先采用fopen函数打开文件，得到返回值的就是资源类型。</div><div class="line"><span class="variable">$file_handle</span>=fopen(<span class="string">"/data/webroot/resource/php/f.txt"</span>,<span class="string">"r"</span>);;</div><div class="line"><span class="keyword">if</span>(<span class="variable">$file_handle</span>)&#123;</div><div class="line">	//然后采用循环一行一行的读取文件，然后输出每行的文字</div><div class="line">	<span class="keyword">while</span>(!feof(<span class="variable">$file_handle</span>))&#123;   //判断是否到最后一行</div><div class="line">		<span class="variable">$line</span>=fgets(<span class="variable">$file_handle</span>));   //读取一行文本</div><div class="line">		<span class="built_in">echo</span> <span class="variable">$line</span>;                //出入一行文本</div><div class="line">				</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fclose(<span class="variable">$file_handle</span>);       //关闭文件</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -496,7 +496,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -538,7 +538,7 @@
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 

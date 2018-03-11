@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include using namespace std;typedef struct node{    void (fn)(void);    struct node next;}Node,bnode;v">
+<meta name="description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include &amp;lt;iostream&amp;gt; using namespace std; typedef struct node {     void (*fn)(void);     struct n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="void (*fn)(void)函数的调用问题">
 <meta property="og:url" content="http://yoursite.com/2018/01/15/void-fn-void-函数的调用问题/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include using namespace std;typedef struct node{    void (fn)(void);    struct node next;}Node,bnode;v">
+<meta property="og:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include &amp;lt;iostream&amp;gt; using namespace std; typedef struct node {     void (*fn)(void);     struct n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-15T09:58:19.029Z">
+<meta property="og:updated_time" content="2018-03-11T03:11:04.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="void (*fn)(void)函数的调用问题">
-<meta name="twitter:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include using namespace std;typedef struct node{    void (fn)(void);    struct node next;}Node,bnode;v">
+<meta name="twitter:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include &amp;lt;iostream&amp;gt; using namespace std; typedef struct node {     void (*fn)(void);     struct n">
 
 
 
@@ -331,10 +331,34 @@
       
         <p>在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。</p>
 <h3 id="void-fn-void-函数指针"><a href="#void-fn-void-函数指针" class="headerlink" title="void (*fn)(void)函数指针"></a>void (*fn)(void)函数指针</h3><p>fn为一个指针类型的变量，此指针类型指向一个函数</p>
-<h3 id="下面写记几个程序，来观察是否执行"><a href="#下面写记几个程序，来观察是否执行" class="headerlink" title="下面写记几个程序，来观察是否执行"></a>下面写记几个程序，来观察是否执行</h3><p>#include <iostream><br>using namespace std;<br>typedef struct node<br>{<br>    void (<em>fn)(void);<br>    struct node </em>next;<br>}Node,<em>bnode;<br>void show()<br>{<br>    cout&lt;&lt;”11111\n”;<br>}<br>void show2(void (</em>fn)(void))<br>{<br>    cout&lt;&lt;”22222\n”;<br>}<br>int main()<br>{<br>    bnode p=new Node;<br>    p-&gt;fn=show;                //执行这一条语句的时候不进入show（）函数体本身；<br>    p-&gt;next=NULL;<br>    p-&gt;fn();               //此时进入函数体本身；执行show（）函数；</iostream></p>
-<pre><code>cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;endl;
-show2(show);           //此时执行的是show2函数体，但是不执行show函数；
-</code></pre><p>}</p>
+<h3 id="下面写记几个程序，来观察是否执行"><a href="#下面写记几个程序，来观察是否执行" class="headerlink" title="下面写记几个程序，来观察是否执行"></a>下面写记几个程序，来观察是否执行</h3><pre><code class="bash"><span class="comment">#include &lt;iostream&gt;</span>
+using namespace std;
+typedef struct node
+{
+    void (*fn)(void);
+    struct node *next;
+}Node,*bnode;
+void show()
+{
+    cout&lt;&lt;<span class="string">"11111\n"</span>;
+}
+void show2(void (*fn)(void))
+{
+    cout&lt;&lt;<span class="string">"22222\n"</span>;
+}
+int main()
+{
+    bnode p=new Node;
+    p-&gt;fn=show;                //执行这一条语句的时候不进入show（）函数体本身；
+    p-&gt;next=NULL;
+    p-&gt;fn();               //此时进入函数体本身；执行show（）函数；
+
+
+    cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;endl;
+    show2(show);           //此时执行的是show2函数体，但是不执行show函数；
+
+}
+</code></pre>
 <h3 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h3><p>11111</p>
 <p>22222</p>
 
@@ -473,7 +497,7 @@ show2(show);           //此时执行的是show2函数体，但是不执行show�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -515,7 +539,7 @@ show2(show);           //此时执行的是show2函数体，但是不执行show�
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 

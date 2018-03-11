@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{    vertextype vexs[maxsize];    vrtype arc[maxsize][maxsize];    int vexnum,arcnum;    }Mgraph; 邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v1的边 结">
+<meta name="description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{     vertextype vexs[maxsize];     vrtype arc[maxsize][maxsize];     int vexnum,arcnum;     }Mgraph;  邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图的表示">
 <meta property="og:url" content="http://yoursite.com/2017/11/25/图的表示/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{    vertextype vexs[maxsize];    vrtype arc[maxsize][maxsize];    int vexnum,arcnum;    }Mgraph; 邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v1的边 结">
+<meta property="og:description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{     vertextype vexs[maxsize];     vrtype arc[maxsize][maxsize];     int vexnum,arcnum;     }Mgraph;  邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-25T08:47:20.062Z">
+<meta property="og:updated_time" content="2018-03-11T03:11:52.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图的表示">
-<meta name="twitter:description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{    vertextype vexs[maxsize];    vrtype arc[maxsize][maxsize];    int vexnum,arcnum;    }Mgraph; 邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v1的边 结">
+<meta name="twitter:description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{     vertextype vexs[maxsize];     vrtype arc[maxsize][maxsize];     int vexnum,arcnum;     }Mgraph;  邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v">
 
 
 
@@ -354,11 +354,30 @@
       
         <p>图的数组表示法</p>
 <h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p>顶点数组vexs<br>邻接矩阵arcs<br>顶点数<br>图的类型<br>弧（数）</p>
-<h3 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h3><p>typedef struct{<br>    vertextype vexs[maxsize];<br>    vrtype arc[maxsize][maxsize];<br>    int vexnum,arcnum;<br>    }Mgraph;</p>
+<h3 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h3><pre><code class="bash">typedef struct{
+    vertextype vexs[maxsize];
+    vrtype arc[maxsize][maxsize];
+    int vexnum,arcnum;
+    }Mgraph;
+</code></pre>
 <p>邻接表表示法<br>为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v1的边</p>
-<h3 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h3><p>typedef struct ArcNode{     //表结点类型定义，对网需要加权值属性<br>    int adjvex;             //顶点位置编号<br>    struct ArcNode <em>next;   //下一个表结点指针<br>    infotype </em>info;<br>    }ArcNode;</p>
-<p>typedef struct VNode{       //头结点及其数组类型定义<br>        Vertextype data;    //顶点信息<br>        ArcNode *firstarc;    //指向第一条弧<br>        }VNode ,AdjList[maxsize];</p>
-<p>typedef struct {            //邻接表的类型定义<br>    AdjList vertices;        //头结点数组<br>    int vexnum,arcnum;        //顶点数、弧数<br>    }ALGraph;                </p>
+<h3 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h3><pre><code class="bash">typedef struct ArcNode{     //表结点类型定义，对网需要加权值属性
+    int adjvex;             //顶点位置编号
+    struct ArcNode *next;   //下一个表结点指针
+    infotype *info;
+    }ArcNode;
+
+typedef struct VNode{       //头结点及其数组类型定义
+        Vertextype data;    //顶点信息
+        ArcNode *firstarc;    //指向第一条弧
+        }VNode ,AdjList[maxsize];
+
+
+typedef struct {            //邻接表的类型定义
+    AdjList vertices;        //头结点数组
+    int vexnum,arcnum;        //顶点数、弧数
+    }ALGraph;
+</code></pre>
 
       
     </div>
@@ -501,7 +520,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -543,7 +562,7 @@
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 

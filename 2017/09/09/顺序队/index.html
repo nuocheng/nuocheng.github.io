@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="/* 顺序队队空条件：front=rear;队满条件：rear=maxsize-1元素进队：rear++;data[rear]=e;元素出队：front++;e=data[front]初始时：front=rear=-1;typedef struct {     ElementType data[maxsize];     int front,rear; }SqQueue;  /初始化队列/ voi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-10T09:21:59.846Z">
+<meta property="og:updated_time" content="2018-03-11T03:03:13.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="顺序队">
 <meta name="twitter:description" content="/* 顺序队队空条件：front=rear;队满条件：rear=maxsize-1元素进队：rear++;data[rear]=e;元素出队：front++;e=data[front]初始时：front=rear=-1;typedef struct {     ElementType data[maxsize];     int front,rear; }SqQueue;  /初始化队列/ voi">
@@ -353,49 +353,49 @@
 
       
         <p>/*</p>
-<h3 id="顺序队"><a href="#顺序队" class="headerlink" title="顺序队"></a>顺序队</h3><h3 id="队空条件：front-rear"><a href="#队空条件：front-rear" class="headerlink" title="队空条件：front=rear;"></a>队空条件：front=rear;</h3><h3 id="队满条件：rear-maxsize-1"><a href="#队满条件：rear-maxsize-1" class="headerlink" title="队满条件：rear=maxsize-1"></a>队满条件：rear=maxsize-1</h3><h3 id="元素进队：rear-data-rear-e"><a href="#元素进队：rear-data-rear-e" class="headerlink" title="元素进队：rear++;data[rear]=e;"></a>元素进队：rear++;data[rear]=e;</h3><h3 id="元素出队：front-e-data-front"><a href="#元素出队：front-e-data-front" class="headerlink" title="元素出队：front++;e=data[front]"></a>元素出队：front++;e=data[front]</h3><h3 id="初始时：front-rear-1"><a href="#初始时：front-rear-1" class="headerlink" title="初始时：front=rear=-1;"></a>初始时：front=rear=-1;</h3><pre><code class="python">typedef struct
+<h3 id="顺序队"><a href="#顺序队" class="headerlink" title="顺序队"></a>顺序队</h3><h3 id="队空条件：front-rear"><a href="#队空条件：front-rear" class="headerlink" title="队空条件：front=rear;"></a>队空条件：front=rear;</h3><h3 id="队满条件：rear-maxsize-1"><a href="#队满条件：rear-maxsize-1" class="headerlink" title="队满条件：rear=maxsize-1"></a>队满条件：rear=maxsize-1</h3><h3 id="元素进队：rear-data-rear-e"><a href="#元素进队：rear-data-rear-e" class="headerlink" title="元素进队：rear++;data[rear]=e;"></a>元素进队：rear++;data[rear]=e;</h3><h3 id="元素出队：front-e-data-front"><a href="#元素出队：front-e-data-front" class="headerlink" title="元素出队：front++;e=data[front]"></a>元素出队：front++;e=data[front]</h3><h3 id="初始时：front-rear-1"><a href="#初始时：front-rear-1" class="headerlink" title="初始时：front=rear=-1;"></a>初始时：front=rear=-1;</h3><pre><code class="bash">typedef struct
 {
     ElementType data[maxsize];
     int front,rear;
 }SqQueue;
 </code></pre>
 <p>/<em>初始化队列</em>/</p>
-<pre><code class="python">void InitQueue(SqStack *&amp;q)
+<pre><code class="bash">void InitQueue(SqStack *&amp;q)
 {
     q=(SqQueue *)malloc(sizeof(SqQueue));
     q-&gt;front=q-&gt;rear=-1;
 }
 </code></pre>
 <p>/<em>销毁队列</em>/</p>
-<pre><code class="python">void DestroyQueue(SqQueue *&amp;q)
+<pre><code class="bash">void DestroyQueue(SqQueue *&amp;q)
 {
     free(q);
 }
 </code></pre>
 <p>/<em>判断是否为空</em>/</p>
-<pre><code class="python">bool QueueEmpty(SqQueue *q)
+<pre><code class="bash">bool QueueEmpty(SqQueue *q)
 {
-    return (q-&gt;front==q-&gt;rear);
+    <span class="built_in">return</span> (q-&gt;front==q-&gt;rear);
 }
 </code></pre>
 <p>/<em>进队</em>/</p>
-<pre><code class="python">bool enQueue(SqQueue *&amp;q,ElemType e)
+<pre><code class="bash">bool enQueue(SqQueue *&amp;q,ElemType e)
 {
-    if(q-&gt;rear==maxsize-1)
-        <span class="keyword">return</span> false;
+    <span class="keyword">if</span>(q-&gt;rear==maxsize-1)
+        <span class="built_in">return</span> <span class="literal">false</span>;
     q-&gt;rear++;
     q-&gt;data[q-&gt;rear]=e;
-    <span class="keyword">return</span> true;
+    <span class="built_in">return</span> <span class="literal">true</span>;
 }
 </code></pre>
 <p>/<em>出队</em>/</p>
-<pre><code class="python">bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
+<pre><code class="bash">bool deQueue(SqQueue *&amp;q,ElemType &amp;e)
 {
-    if(q-&gt;front==q-&gt;rear)
-        <span class="keyword">return</span> false;
+    <span class="keyword">if</span>(q-&gt;front==q-&gt;rear)
+        <span class="built_in">return</span> <span class="literal">false</span>;
     q-&gt;front++;
     e=q-&gt;data[q-&gt;front];
-    <span class="keyword">return</span> true;
+    <span class="built_in">return</span> <span class="literal">true</span>;
 }
 </code></pre>
 
@@ -540,7 +540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -582,7 +582,7 @@
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 

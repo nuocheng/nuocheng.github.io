@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下：import time import requests from bs4 import BeautifulSoup import random #请求头 headers={     &amp;apos;User-Agent&amp;apos;:&amp;apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/">
+<meta name="description" content="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下： import time import requests from bs4 import BeautifulSoup import random #请求头 headers={     &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML,">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫酷狗top_50">
 <meta property="og:url" content="http://yoursite.com/2018/01/31/爬虫酷狗top-50/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下：import time import requests from bs4 import BeautifulSoup import random #请求头 headers={     &amp;apos;User-Agent&amp;apos;:&amp;apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/">
+<meta property="og:description" content="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下： import time import requests from bs4 import BeautifulSoup import random #请求头 headers={     &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T10:04:20.790Z">
+<meta property="og:updated_time" content="2018-03-11T03:06:21.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫酷狗top_50">
-<meta name="twitter:description" content="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下：import time import requests from bs4 import BeautifulSoup import random #请求头 headers={     &amp;apos;User-Agent&amp;apos;:&amp;apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/">
+<meta name="twitter:description" content="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下： import time import requests from bs4 import BeautifulSoup import random #请求头 headers={     &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML,">
 
 
 
@@ -352,40 +352,42 @@
       
 
       
-        <h3 id="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲-代码如下："><a href="#今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲-代码如下：" class="headerlink" title="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下："></a>今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下：</h3><pre><code>import time
+        <h3 id="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲-代码如下："><a href="#今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲-代码如下：" class="headerlink" title="今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下："></a>今天练习了一下爬虫的东西，拿爬取酷狗前500首歌曲  代码如下：</h3><pre><code class="bash">
+import time
 import requests
 from bs4 import BeautifulSoup
 import random
-#请求头
+<span class="comment">#请求头</span>
 headers={
-    &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36&apos;
+    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'</span>
 }
 
-#传入url
+<span class="comment">#传入url</span>
 def get_into(url):
 
-    # 获取html的页面，发送请求
-    wb_data=requests.get(url,headers=headers)           #headers的设置是给服务器一个证明 我们是浏览器
-    soup=BeautifulSoup(wb_data.text,&apos;lxml&apos;)             #解析这个网页
-    ranks=soup.select(&apos;.pc_temp_num&apos;)
-    titles=soup.select(&apos;.pc_temp_songlist &gt; ul &gt; li &gt; a&apos;)
-    song_times=soup.select(&apos;.pc_temp_time&apos;)
-    for rank, title, song_time in zip(ranks,titles,song_times):
+    <span class="comment"># 获取html的页面，发送请求</span>
+    wb_data=requests.get(url,headers=headers)           <span class="comment">#headers的设置是给服务器一个证明 我们是浏览器</span>
+    soup=BeautifulSoup(wb_data.text,<span class="string">'lxml'</span>)             <span class="comment">#解析这个网页</span>
+    ranks=soup.select(<span class="string">'.pc_temp_num'</span>)
+    titles=soup.select(<span class="string">'.pc_temp_songlist &gt; ul &gt; li &gt; a'</span>)
+    song_times=soup.select(<span class="string">'.pc_temp_time'</span>)
+    <span class="keyword">for</span> rank, title, song_time <span class="keyword">in</span> zip(ranks,titles,song_times):
         data={
-            &apos;rank&apos;:rank.get_text().strip(),
-            &apos;singer&apos;: title.get_text().split(&apos;-&apos;)[0].strip(),
-            &apos;song&apos;:title.get_text().split(&apos;-&apos;)[1].strip(),
-            &apos;time&apos;:song_time.get_text().strip()
+            <span class="string">'rank'</span>:rank.get_text().strip(),
+            <span class="string">'singer'</span>: title.get_text().split(<span class="string">'-'</span>)[0].strip(),
+            <span class="string">'song'</span>:title.get_text().split(<span class="string">'-'</span>)[1].strip(),
+            <span class="string">'time'</span>:song_time.get_text().strip()
         }
-        print(data)
+        <span class="built_in">print</span>(data)
 
-#下面这句话的意思是该脚本模块可以导入到别的模块中用，另外该模块也可以自己执行
-if __name__==&apos;__main__&apos;:
-    urls=[&apos;http://www.kugou.com/yy/rank/home/{}-8888.html?&apos;.format(str(i)) for i in range(1,24)]
-    for url in urls:
+<span class="comment">#下面这句话的意思是该脚本模块可以导入到别的模块中用，另外该模块也可以自己执行</span>
+<span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:
+    urls=[<span class="string">'http://www.kugou.com/yy/rank/home/{}-8888.html?'</span>.format(str(i)) <span class="keyword">for</span> i <span class="keyword">in</span> range(1,24)]
+    <span class="keyword">for</span> url <span class="keyword">in</span> urls:
         get_into(url)
         time.sleep(random.randint(1,10))
 </code></pre>
+
       
     </div>
     
@@ -527,7 +529,7 @@ if __name__==&apos;__main__&apos;:
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -569,7 +571,7 @@ if __name__==&apos;__main__&apos;:
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=534064010&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=526068535&auto=1&height=66"></iframe>
 
       </section>
 
