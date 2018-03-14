@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="/request的安装是pip install requests/ requests 库获取网页html代码的request.get()用于请求目标网站r=request.get(&apos;网址&apos;) print(r.status_code)      //打印状态码 print(r.url)              //打印请求的url print(r.headers)         //打印头信息">
-<meta name="keywords" content="Python">
+<meta name="description" content="广度优先遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include &amp;lt;bits/stdc++.h&amp;gt;#define maxsize 1000using namespace std;int maps[maxsize][maxsize];">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python之爬虫requests请求">
-<meta property="og:url" content="http://yoursite.com/2018/01/26/Python之爬虫requests请求/index.html">
+<meta property="og:title" content="数据结构（图、查找）">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/数据结构（图、查找）/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="/request的安装是pip install requests/ requests 库获取网页html代码的request.get()用于请求目标网站r=request.get(&apos;网址&apos;) print(r.status_code)      //打印状态码 print(r.url)              //打印请求的url print(r.headers)         //打印头信息">
+<meta property="og:description" content="广度优先遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include &amp;lt;bits/stdc++.h&amp;gt;#define maxsize 1000using namespace std;int maps[maxsize][maxsize];">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T03:10:53.155Z">
+<meta property="og:updated_time" content="2018-03-14T13:30:46.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python之爬虫requests请求">
-<meta name="twitter:description" content="/request的安装是pip install requests/ requests 库获取网页html代码的request.get()用于请求目标网站r=request.get(&apos;网址&apos;) print(r.status_code)      //打印状态码 print(r.url)              //打印请求的url print(r.headers)         //打印头信息">
+<meta name="twitter:title" content="数据结构（图、查找）">
+<meta name="twitter:description" content="广度优先遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include &amp;lt;bits/stdc++.h&amp;gt;#define maxsize 1000using namespace std;int maps[maxsize][maxsize];">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/26/Python之爬虫requests请求/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/14/数据结构（图、查找）/"/>
 
 
 
 
 
-  <title>Python之爬虫requests请求 | 诺铖的博客</title>
+  <title>数据结构（图、查找） | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/Python之爬虫requests请求/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/数据结构（图、查找）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python之爬虫requests请求</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构（图、查找）</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T15:19:13+08:00">
-                2018-01-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T21:25:54+08:00">
+                2018-03-14
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -352,80 +352,145 @@
       
 
       
-        <p>/<em>request的安装是pip install requests</em>/</p>
-<h3 id="requests-库获取网页html代码的"><a href="#requests-库获取网页html代码的" class="headerlink" title="requests 库获取网页html代码的"></a>requests 库获取网页html代码的</h3><h3 id="request-get-用于请求目标网站"><a href="#request-get-用于请求目标网站" class="headerlink" title="request.get()用于请求目标网站"></a>request.get()用于请求目标网站</h3><pre><code class="bash">r=request.get(<span class="string">'网址'</span>)
-<span class="built_in">print</span>(r.status_code)      //打印状态码
-<span class="built_in">print</span>(r.url)              //打印请求的url
-<span class="built_in">print</span>(r.headers)         //打印头信息
-<span class="built_in">print</span>(r.cookies)         //打印coolie信息
-<span class="built_in">print</span>(r.text)             //以文本方式打印网页源码
-</code></pre>
-<h3 id="基本的get请求"><a href="#基本的get请求" class="headerlink" title="基本的get请求"></a>基本的get请求</h3><p>（1）、无参数：</p>
-<pre><code class="bash">improt requests     //引入request
-r=requests.get(<span class="string">'网址'</span>)   //配置url
-<span class="built_in">print</span>(r.url);
-</code></pre>
-<p>（2）、有参数：</p>
-<pre><code>第一种直接将参数放在url内
+        <h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#include &lt;bits/stdc++.h&gt;</span></div><div class="line"><span class="comment">#define maxsize 1000</span></div><div class="line">using namespace std;</div><div class="line">int maps[maxsize][maxsize];</div><div class="line">int vis[maxsize];</div><div class="line">int ans[maxsize];    //用来保存遍历的结果;</div><div class="line">int p;</div><div class="line">int k,m,t;          //m边，k顶点，t遍历的起始位置</div><div class="line">void bfs(int t,int n)</div><div class="line">&#123;</div><div class="line">    queue &lt;int&gt; q;</div><div class="line">    vis[t]=1;</div><div class="line">    ans[p++]=t;</div><div class="line">    q.push(t);</div><div class="line">    <span class="keyword">while</span>(!q.empty())</div><div class="line">    &#123;</div><div class="line">        int v=q.front();</div><div class="line">        q.pop();</div><div class="line">        <span class="keyword">for</span>(int i=0;i&lt;n;i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(!vis[i]&amp;&amp;maps[v][i])</div><div class="line">            &#123;</div><div class="line">                vis[i]=1;</div><div class="line">                ans[p++]=i;</div><div class="line">                q.push(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int T,i,u,v;</div><div class="line">    cin&gt;&gt;T;</div><div class="line">    <span class="keyword">while</span>(T--)</div><div class="line">    &#123;</div><div class="line">         cin&gt;&gt;k&gt;&gt;m&gt;&gt;t;</div><div class="line">        memset(maps,0,sizeof(maps));</div><div class="line">        memset(vis,0,sizeof(vis));</div><div class="line">        <span class="keyword">for</span>(i=0;i&lt;m;i++)</div><div class="line">        &#123;</div><div class="line">            cin&gt;&gt;u&gt;&gt;v;</div><div class="line">            maps[u][v]=1;</div><div class="line">            maps[v][u]=1;</div><div class="line">        &#125;</div><div class="line">        bfs(t,k);</div><div class="line">       <span class="keyword">for</span>(int i=0;i&lt;p;i++)</div><div class="line">            cout&lt;&lt;ans[i]&lt;&lt;<span class="string">" "</span>;</div><div class="line">        p=0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="图的深度遍历"><a href="#图的深度遍历" class="headerlink" title="图的深度遍历"></a>图的深度遍历</h3><pre><code class="bash"><span class="comment">#include &lt;bits/stdc++.h&gt;</span>
+<span class="comment">#define maxsize 10000</span>
+using namespace std;
+int vis[maxsize];
+int a[maxsize][maxsize];
+int k,m;    //m表示的是边数  k表示的是顶点数
+void dfs(int i)
+{
+    int j;
+    <span class="keyword">for</span>(j=0;j&lt;k;j++)
+    {
+        <span class="keyword">if</span>(a[i][j]==1&amp;&amp;vis[j]==0)
+        {<span class="comment">#include&lt;bits/stdc++.h&gt;</span>
+ using namespace std;
+ int vis[105], a[105][105];
+ int k, m;
+ void dfs(int i)
+ {
+     int j;
+     <span class="keyword">for</span>(j = 0; j &lt; k; j++)
+     {
+         <span class="keyword">if</span>(a[i][j]==1&amp;&amp;vis[j]==0)
+         {
+             <span class="built_in">printf</span>(<span class="string">" %d"</span>, j);
+             vis[j] = 1;
+             dfs(j);
+         }
+     }
+ }
+ int main()
+ {
+     int i, n, u, x, y;
+     scanf(<span class="string">"%d"</span>, &amp;n);
+     <span class="keyword">while</span>(n--)
+     {
+         scanf(<span class="string">"%d%d"</span>, &amp;k, &amp;m);
+         memset(vis, 0, sizeof(vis));
+         memset(a, 0, sizeof(a));
+         <span class="keyword">for</span>(i = 0; i &lt; m; i++)
+         {
+             scanf(<span class="string">"%d%d"</span>, &amp;x, &amp;y);
+             a[x][y] = a[y][x] = 1;
+             <span class="keyword">if</span>(i==0) u = x;
+         }
+         cout&lt;&lt;u; vis[u] = 1;
+         dfs(u);
+         cout&lt;&lt;endl;
+     }
+ }
 
-import requests
-r=requests.get(网址?键=值&amp;键=值）
-print(r.url)
-
-第二种就是将参数填写在dict中，发起请求时params参数指定为dict
-
-improt requests
-payload={                    //为get请求配置参数
-    &apos;key1&apos;:&apos;value1&apos;,
-    &apos;key2&apos;:&apos;value2&apos;,
-    }
-r=requests.get(&apos;网址&apos;，params=payload)
-print(r.url)
-</code></pre><h3 id="设置header"><a href="#设置header" class="headerlink" title="设置header"></a>设置header</h3><pre><code>import requests
-headers={
-    &apos;键&apos;:&apos;值&apos;,
-    &apos;键&apos;:&apos;值&apos;,
-    &apos;键&apos;:&apos;值&apos;
-    }
-r=reuqests.get(&apos;网址&apos;,header=headers)
-print(r.text)
-</code></pre><h3 id="基本post请求"><a href="#基本post请求" class="headerlink" title="基本post请求"></a>基本post请求</h3><pre><code>（1）、有数据：
-        import request
-        payload={
-            &apos;键&apos;:&apos;值&apos;
-            }
-        r=requests.post(&apos;网址&apos;,data=payload)
-        print(r.text)
-
-（2）、有数据（json格式）
-        import requests
-        import json 
-        payload={
-            &apos;键&apos;:&apos;值&apos;,
-            &apos;键&apos;:&apos;值&apos;
-            }
-        r=requests.post(&apos;网址&apos;,data=json.dumps(payload))
-        print(r.text)
-
-（3）、上传文件
-        import requests
-        url=&apos;网址&apos;
-        files={
-            &apos;file&apos;:open(&apos;text.txt&apos;,&apos;rb&apos;)
+            <span class="built_in">printf</span>(<span class="string">" %d"</span>,j);
+            vis[j]=1;
+            dfs(j);
         }
-        r=requests.post(url.files=files)
-        print(r.text)
-</code></pre><h3 id="请求超时配置："><a href="#请求超时配置：" class="headerlink" title="请求超时配置："></a>请求超时配置：</h3><pre><code>import requests
-url=&apos;网址&apos;
-r=requests.get(url,timeout=1000)
-print(r.text)
-</code></pre><h3 id="代理IP"><a href="#代理IP" class="headerlink" title="代理IP"></a>代理IP</h3><pre><code>import requests
-pro={
-    &apos;https&apos;:&apos;http//IP地址&apos;
+    }
 }
-r=request.post(&apos;网址&apos;,proxies=proxies)
-print(r.status_code)
 </code></pre>
+<h3 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h3><pre><code class="bash">void prim()
+{
+    memset(vis,<span class="literal">false</span>,sizeof(vis));
+    int mm;
+    int i,j;
+    <span class="keyword">for</span>(i=1;i&lt;=n;i++)
+    {
+        dis[i]=mp[1][j];
+    }
+    vis[1]=<span class="literal">true</span>;
+    int pos;
+    <span class="keyword">for</span>(i=1;i&lt;n;i++)
+    {
+        mm=inf;
+        <span class="keyword">for</span>(j=1;j&lt;=n;j++)
+        {
+            <span class="keyword">if</span>(!vis[j]&amp;&amp;mm&gt;dis[j])
+            {
+                mm=dis[j];
+                pos=j;
+            }
+        }
+        <span class="keyword">if</span>(mm==inf)
+        {
+            cout&lt;&lt;<span class="string">"这是一个孤立的位置，没有与任何村庄相同\n"</span>;
+        }
+        sum+=mm;
+        <span class="keyword">for</span>(j=1;j&lt;=n;j++)
+        {
+            <span class="keyword">if</span>(!vis[j]&amp;&amp;dis[j]&gt;mp[pos][j])
+            {
+                dis[j]=mp[pos][j];
+            }
+        }
+    }
+
+}
+</code></pre>
+<p>###二分查找 </p>
+<pre><code class="bash"><span class="comment">#include &lt;bits/stdc++.h&gt;</span>
+<span class="comment">#define maxsize 1000</span>
+using namespace std;
+int paixu(int *a,int l,int r,int key)
+{
+    <span class="keyword">while</span>(l&lt;=r)
+    {
+        int mid=(l+r)/2;
+        <span class="keyword">if</span>(a[mid]&lt;key)
+        {
+            l=mid+1;
+        }
+        <span class="keyword">else</span> <span class="keyword">if</span>(a[mid]&gt;key)
+        {
+            r=mid-1;
+        }
+        <span class="keyword">else</span>
+            <span class="built_in">return</span> mid;
+    }
+    <span class="built_in">return</span> -1;
+}
+int main()
+{
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    int a[maxsize];
+    <span class="keyword">for</span>(int i=0;i&lt;n;i++)
+    {
+        cin&gt;&gt;a[i];
+    }
+
+    <span class="keyword">while</span>(m--)
+    {
+        int key;
+        cin&gt;&gt;key;
+
+        int flag=paixu(a,0,n-1,key);
+        cout&lt;&lt;flag&lt;&lt;endl;
+    }
+}
+</code></pre>
+
       
     </div>
     
@@ -442,7 +507,7 @@ print(r.status_code)
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
         </div>
       
@@ -455,8 +520,8 @@ print(r.status_code)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/24/Python之文件/" rel="next" title="Python之文件">
-                <i class="fa fa-chevron-left"></i> Python之文件
+              <a href="/2018/03/13/JavaScript之图片的转换/" rel="next" title="JavaScript之图片的转换">
+                <i class="fa fa-chevron-left"></i> JavaScript之图片的转换
               </a>
             
           </div>
@@ -464,10 +529,6 @@ print(r.status_code)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/27/requests请求代码部分/" rel="prev" title="requests请求代码部分">
-                requests请求代码部分 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,7 +684,7 @@ print(r.status_code)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#requests-库获取网页html代码的"><span class="nav-number">1.</span> <span class="nav-text">requests 库获取网页html代码的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-get-用于请求目标网站"><span class="nav-number">2.</span> <span class="nav-text">request.get()用于请求目标网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本的get请求"><span class="nav-number">3.</span> <span class="nav-text">基本的get请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置header"><span class="nav-number">4.</span> <span class="nav-text">设置header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本post请求"><span class="nav-number">5.</span> <span class="nav-text">基本post请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求超时配置："><span class="nav-number">6.</span> <span class="nav-text">请求超时配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理IP"><span class="nav-number">7.</span> <span class="nav-text">代理IP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先遍历"><span class="nav-number">1.</span> <span class="nav-text">广度优先遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的深度遍历"><span class="nav-number">2.</span> <span class="nav-text">图的深度遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最短路径"><span class="nav-number">3.</span> <span class="nav-text">最短路径</span></a></li></ol></div>
             
 
           </div>
