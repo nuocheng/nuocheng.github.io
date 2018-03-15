@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="广度优先遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include &amp;lt;bits/stdc++.h&amp;gt;#define maxsize 1000using namespace std;int maps[maxsize][maxsize];">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-14T13:30:46.588Z">
+<meta property="og:updated_time" content="2018-03-15T02:18:40.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构（图、查找）">
 <meta name="twitter:description" content="广度优先遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include &amp;lt;bits/stdc++.h&amp;gt;#define maxsize 1000using namespace std;int maps[maxsize][maxsize];">
@@ -353,19 +353,7 @@
 
       
         <h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#include &lt;bits/stdc++.h&gt;</span></div><div class="line"><span class="comment">#define maxsize 1000</span></div><div class="line">using namespace std;</div><div class="line">int maps[maxsize][maxsize];</div><div class="line">int vis[maxsize];</div><div class="line">int ans[maxsize];    //用来保存遍历的结果;</div><div class="line">int p;</div><div class="line">int k,m,t;          //m边，k顶点，t遍历的起始位置</div><div class="line">void bfs(int t,int n)</div><div class="line">&#123;</div><div class="line">    queue &lt;int&gt; q;</div><div class="line">    vis[t]=1;</div><div class="line">    ans[p++]=t;</div><div class="line">    q.push(t);</div><div class="line">    <span class="keyword">while</span>(!q.empty())</div><div class="line">    &#123;</div><div class="line">        int v=q.front();</div><div class="line">        q.pop();</div><div class="line">        <span class="keyword">for</span>(int i=0;i&lt;n;i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(!vis[i]&amp;&amp;maps[v][i])</div><div class="line">            &#123;</div><div class="line">                vis[i]=1;</div><div class="line">                ans[p++]=i;</div><div class="line">                q.push(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int T,i,u,v;</div><div class="line">    cin&gt;&gt;T;</div><div class="line">    <span class="keyword">while</span>(T--)</div><div class="line">    &#123;</div><div class="line">         cin&gt;&gt;k&gt;&gt;m&gt;&gt;t;</div><div class="line">        memset(maps,0,sizeof(maps));</div><div class="line">        memset(vis,0,sizeof(vis));</div><div class="line">        <span class="keyword">for</span>(i=0;i&lt;m;i++)</div><div class="line">        &#123;</div><div class="line">            cin&gt;&gt;u&gt;&gt;v;</div><div class="line">            maps[u][v]=1;</div><div class="line">            maps[v][u]=1;</div><div class="line">        &#125;</div><div class="line">        bfs(t,k);</div><div class="line">       <span class="keyword">for</span>(int i=0;i&lt;p;i++)</div><div class="line">            cout&lt;&lt;ans[i]&lt;&lt;<span class="string">" "</span>;</div><div class="line">        p=0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="图的深度遍历"><a href="#图的深度遍历" class="headerlink" title="图的深度遍历"></a>图的深度遍历</h3><pre><code class="bash"><span class="comment">#include &lt;bits/stdc++.h&gt;</span>
-<span class="comment">#define maxsize 10000</span>
-using namespace std;
-int vis[maxsize];
-int a[maxsize][maxsize];
-int k,m;    //m表示的是边数  k表示的是顶点数
-void dfs(int i)
-{
-    int j;
-    <span class="keyword">for</span>(j=0;j&lt;k;j++)
-    {
-        <span class="keyword">if</span>(a[i][j]==1&amp;&amp;vis[j]==0)
-        {<span class="comment">#include&lt;bits/stdc++.h&gt;</span>
+<h3 id="图的深度遍历"><a href="#图的深度遍历" class="headerlink" title="图的深度遍历"></a>图的深度遍历</h3><pre><code class="bash"><span class="comment">#include&lt;bits/stdc++.h&gt;</span>
  using namespace std;
  int vis[105], a[105][105];
  int k, m;
@@ -437,6 +425,7 @@ void dfs(int i)
             cout&lt;&lt;<span class="string">"这是一个孤立的位置，没有与任何村庄相同\n"</span>;
         }
         sum+=mm;
+        vis[pos]=<span class="literal">true</span>;
         <span class="keyword">for</span>(j=1;j&lt;=n;j++)
         {
             <span class="keyword">if</span>(!vis[j]&amp;&amp;dis[j]&gt;mp[pos][j])
@@ -448,8 +437,7 @@ void dfs(int i)
 
 }
 </code></pre>
-<p>###二分查找 </p>
-<pre><code class="bash"><span class="comment">#include &lt;bits/stdc++.h&gt;</span>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><pre><code class="bash"><span class="comment">#include &lt;bits/stdc++.h&gt;</span>
 <span class="comment">#define maxsize 1000</span>
 using namespace std;
 int paixu(int *a,int l,int r,int key)
@@ -684,7 +672,7 @@ int main()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先遍历"><span class="nav-number">1.</span> <span class="nav-text">广度优先遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的深度遍历"><span class="nav-number">2.</span> <span class="nav-text">图的深度遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最短路径"><span class="nav-number">3.</span> <span class="nav-text">最短路径</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先遍历"><span class="nav-number">1.</span> <span class="nav-text">广度优先遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的深度遍历"><span class="nav-number">2.</span> <span class="nav-text">图的深度遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最短路径"><span class="nav-number">3.</span> <span class="nav-text">最短路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分查找"><span class="nav-number">4.</span> <span class="nav-text">二分查找</span></a></li></ol></div>
             
 
           </div>
