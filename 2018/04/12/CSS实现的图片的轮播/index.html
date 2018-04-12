@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/1.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="今天发现html中有一个好玩的属性animation：名字 时间 运动时的速度 循环次数与@keyframes 名字 接下来看一下代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS实现的图片的轮播">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/CSS实现的图片的轮播/index.html">
+<meta property="og:site_name" content="诺铖的博客">
+<meta property="og:description" content="今天发现html中有一个好玩的属性animation：名字 时间 运动时的速度 循环次数与@keyframes 名字 接下来看一下代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-12T11:25:34.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS实现的图片的轮播">
+<meta name="twitter:description" content="今天发现html中有一个好玩的属性animation：名字 时间 运动时的速度 循环次数与@keyframes 名字 接下来看一下代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/12/CSS实现的图片的轮播/"/>
+
+
+
+
+
+  <title>CSS实现的图片的轮播 | 诺铖的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">诺铖的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/CSS实现的图片的轮播/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS实现的图片的轮播</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T19:21:21+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS3/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天发现html中有一个好玩的属性animation：名字 时间 运动时的速度 循环次数与@keyframes 名字</p>
+<h3 id="接下来看一下代码："><a href="#接下来看一下代码：" class="headerlink" title="接下来看一下代码："></a>接下来看一下代码：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;  </div><div class="line">&lt;html&gt;  </div><div class="line"> &lt;head&gt;  </div><div class="line">  &lt;title&gt; 飛天网事--纯CSS代码实现图片轮播 &lt;/title&gt;  </div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span> /&gt;  </div><div class="line"></div><div class="line">  &lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;  </div><div class="line">        <span class="comment">#frame &#123;/*----------图片轮播相框容器----------*/  </span></div><div class="line">            position: absolute; /*--绝对定位，方便子元素的定位*/  </div><div class="line">            width: 300px;  </div><div class="line">            height: 200px;  </div><div class="line">            overflow: hidden;/*--相框作用，只显示一个图片---*/  </div><div class="line">            border-radius:5px;  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">#dis &#123;/*--绝对定位方便li图片简介的自动分布定位---*/  </span></div><div class="line">            position: absolute;  </div><div class="line">            left: -50px;  </div><div class="line">            top: -10px;  </div><div class="line">            opacity: 0.5;  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">#dis li &#123;  </span></div><div class="line">            display: inline-block;  </div><div class="line">            width: 200px;  </div><div class="line">            height: 20px;  </div><div class="line">            margin: 0 50px;  </div><div class="line">            <span class="built_in">float</span>: left;  </div><div class="line">            text-align: center;  </div><div class="line">            color: <span class="comment">#fff;  </span></div><div class="line">            border-radius: 10px;  </div><div class="line">            background: <span class="comment">#000;  </span></div><div class="line">        &#125;  </div><div class="line">        <span class="comment">#photos img &#123;  </span></div><div class="line">            <span class="built_in">float</span>: left;  </div><div class="line">            width:300px;  </div><div class="line">            height:200px;  </div><div class="line">        &#125;  </div><div class="line">        <span class="comment">#photos &#123;/*---设置总的图片宽度--通过位移来达到轮播效果----*/  </span></div><div class="line">            position: absolute;z-index:9px;  </div><div class="line">            width: calc(300px * 5);/*---修改图片数量的话需要修改下面的动画参数*/  </div><div class="line">        &#125;  </div><div class="line">        .play&#123;  </div><div class="line">            animation: ma 20s ease-out infinite alternate;/**/  </div><div class="line">        &#125;  </div><div class="line">        @keyframes ma &#123;/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/  </div><div class="line">            0%,20% &#123;        margin-left: 0px;       &#125;  </div><div class="line">            25%,40% &#123;       margin-left: -300px;    &#125;  </div><div class="line">            45%,60% &#123;       margin-left: -600px;    &#125;  </div><div class="line">            65%,80% &#123;       margin-left: -900px;    &#125;  </div><div class="line">            85%,100% &#123;      margin-left: -1200px;   &#125;  </div><div class="line">        &#125;  </div><div class="line">        .num&#123;  </div><div class="line">            position:absolute;z-index:10;  </div><div class="line">            display:inline-block;  </div><div class="line">            right:10px;top:165px;  </div><div class="line">            border-radius:100%;  </div><div class="line">            background:<span class="comment">#f00;  </span></div><div class="line">            width:25px;height:25px;  </div><div class="line">            line-height:25px;  </div><div class="line">            cursor:pointer;  </div><div class="line">            color:<span class="comment">#fff;  </span></div><div class="line">            text-align:center;  </div><div class="line">            opacity:0.8;  </div><div class="line">        &#125;  </div><div class="line">        .num:hover&#123;background:<span class="comment">#00f;&#125;  </span></div><div class="line">        .num:hover,<span class="comment">#photos:hover&#123;animation-play-state:paused;&#125;  </span></div><div class="line">        .num:nth-child(2)&#123;margin-right:30px&#125;  </div><div class="line">        .num:nth-child(3)&#123;margin-right:60px&#125;  </div><div class="line">        .num:nth-child(4)&#123;margin-right:90px&#125;  </div><div class="line">        .num:nth-child(5)&#123;margin-right:120px&#125;  </div><div class="line">        <span class="comment">#a1:hover ~ #photos&#123;animation: ma1 .5s ease-out forwards;&#125;  </span></div><div class="line">        <span class="comment">#a2:hover ~ #photos&#123;animation: ma2 .5s ease-out forwards;&#125;  </span></div><div class="line">        <span class="comment">#a3:hover ~ #photos&#123;animation: ma3 .5s ease-out forwards;&#125;  </span></div><div class="line">        <span class="comment">#a4:hover ~ #photos&#123;animation: ma4 .5s ease-out forwards;&#125;  </span></div><div class="line">        <span class="comment">#a5:hover ~ #photos &#123;animation: ma5 .5s ease-out forwards;&#125;  </span></div><div class="line">        @keyframes ma1 &#123;0%&#123;margin-left:-1200px;&#125;100%&#123;margin-left:-0px;&#125; &#125;  </div><div class="line">        @keyframes ma2 &#123;0%&#123;margin-left:-1200px;&#125;100%&#123;margin-left:-300px;&#125;   &#125;  </div><div class="line">        @keyframes ma3 &#123;100%&#123;margin-left:-600px;&#125;   &#125;  </div><div class="line">        @keyframes ma4 &#123;100%&#123;margin-left:-900px;&#125;   &#125;  </div><div class="line">        @keyframes ma5 &#123;100%&#123;margin-left:-1200px;&#125;  &#125;  </div><div class="line">  &lt;/style&gt;  </div><div class="line"> &lt;/head&gt;  </div><div class="line"> &lt;body&gt;  </div><div class="line"> &lt;div id=<span class="string">"frame"</span> &gt;  </div><div class="line">        &lt;a id=<span class="string">"a1"</span> class=<span class="string">"num"</span>&gt;1&lt;/a&gt;  </div><div class="line">        &lt;a id=<span class="string">"a2"</span> class=<span class="string">"num"</span>&gt;2&lt;/a&gt;  </div><div class="line">        &lt;a id=<span class="string">"a3"</span> class=<span class="string">"num"</span>&gt;3&lt;/a&gt;  </div><div class="line">        &lt;a id=<span class="string">"a4"</span> class=<span class="string">"num"</span>&gt;4&lt;/a&gt;  </div><div class="line">        &lt;a id=<span class="string">"a5"</span> class=<span class="string">"num"</span>&gt;5&lt;/a&gt;  </div><div class="line">        &lt;div id=<span class="string">"photos"</span> class=<span class="string">"play"</span>&gt;  </div><div class="line">              &lt;img src=<span class="string">"http://eduppp.cn/images/0/1.jpg"</span> &gt;  </div><div class="line">              &lt;img src=<span class="string">"http://eduppp.cn/images/0/3.jpg"</span> &gt;  </div><div class="line">              &lt;img src=<span class="string">"http://eduppp.cn/images/0/4.jpg"</span> &gt;  </div><div class="line">              &lt;img src=<span class="string">"http://eduppp.cn/images/0/5.jpg"</span> &gt;  </div><div class="line">              &lt;img src=<span class="string">"http://eduppp.cn/images/0/2.jpg"</span> &gt;  </div><div class="line">              &lt;ul id=<span class="string">"dis"</span>&gt;  </div><div class="line">                &lt;li&gt;中国标志性建筑：天安门&lt;/li&gt;  </div><div class="line">                &lt;li&gt;中国标志性建筑：东方明珠&lt;/li&gt;  </div><div class="line">                &lt;li&gt;中国标志性建筑：布达拉宫&lt;/li&gt;  </div><div class="line">                &lt;li&gt;中国标志性建筑：长城&lt;/li&gt;  </div><div class="line">                &lt;li&gt;中国标志性建筑：天坛&lt;/li&gt;  </div><div class="line">              &lt;/ul&gt;  </div><div class="line">        &lt;/div&gt;  </div><div class="line">&lt;/div&gt;  </div><div class="line">&lt;/body&gt;  </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag"><i class="fa fa-tag"></i> CSS3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/10/阴影美图设计/" rel="next" title="阴影美图设计">
+                <i class="fa fa-chevron-left"></i> 阴影美图设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/2.jpg"
+               alt="张程东" />
+          <p class="site-author-name" itemprop="name">张程东</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">84</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=483671599&auto=1&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来看一下代码："><span class="nav-number">1.</span> <span class="nav-text">接下来看一下代码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张程东</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" color="0,0,255" opacity='0.1' zIndex="-2" count="90" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+<!--卖萌-->
+<script type="text/javascript" src="/js/src/dytitle.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
