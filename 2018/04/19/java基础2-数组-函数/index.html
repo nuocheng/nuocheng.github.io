@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="今天主要是学到了简单的输入，数组的定义，函数的定义等4 知识点：（1）、输入： import java.util.Scanner;  int a; Scanner sc=new Scanner(System.in); a=sc.nextInt(); （2）、数组的定义： int[] arr=new int[数组的空间大小]; 另一种定义方式： int[] arr={4,8,6,9}; 数组的长度判">
+<meta name="description" content="今天主要是学到了简单的输入，数组的定义，函数的定义以及函数的重载问题； 知识点：（1）、输入： import java.util.Scanner;  int a; Scanner sc=new Scanner(System.in); a=sc.nextInt();   （2）、数组的定义： int[] arr=new int[数组的空间大小]; 另一种定义方式： int[] arr={4,8,6,">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础2_数组">
-<meta property="og:url" content="http://yoursite.com/2018/04/19/java基础2-数组/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/java基础2-数组-函数/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="今天主要是学到了简单的输入，数组的定义，函数的定义等4 知识点：（1）、输入： import java.util.Scanner;  int a; Scanner sc=new Scanner(System.in); a=sc.nextInt(); （2）、数组的定义： int[] arr=new int[数组的空间大小]; 另一种定义方式： int[] arr={4,8,6,9}; 数组的长度判">
+<meta property="og:description" content="今天主要是学到了简单的输入，数组的定义，函数的定义以及函数的重载问题； 知识点：（1）、输入： import java.util.Scanner;  int a; Scanner sc=new Scanner(System.in); a=sc.nextInt();   （2）、数组的定义： int[] arr=new int[数组的空间大小]; 另一种定义方式： int[] arr={4,8,6,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-19T13:01:14.044Z">
+<meta property="og:updated_time" content="2018-04-20T08:28:10.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础2_数组">
-<meta name="twitter:description" content="今天主要是学到了简单的输入，数组的定义，函数的定义等4 知识点：（1）、输入： import java.util.Scanner;  int a; Scanner sc=new Scanner(System.in); a=sc.nextInt(); （2）、数组的定义： int[] arr=new int[数组的空间大小]; 另一种定义方式： int[] arr={4,8,6,9}; 数组的长度判">
+<meta name="twitter:description" content="今天主要是学到了简单的输入，数组的定义，函数的定义以及函数的重载问题； 知识点：（1）、输入： import java.util.Scanner;  int a; Scanner sc=new Scanner(System.in); a=sc.nextInt();   （2）、数组的定义： int[] arr=new int[数组的空间大小]; 另一种定义方式： int[] arr={4,8,6,">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/19/java基础2-数组/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/java基础2-数组-函数/"/>
 
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/java基础2-数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/java基础2-数组-函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -352,19 +352,37 @@
       
 
       
-        <p>今天主要是学到了简单的输入，数组的定义，函数的定义等4</p>
+        <p>今天主要是学到了简单的输入，数组的定义，函数的定义以及函数的重载问题；</p>
 <h3 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h3><pre><code>（1）、输入：
 import java.util.Scanner;
 
 int a;
 Scanner sc=new Scanner(System.in);
 a=sc.nextInt();
+
+
 （2）、数组的定义：
 int[] arr=new int[数组的空间大小];
 另一种定义方式：
 int[] arr={4,8,6,9};
 数组的长度判断：
 int len=arr.length;
+
+
+（3）、函数的重载：
+public static int add(int a,int b)
+{
+    return a+b;
+}
+public static int add(int a,int b,int c)
+{
+    return a+b+c;
+}
+
+在主函数中如何调用：
+add(a,b);
+add(a,b,c);
+这就是函数的重载，这表示的是根据参数的个数来决定的。
 </code></pre><h3 id="接下来代码部分："><a href="#接下来代码部分：" class="headerlink" title="接下来代码部分："></a>接下来代码部分：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">package com.imooc;</div><div class="line"></div><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line">class Zhan&#123;</div><div class="line">	public static int add(int a,int b)</div><div class="line">	&#123;</div><div class="line">		int sum=a+b;</div><div class="line">		<span class="built_in">return</span> sum;</div><div class="line">	&#125;</div><div class="line">	/*二分查找*/</div><div class="line">	public static int half(int[] arr,int key)</div><div class="line">	&#123;</div><div class="line">		int left=0,right=arr.length-1,mid;</div><div class="line">		<span class="keyword">while</span>(left&lt;=right)</div><div class="line">		&#123;</div><div class="line">			mid=(left+right)/2;</div><div class="line">			<span class="keyword">if</span>(arr[mid]&gt;key)</div><div class="line">			&#123;</div><div class="line">				right=mid-1;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				<span class="keyword">if</span>(arr[mid]&lt;key)</div><div class="line">				&#123;</div><div class="line">					left=mid+1;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">else</span></div><div class="line">					<span class="built_in">return</span> mid;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">return</span> -1;</div><div class="line">	&#125;</div><div class="line">	public static void main(String[] args)</div><div class="line">	&#123;</div><div class="line">		int a,b;</div><div class="line">		Scanner sc=new Scanner(System.in);</div><div class="line">		a=sc.nextInt();</div><div class="line">		b=sc.nextInt();</div><div class="line">		int sum=add(a,b);</div><div class="line">		System.out.println(sum+<span class="string">"this is your number"</span>);</div><div class="line">		</div><div class="line">		</div><div class="line">		int[] arr=new int[8];</div><div class="line">		</div><div class="line">		arr[0]=324;</div><div class="line">		</div><div class="line">		System.out.println(arr[0]);</div><div class="line">		</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"---------二分查找--------------"</span>);</div><div class="line">		</div><div class="line">		</div><div class="line">		int[] arr2= &#123;7,56,6,2,89,45,5,9&#125;;</div><div class="line">		/*冒泡排序*/</div><div class="line">		int t;</div><div class="line">		<span class="keyword">for</span>(int i=0;i&lt;arr2.length-1;i++) &#123;</div><div class="line">			<span class="keyword">for</span>(int j=i;j&lt;arr2.length;j++) &#123;</div><div class="line">				<span class="keyword">if</span>(arr2[i]&gt;arr2[j])</div><div class="line">				&#123;</div><div class="line">					t=arr2[i];</div><div class="line">					arr2[i]=arr2[j];</div><div class="line">					arr2[j]=t;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(int i=0;i&lt;arr2.length;i++)</div><div class="line">		&#123;</div><div class="line">			System.out.println(arr2[i]+<span class="string">" "</span>);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		</div><div class="line">		int key=56;</div><div class="line">		int index=half(arr2,key);</div><div class="line">		System.out.println(index);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
