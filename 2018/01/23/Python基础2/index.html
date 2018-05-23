@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="列表的创建：empty=[] 向列表添加元素：append(&amp;apos;一个数据&amp;apos;) extend([‘多个数据’]) insert(位置，数据) empty.append(1)  //在尾部添加一个数据； empty.extend() empty.insert(1,&amp;apos;dafa&amp;apos;)  例如： ``` bash     com=[1,2,3]     com.appen">
+<meta name="description" content="列表的创建：empty=[] 向列表添加元素：append(&amp;apos;一个数据&amp;apos;) extend([‘多个数据’]) insert(位置，数据) empty.append(1)  //在尾部添加一个数据； empty.extend() empty.insert(1,&amp;apos;dafa&amp;apos;)  例如： com=[1,2,3] com.append(4) com.extend([">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础2">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/Python基础2/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="列表的创建：empty=[] 向列表添加元素：append(&amp;apos;一个数据&amp;apos;) extend([‘多个数据’]) insert(位置，数据) empty.append(1)  //在尾部添加一个数据； empty.extend() empty.insert(1,&amp;apos;dafa&amp;apos;)  例如： ``` bash     com=[1,2,3]     com.appen">
+<meta property="og:description" content="列表的创建：empty=[] 向列表添加元素：append(&amp;apos;一个数据&amp;apos;) extend([‘多个数据’]) insert(位置，数据) empty.append(1)  //在尾部添加一个数据； empty.extend() empty.insert(1,&amp;apos;dafa&amp;apos;)  例如： com=[1,2,3] com.append(4) com.extend([">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T03:09:06.896Z">
+<meta property="og:updated_time" content="2018-05-23T03:26:09.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础2">
-<meta name="twitter:description" content="列表的创建：empty=[] 向列表添加元素：append(&amp;apos;一个数据&amp;apos;) extend([‘多个数据’]) insert(位置，数据) empty.append(1)  //在尾部添加一个数据； empty.extend() empty.insert(1,&amp;apos;dafa&amp;apos;)  例如： ``` bash     com=[1,2,3]     com.appen">
+<meta name="twitter:description" content="列表的创建：empty=[] 向列表添加元素：append(&amp;apos;一个数据&amp;apos;) extend([‘多个数据’]) insert(位置，数据) empty.append(1)  //在尾部添加一个数据； empty.extend() empty.insert(1,&amp;apos;dafa&amp;apos;)  例如： com=[1,2,3] com.append(4) com.extend([">
 
 
 
@@ -361,62 +361,60 @@ empty.extend()
 empty.insert(1,&apos;dafa&apos;)
 
 例如：
+</code></pre><pre><code class="bash">com=[1,2,3]
+com.append(4)
+com.extend([5,6])
+com.insert(0,0)
+<span class="keyword">for</span> i <span class="keyword">in</span> range(len(com)):
+    <span class="built_in">print</span>(com[i]);
+
+
+temp=com[1];
+com[1]=com[0];
+com[0]=temp;
+<span class="keyword">for</span> i <span class="keyword">in</span> range(len(com)):
+<span class="built_in">print</span>(com[i]);
+</code></pre>
+<h3 id="全局变量的调用："><a href="#全局变量的调用：" class="headerlink" title="全局变量的调用："></a>全局变量的调用：</h3><pre><code>global 变量名
+</code></pre><h3 id="创建函数："><a href="#创建函数：" class="headerlink" title="创建函数："></a>创建函数：</h3><pre><code>def 函数名():
+    函数体；
+</code></pre><h3 id="内嵌函数："><a href="#内嵌函数：" class="headerlink" title="内嵌函数："></a>内嵌函数：</h3><pre><code>def fun1():                               //先调用fun1函数
+    print(&quot;fun1()正在调用&quot;)
+    def fun2():                                //嵌套的fun2函数不执行
+        print(&quot;fun2正在被调用&quot;)
+    fun2()                                    //fun2此时被调用
+
+
+
+#### 调用方法：
+def funx(x):
+    def funy(y):               /*带有参数*/
+        return x*y
+    return funy             /*此时返回的函数不带有括号形式*/ 
+
+i=funx(8);    /*此时i只是代表的funx这个类 以及参数*/
+i(5);            /*这时候代表的是给funy进行赋值*/
+
+或者是
+funx(8)(5);
+
+nonlocal x                /*声明x不止局部变量，可以再内嵌函数内使用*/
+例如：    
 ``` bash
-    com=[1,2,3]
-    com.append(4)
-    com.extend([5,6])
-    com.insert(0,0)
-    for i in range(len(com)):
-        print(com[i]);
+    def fun1 ():     
 
-
-    temp=com[1];
-    com[1]=com[0];
-    com[0]=temp;
-    for i in range(len(com)):
-    print(com[i]);
-</code></pre><pre><code>### 全局变量的调用：
-    global 变量名
-### 创建函数：
-    def 函数名():
-        函数体；
-### 内嵌函数：
-    def fun1():                               //先调用fun1函数
-        print(&quot;fun1()正在调用&quot;)
-        def fun2():                                //嵌套的fun2函数不执行
-            print(&quot;fun2正在被调用&quot;)
-        fun2()                                    //fun2此时被调用
-
-
-
-    #### 调用方法：
-    def funx(x):
-        def funy(y):               /*带有参数*/
-            return x*y
-        return funy             /*此时返回的函数不带有括号形式*/ 
-
-    i=funx(8);    /*此时i只是代表的funx这个类 以及参数*/
-    i(5);            /*这时候代表的是给funy进行赋值*/
-
-    或者是
-    funx(8)(5);
-
-    nonlocal x                /*声明x不止局部变量，可以再内嵌函数内使用*/
-    例如：    
-    ``` bash
-        def fun1 ():     
-
-            count=1
+        count=1
+        print(count)
+        def fun2():                  /*不带有参数*/
+            nonlocal count;
             print(count)
-            def fun2():                  /*不带有参数*/
-                nonlocal count;
-                print(count)
-                count=2
-                print(count)
-            return fun2();                /*返回值带有括号*/
+            count=2
+            print(count)
+        return fun2();                /*返回值带有括号*/
 
-        fun1()
-</code></pre><h3 id="lambda的使用，是调用函数的时候简单化："><a href="#lambda的使用，是调用函数的时候简单化：" class="headerlink" title="lambda的使用，是调用函数的时候简单化："></a>lambda的使用，是调用函数的时候简单化：</h3><pre><code>例如：
+    fun1()
+</code></pre><p>``` </p>
+<h3 id="lambda的使用，是调用函数的时候简单化："><a href="#lambda的使用，是调用函数的时候简单化：" class="headerlink" title="lambda的使用，是调用函数的时候简单化："></a>lambda的使用，是调用函数的时候简单化：</h3><pre><code>例如：
 def add(x,y):
     return x+y;
 add(3,4);
@@ -641,7 +639,7 @@ list(filter(lambda x:x%2,range(10)));
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表的创建："><span class="nav-number">1.</span> <span class="nav-text">列表的创建：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向列表添加元素："><span class="nav-number">2.</span> <span class="nav-text">向列表添加元素：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda的使用，是调用函数的时候简单化："><span class="nav-number">3.</span> <span class="nav-text">lambda的使用，是调用函数的时候简单化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器filter-map："><span class="nav-number">4.</span> <span class="nav-text">过滤器filter,map：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表的创建："><span class="nav-number">1.</span> <span class="nav-text">列表的创建：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向列表添加元素："><span class="nav-number">2.</span> <span class="nav-text">向列表添加元素：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量的调用："><span class="nav-number">3.</span> <span class="nav-text">全局变量的调用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建函数："><span class="nav-number">4.</span> <span class="nav-text">创建函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内嵌函数："><span class="nav-number">5.</span> <span class="nav-text">内嵌函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda的使用，是调用函数的时候简单化："><span class="nav-number">6.</span> <span class="nav-text">lambda的使用，是调用函数的时候简单化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器filter-map："><span class="nav-number">7.</span> <span class="nav-text">过滤器filter,map：</span></a></li></ol></div>
             
 
           </div>

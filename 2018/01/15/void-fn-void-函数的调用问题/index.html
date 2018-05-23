@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include &amp;lt;iostream&amp;gt; using namespace std; typedef struct node {     void (*fn)(void);     struct n">
+<meta name="description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行123456789101112131415161718192021222324252627#include &amp;lt;iostream&amp;gt;using namespace std;typedef struc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="void (*fn)(void)函数的调用问题">
 <meta property="og:url" content="http://yoursite.com/2018/01/15/void-fn-void-函数的调用问题/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include &amp;lt;iostream&amp;gt; using namespace std; typedef struct node {     void (*fn)(void);     struct n">
+<meta property="og:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行123456789101112131415161718192021222324252627#include &amp;lt;iostream&amp;gt;using namespace std;typedef struc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T03:11:04.883Z">
+<meta property="og:updated_time" content="2018-05-23T03:28:09.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="void (*fn)(void)函数的调用问题">
-<meta name="twitter:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行#include &amp;lt;iostream&amp;gt; using namespace std; typedef struct node {     void (*fn)(void);     struct n">
+<meta name="twitter:description" content="在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数 下面写记几个程序，来观察是否执行123456789101112131415161718192021222324252627#include &amp;lt;iostream&amp;gt;using namespace std;typedef struc">
 
 
 
@@ -331,34 +331,7 @@
       
         <p>在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。</p>
 <h3 id="void-fn-void-函数指针"><a href="#void-fn-void-函数指针" class="headerlink" title="void (*fn)(void)函数指针"></a>void (*fn)(void)函数指针</h3><p>fn为一个指针类型的变量，此指针类型指向一个函数</p>
-<h3 id="下面写记几个程序，来观察是否执行"><a href="#下面写记几个程序，来观察是否执行" class="headerlink" title="下面写记几个程序，来观察是否执行"></a>下面写记几个程序，来观察是否执行</h3><pre><code class="bash"><span class="comment">#include &lt;iostream&gt;</span>
-using namespace std;
-typedef struct node
-{
-    void (*fn)(void);
-    struct node *next;
-}Node,*bnode;
-void show()
-{
-    cout&lt;&lt;<span class="string">"11111\n"</span>;
-}
-void show2(void (*fn)(void))
-{
-    cout&lt;&lt;<span class="string">"22222\n"</span>;
-}
-int main()
-{
-    bnode p=new Node;
-    p-&gt;fn=show;                //执行这一条语句的时候不进入show（）函数体本身；
-    p-&gt;next=NULL;
-    p-&gt;fn();               //此时进入函数体本身；执行show（）函数；
-
-
-    cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;endl;
-    show2(show);           //此时执行的是show2函数体，但是不执行show函数；
-
-}
-</code></pre>
+<h3 id="下面写记几个程序，来观察是否执行"><a href="#下面写记几个程序，来观察是否执行" class="headerlink" title="下面写记几个程序，来观察是否执行"></a>下面写记几个程序，来观察是否执行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#include &lt;iostream&gt;</span></div><div class="line">using namespace std;</div><div class="line">typedef struct node</div><div class="line">&#123;</div><div class="line">    void (*fn)(void);</div><div class="line">    struct node *next;</div><div class="line">&#125;Node,*bnode;</div><div class="line">void show()</div><div class="line">&#123;</div><div class="line">    cout&lt;&lt;<span class="string">"11111\n"</span>;</div><div class="line">&#125;</div><div class="line">void show2(void (*fn)(void))</div><div class="line">&#123;</div><div class="line">    cout&lt;&lt;<span class="string">"22222\n"</span>;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    bnode p=new Node;</div><div class="line">    p-&gt;fn=show;                //执行这一条语句的时候不进入show（）函数体本身；</div><div class="line">    p-&gt;next=NULL;</div><div class="line">    p-&gt;fn();               //此时进入函数体本身；执行show（）函数；</div><div class="line"></div><div class="line"></div><div class="line">    cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;endl;</div><div class="line">    show2(show);           //此时执行的是show2函数体，但是不执行show函数；</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="输出结果为："><a href="#输出结果为：" class="headerlink" title="输出结果为："></a>输出结果为：</h3><p>11111</p>
 <p>22222</p>
 
