@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="今天做分页的时候学了很多的东西，以及注意事项： 1thinkphp5中有一个助手函数db(&amp;apos;表名&amp;apos;)-&amp;gt;where()-&amp;gt;select();等  在HTML中提交表单的时候一定要注意要有name属性，而却name的值一定是数据库里的字段 2thinkphp5中判断时候提交表单的方式：     request()-&amp;gt;isPost();  接受提交过来的信息">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-07T03:37:09.972Z">
+<meta property="og:updated_time" content="2018-06-07T12:33:16.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="thinkphp之数据库信息显示分页">
 <meta name="twitter:description" content="今天做分页的时候学了很多的东西，以及注意事项： 1thinkphp5中有一个助手函数db(&amp;apos;表名&amp;apos;)-&amp;gt;where()-&amp;gt;select();等  在HTML中提交表单的时候一定要注意要有name属性，而却name的值一定是数据库里的字段 2thinkphp5中判断时候提交表单的方式：     request()-&amp;gt;isPost();  接受提交过来的信息">
@@ -372,7 +372,6 @@ $res=db(&apos;user&apos;)-&gt;paginate(6);     paginate是查询并控制显示�
 
 将数据传送给页面并显示
 $this-&gt;assign(&apos;data&apos;,$res);
-
 在HTML中调用
 {volist name=&quot;data&quot; id=&quot;value&quot;}
     &lt;tr&gt;
@@ -382,6 +381,18 @@ $this-&gt;assign(&apos;data&apos;,$res);
 
 使用分页将其余的页面显示出来
 {$data-&gt;render()}
+</code></pre><h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><pre><code>登录账户的使用：
+从登陆页面上获取用户名与密码接受后
+session(&apos;name&apos;,$admin_name[&apos;id&apos;]);
+session(&apos;password&apos;,$admin_name[&apos;password&apos;]);
+
+在网页中使用{$Request.session.name}
+{$Request.session.password}
+
+
+
+在控制器中使用
+session[&apos;name&apos;],session[&apos;password&apos;];
 </code></pre>
       
     </div>
@@ -576,7 +587,7 @@ $this-&gt;assign(&apos;data&apos;,$res);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li></ol></div>
             
 
           </div>
