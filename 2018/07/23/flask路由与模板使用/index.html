@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="flask的路由from flask import Flask,requestfrom flask import url_for app=Flask(name) @app.route(‘/‘,methods=[‘GET’,’POST’])def index():    return ‘这是首页’@app.route(‘/logo/‘)def showid(id):    return ‘输入的id">
+<meta name="description" content="flask的路由123456789101112131415161718192021222324from flask import Flask,requestfrom flask import url_forapp=Flask(__name__)@app.route(&apos;/&apos;,methods=[&apos;GET&apos;,&apos;POST&apos;])def index():    return &apos;这是首页&apos;@app.route(">
 <meta name="keywords" content="flask">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flask路由与模板使用">
 <meta property="og:url" content="http://yoursite.com/2018/07/23/flask路由与模板使用/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="flask的路由from flask import Flask,requestfrom flask import url_for app=Flask(name) @app.route(‘/‘,methods=[‘GET’,’POST’])def index():    return ‘这是首页’@app.route(‘/logo/‘)def showid(id):    return ‘输入的id">
+<meta property="og:description" content="flask的路由123456789101112131415161718192021222324from flask import Flask,requestfrom flask import url_forapp=Flask(__name__)@app.route(&apos;/&apos;,methods=[&apos;GET&apos;,&apos;POST&apos;])def index():    return &apos;这是首页&apos;@app.route(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T09:54:01.283Z">
+<meta property="og:updated_time" content="2018-07-23T09:58:34.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask路由与模板使用">
-<meta name="twitter:description" content="flask的路由from flask import Flask,requestfrom flask import url_for app=Flask(name) @app.route(‘/‘,methods=[‘GET’,’POST’])def index():    return ‘这是首页’@app.route(‘/logo/‘)def showid(id):    return ‘输入的id">
+<meta name="twitter:description" content="flask的路由123456789101112131415161718192021222324from flask import Flask,requestfrom flask import url_forapp=Flask(__name__)@app.route(&apos;/&apos;,methods=[&apos;GET&apos;,&apos;POST&apos;])def index():    return &apos;这是首页&apos;@app.route(">
 
 
 
@@ -352,37 +352,20 @@
       
 
       
-        <h3 id="flask的路由"><a href="#flask的路由" class="headerlink" title="flask的路由"></a>flask的路由</h3><p>from flask import Flask,request<br>from flask import url_for</p>
-<p>app=Flask(<strong>name</strong>)</p>
-<p>@app.route(‘/‘,methods=[‘GET’,’POST’])<br>def index():<br>    return ‘这是首页’<br>@app.route(‘/logo/<id>‘)<br>def showid(id):<br>    return ‘输入的id号为’+id</id></p>
-<p>@app.route(‘/show’)<br>def show_id():<br>    id=request.args.get(‘id’)<br>    return ‘通过request得到的id’+id</p>
-<p>@app.route(‘/query_url’)<br>def query_url():<br>    return ‘show_id的路由是:’+url_for(‘show_id’)</p>
-<p>if <strong>name</strong>==’<strong>main</strong>‘:<br>    app.run()</p>
+        <h3 id="flask的路由"><a href="#flask的路由" class="headerlink" title="flask的路由"></a>flask的路由</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">from flask import Flask,request</div><div class="line">from flask import url_for</div><div class="line"></div><div class="line">app=Flask(__name__)</div><div class="line"></div><div class="line">@app.route(<span class="string">'/'</span>,methods=[<span class="string">'GET'</span>,<span class="string">'POST'</span>])</div><div class="line">def index():</div><div class="line">    <span class="built_in">return</span> <span class="string">'这是首页'</span></div><div class="line">@app.route(<span class="string">'/logo/&lt;id&gt;'</span>)</div><div class="line">def showid(id):</div><div class="line">    <span class="built_in">return</span> <span class="string">'输入的id号为'</span>+id</div><div class="line"></div><div class="line">@app.route(<span class="string">'/show'</span>)</div><div class="line">def show_id():</div><div class="line">    id=request.args.get(<span class="string">'id'</span>)</div><div class="line">    <span class="built_in">return</span> <span class="string">'通过request得到的id'</span>+id</div><div class="line"></div><div class="line">@app.route(<span class="string">'/query_url'</span>)</div><div class="line">def query_url():</div><div class="line">    <span class="built_in">return</span> <span class="string">'show_id的路由是:'</span>+url_for(<span class="string">'show_id'</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    app.run()</div></pre></td></tr></table></figure>
 <h3 id="flask的模板"><a href="#flask的模板" class="headerlink" title="flask的模板"></a>flask的模板</h3><pre><code>模板的简单使用
 条件语句
 循环语句
 模板的继承
-</code></pre><p>from flask import Flask,request,render_template<br>from models import User<br>app=Flask(<strong>name</strong>)</p>
-<p>@app.route(‘/‘)<br>def hello_world():<br>    con=”this is index content”<br>    return render_template(‘index.html’,con=con)</p>
-<p>#对象的传入以及模板的使用</p>
-<p>@app.route(‘/user/<id>‘)<br>def query_suer(id):<br>    user=None<br>    if int(id)==1:<br>        user=User(1,’nuocheng’)<br>    return render_template(‘index.html’,user=user)</id></p>
-<p>#循环语句<br>@app.route(‘/list’)<br>def user_list():<br>    users=[]<br>    for i in range(1,5):<br>        user=User(i,’nuocheng’+str(i))<br>        users.append(user)<br>    return render_template(‘list.html’,users=users)</p>
-<h3 id="models-py里的相关代码"><a href="#models-py里的相关代码" class="headerlink" title="models.py里的相关代码"></a>models.py里的相关代码</h3><p>class User(object):<br>    def <strong>init</strong>(self,user_id,user_name):<br>        self.user_id=user_id<br>        self.user_name=user_name</p>
-<h3 id="index-html里的先关代码："><a href="#index-html里的先关代码：" class="headerlink" title="index.html里的先关代码："></a>index.html里的先关代码：</h3><pre><code>&lt;body&gt;
-    {% if user %}
-			hello {{user.name}}
-		{% else %}
-			没有此用户
-		{% endif %}
-&lt;/body&gt;
-</code></pre><h3 id="list-html里的代码："><a href="#list-html里的代码：" class="headerlink" title="list.html里的代码："></a>list.html里的代码：</h3><pre><code>&lt;body&gt;
-    {% for user in users %}
-			{{user.id}}----{{user.name}}<br>
-		{% endfor %}
-
-&lt;/body&gt;
-</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>继承网站的头部与底部
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">from flask import Flask,request,render_template</div><div class="line">from models import User</div><div class="line">app=Flask(__name__)</div><div class="line"></div><div class="line">@app.route(<span class="string">'/'</span>)</div><div class="line">def hello_world():</div><div class="line">	con=<span class="string">"this is index content"</span></div><div class="line">	<span class="built_in">return</span> render_template(<span class="string">'index.html'</span>,con=con)</div><div class="line"><span class="comment">#在index.html中“&#123;&#123;con&#125;&#125;”来使用</span></div><div class="line"><span class="comment">#对象的传入以及模板的使用</span></div><div class="line"></div><div class="line">@app.route(<span class="string">'/user/&lt;id&gt;'</span>)</div><div class="line">def query_suer(id):</div><div class="line">	user=None</div><div class="line">	<span class="keyword">if</span> int(id)==1:</div><div class="line">		user=User(1,<span class="string">'nuocheng'</span>)</div><div class="line">	<span class="built_in">return</span> render_template(<span class="string">'index.html'</span>,user=user)</div></pre></td></tr></table></figure>
+<p>#循环语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@app.route(<span class="string">'/list'</span>)</div><div class="line">def user_list():</div><div class="line">	users=[]</div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(1,5):</div><div class="line">		user=User(i,<span class="string">'nuocheng'</span>+str(i))</div><div class="line">		users.append(user)</div><div class="line">	<span class="built_in">return</span> render_template(<span class="string">'list.html'</span>,users=users)</div></pre></td></tr></table></figure>
+<h3 id="models-py里的相关代码"><a href="#models-py里的相关代码" class="headerlink" title="models.py里的相关代码"></a>models.py里的相关代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class User(object):</div><div class="line">	def __init__(self,user_id,user_name):</div><div class="line">		self.user_id=user_id</div><div class="line">		self.user_name=user_name</div></pre></td></tr></table></figure>
+<h3 id="index-html里的先关代码："><a href="#index-html里的先关代码：" class="headerlink" title="index.html里的先关代码："></a>index.html里的先关代码：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&#123;% <span class="keyword">if</span> user %&#125;</div><div class="line">		hello &#123;&#123;user.name&#125;&#125;</div><div class="line">	&#123;% <span class="keyword">else</span> %&#125;</div><div class="line">		没有此用户</div><div class="line">	&#123;% endif %&#125;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="list-html里的代码："><a href="#list-html里的代码：" class="headerlink" title="list.html里的代码："></a>list.html里的代码：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&#123;% <span class="keyword">for</span> user <span class="keyword">in</span> users %&#125;</div><div class="line">		&#123;&#123;user.id&#125;&#125;----&#123;&#123;user.name&#125;&#125;&lt;br/&gt;</div><div class="line">	&#123;% endfor %&#125;</div><div class="line">	</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code class="bash">继承网站的头部与底部
 基类：base.html
+
     &lt;body&gt;
         &lt;div&gt;这是头部&lt;/div&gt;
         {% block content  %}
@@ -403,6 +386,7 @@
 			<h2>这是第二页</h2>
 		{% endblock %}
 </code></pre>
+
       
     </div>
     

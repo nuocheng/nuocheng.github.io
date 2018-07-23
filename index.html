@@ -353,11 +353,7 @@
       
         
           
-          flask的路由from flask import Flask,requestfrom flask import url_for
-app=Flask(name)
-@app.route(‘/‘,methods=[‘GET’,’POST’])def index():    return ‘这是首页’@app.route(‘/logo/‘)def showid(id):    return ‘输入的id号为’+id
-@app.route(‘/show’)def show_id():    id=request.args.get(‘id’)    return ‘通过request得到的id’+id
-
+          flask的路由123456789101112131415161718192021222324from flask import Flask,requestfrom flask import url_forapp=Flask(__name__)@app.route('/',methods=['GET','POST'])def index():    return '这是首页'@app.route('/logo/&lt;id&gt;')def showid(id):    return '输入的id号为'+id@app.route('/show')def show_id():    id=req
           ...
           <!--noindex-->
           <div class="post-button text-center">
