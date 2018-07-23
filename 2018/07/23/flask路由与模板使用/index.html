@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="flask的路由from flask import Flask,requestfrom flask import url_for app=Flask(name) @app.route(‘/‘,methods=[‘GET’,’POST’])def index():    return ‘这是首页’@app.route(‘/logo/‘)def showid(id):    return ‘输入的id">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T09:28:13.021Z">
+<meta property="og:updated_time" content="2018-07-23T09:51:23.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask路由与模板使用">
 <meta name="twitter:description" content="flask的路由from flask import Flask,requestfrom flask import url_for app=Flask(name) @app.route(‘/‘,methods=[‘GET’,’POST’])def index():    return ‘这是首页’@app.route(‘/logo/‘)def showid(id):    return ‘输入的id">
@@ -363,59 +363,8 @@
 循环语句
 模板的继承
 </code></pre><p>from flask import Flask,request,render_template<br>from models import User<br>app=Flask(<strong>name</strong>)</p>
-<p>@app.route(‘/‘)<br>def hello_world():<br>    content=”this is index content”<br>    return render_template(‘index.html’,content=content)</p>
-<p>#在index.html中</p><h3 id="flask的路由"><a href="#flask的路由" class="headerlink" title="flask的路由"></a>flask的路由</h3><p>from flask import Flask,request<br>from flask import url_for</p>
-<p>app=Flask(<strong>name</strong>)</p>
-<p>@app.route(‘/‘,methods=[‘GET’,’POST’])<br>def index():<br>    return ‘这是首页’<br>@app.route(‘/logo/<id>‘)<br>def showid(id):<br>    return ‘输入的id号为’+id</id></p>
-<p>@app.route(‘/show’)<br>def show_id():<br>    id=request.args.get(‘id’)<br>    return ‘通过request得到的id’+id</p>
-<p>@app.route(‘/query_url’)<br>def query_url():<br>    return ‘show_id的路由是:’+url_for(‘show_id’)</p>
-<p>if <strong>name</strong>==’<strong>main</strong>‘:<br>    app.run()</p>
-<h3 id="flask的模板"><a href="#flask的模板" class="headerlink" title="flask的模板"></a>flask的模板</h3><pre><code>模板的简单使用
-条件语句
-循环语句
-模板的继承
-</code></pre><p>from flask import Flask,request,render_template<br>from models import User<br>app=Flask(<strong>name</strong>)</p>
-<p>@app.route(‘/‘)<br>def hello_world():<br>    content=”this is index content”<br>    return render_template(‘index.html’,content=content)</p>
-<p>#在index.html中{{content}}来使用</p>
-<p>#对象的传入以及模板的使用</p>
-<p>@app.route(‘/user/<id>‘)<br>def query_suer(id):<br>    user=None<br>    if int(id)==1:<br>        user=User(1,’nuocheng’)<br>    return render_template(‘index.html’,user=user)</id></p>
-<p>#循环语句<br>@app.route(‘/list’)<br>def user_list():<br>    users=[]<br>    for i in range(1,5):<br>        user=User(i,’nuocheng’+str(i))<br>        users.append(user)<br>    return render_template(‘list.html’,users=users)</p>
-<h3 id="models-py里的相关代码"><a href="#models-py里的相关代码" class="headerlink" title="models.py里的相关代码"></a>models.py里的相关代码</h3><p>class User(object):<br>    def <strong>init</strong>(self,user_id,user_name):<br>        self.user_id=user_id<br>        self.user_name=user_name</p>
-<h3 id="index-html里的先关代码："><a href="#index-html里的先关代码：" class="headerlink" title="index.html里的先关代码："></a>index.html里的先关代码：</h3><pre><code>&lt;body&gt;
-    {% if user %}
-			hello {{user.name}}
-		{% else %}
-			没有此用户
-		{% endif %}
-&lt;/body&gt;
-</code></pre><h3 id="list-html里的代码："><a href="#list-html里的代码：" class="headerlink" title="list.html里的代码："></a>list.html里的代码：</h3><pre><code>&lt;body&gt;
-    {% for user in users %}
-			{{user.id}}----{{user.name}}<br>
-		{% endfor %}
-
-&lt;/body&gt;
-</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>继承网站的头部与底部
-基类：base.html
-    &lt;body&gt;
-        &lt;div&gt;这是头部&lt;/div&gt;
-        {% block content  %}
-			{% endblock  %}
-        &lt;div&gt;这是底部&lt;/div&gt;
-    &lt;/body&gt;
-
-子类1：one.html
-    {% extends "base.html" %}
-    {% block content %}
-			<h2>这是第一页</h2>
-		{% endblock %}
-
-
-子类1：two.html
-    {% extends "base.html" %}
-    {% block content %}
-			<h2>这是第二页</h2>
-		{% endblock %}
-</code></pre>来使用<p></p>
+<p>@app.route(‘/‘)<br>def hello_world():<br>    con=”this is index content”<br>    return render_template(‘index.html’,con=con)</p>
+<p>#在index.html中“”来使用</p>
 <p>#对象的传入以及模板的使用</p>
 <p>@app.route(‘/user/<id>‘)<br>def query_suer(id):<br>    user=None<br>    if int(id)==1:<br>        user=User(1,’nuocheng’)<br>    return render_template(‘index.html’,user=user)</id></p>
 <p>#循环语句<br>@app.route(‘/list’)<br>def user_list():<br>    users=[]<br>    for i in range(1,5):<br>        user=User(i,’nuocheng’+str(i))<br>        users.append(user)<br>    return render_template(‘list.html’,users=users)</p>
@@ -648,7 +597,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#flask的路由"><span class="nav-number">1.</span> <span class="nav-text">flask的路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flask的模板"><span class="nav-number">2.</span> <span class="nav-text">flask的模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flask的路由"><span class="nav-number">3.</span> <span class="nav-text">flask的路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flask的模板"><span class="nav-number">4.</span> <span class="nav-text">flask的模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#models-py里的相关代码"><span class="nav-number">5.</span> <span class="nav-text">models.py里的相关代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-html里的先关代码："><span class="nav-number">6.</span> <span class="nav-text">index.html里的先关代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-html里的代码："><span class="nav-number">7.</span> <span class="nav-text">list.html里的代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">8.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">这是第一页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">这是第二页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#models-py里的相关代码"><span class="nav-number">1.</span> <span class="nav-text">models.py里的相关代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-html里的先关代码："><span class="nav-number">2.</span> <span class="nav-text">index.html里的先关代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-html里的代码："><span class="nav-number">3.</span> <span class="nav-text">list.html里的代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">4.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">这是第一页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">这是第二页</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#flask的路由"><span class="nav-number">1.</span> <span class="nav-text">flask的路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flask的模板"><span class="nav-number">2.</span> <span class="nav-text">flask的模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#models-py里的相关代码"><span class="nav-number">3.</span> <span class="nav-text">models.py里的相关代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-html里的先关代码："><span class="nav-number">4.</span> <span class="nav-text">index.html里的先关代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-html里的代码："><span class="nav-number">5.</span> <span class="nav-text">list.html里的代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">6.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">这是第一页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">这是第二页</span></a></div>
             
 
           </div>
