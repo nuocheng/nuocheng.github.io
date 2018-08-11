@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="涉及到的命令行sudo adduser name sudo usermod -G name groups name  sudo deluser name --remove-home  touch file sudo chown name file chmod 600 file 1、创建一个文件touch filetouch  demo_{1,2,3,4}.txt 就会在该路径下创建对应的demo_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T04:21:49.469Z">
+<meta property="og:updated_time" content="2018-08-11T12:27:12.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux之用户添加及文件权限">
 <meta name="twitter:description" content="涉及到的命令行sudo adduser name sudo usermod -G name groups name  sudo deluser name --remove-home  touch file sudo chown name file chmod 600 file 1、创建一个文件touch filetouch  demo_{1,2,3,4}.txt 就会在该路径下创建对应的demo_">
@@ -363,6 +363,8 @@ sudo chown name file
 chmod 600 file
 </code></pre><h3 id="1、创建一个文件touch-file"><a href="#1、创建一个文件touch-file" class="headerlink" title="1、创建一个文件touch file"></a>1、创建一个文件touch file</h3><pre><code>touch  demo_{1,2,3,4}.txt
 就会在该路径下创建对应的demo_1.txt demo_2.txt demo_3.txt demo_4.txt
+
+创建一个文件夹mkdir 文件名       直接创建一个树链mkdir -p father/son/grandson
 </code></pre><h3 id="2、查看当前的路径-pwd"><a href="#2、查看当前的路径-pwd" class="headerlink" title="2、查看当前的路径 :pwd"></a>2、查看当前的路径 :pwd</h3><h3 id="3、查看用户：-who-am-i-或者-who-mom-likes"><a href="#3、查看用户：-who-am-i-或者-who-mom-likes" class="headerlink" title="3、查看用户： who am i  或者 who mom likes"></a>3、查看用户： who am i  或者 who mom likes</h3><h3 id="4、创建用户"><a href="#4、创建用户" class="headerlink" title="4、创建用户"></a>4、创建用户</h3><pre><code>①。su &lt;user&gt; 可以切换到用户user
 ②。sudo &lt;cmd&gt; 可以特权级别运行cmd 需要输入当前用户密码
 ③。sudo adduser nuocheng #这里是创建了一个用户
@@ -379,6 +381,16 @@ sudo chown nuocheng iphone6
 
 修改文件的权限
 chmod 600 iphone6
+</code></pre><h3 id="10、文件的复制"><a href="#10、文件的复制" class="headerlink" title="10、文件的复制"></a>10、文件的复制</h3><pre><code>cp test father/son/grandson/
+将test 复制到father/son/grandson
+
+复制一个文件夹famile
+cp -r father/son/grandson/  family
+表示的是将family 复制到这个路径下
+</code></pre><h3 id="11、文件的删除"><a href="#11、文件的删除" class="headerlink" title="11、文件的删除"></a>11、文件的删除</h3><pre><code>rm text
+
+删除文件夹
+rm -r family
 </code></pre>
       
     </div>
@@ -573,7 +585,7 @@ chmod 600 iphone6
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及到的命令行"><span class="nav-number">1.</span> <span class="nav-text">涉及到的命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、创建一个文件touch-file"><span class="nav-number">2.</span> <span class="nav-text">1、创建一个文件touch file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看当前的路径-pwd"><span class="nav-number">3.</span> <span class="nav-text">2、查看当前的路径 :pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、查看用户：-who-am-i-或者-who-mom-likes"><span class="nav-number">4.</span> <span class="nav-text">3、查看用户： who am i  或者 who mom likes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、创建用户"><span class="nav-number">5.</span> <span class="nav-text">4、创建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、cat命令用于读取指定文件的内容并打印到终端输出"><span class="nav-number">6.</span> <span class="nav-text">6、cat命令用于读取指定文件的内容并打印到终端输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、添加账户到用户组"><span class="nav-number">7.</span> <span class="nav-text">7、添加账户到用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、删除用户"><span class="nav-number">8.</span> <span class="nav-text">8、删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、文件的权限"><span class="nav-number">9.</span> <span class="nav-text">9、文件的权限</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及到的命令行"><span class="nav-number">1.</span> <span class="nav-text">涉及到的命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、创建一个文件touch-file"><span class="nav-number">2.</span> <span class="nav-text">1、创建一个文件touch file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、查看当前的路径-pwd"><span class="nav-number">3.</span> <span class="nav-text">2、查看当前的路径 :pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、查看用户：-who-am-i-或者-who-mom-likes"><span class="nav-number">4.</span> <span class="nav-text">3、查看用户： who am i  或者 who mom likes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、创建用户"><span class="nav-number">5.</span> <span class="nav-text">4、创建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、cat命令用于读取指定文件的内容并打印到终端输出"><span class="nav-number">6.</span> <span class="nav-text">6、cat命令用于读取指定文件的内容并打印到终端输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、添加账户到用户组"><span class="nav-number">7.</span> <span class="nav-text">7、添加账户到用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、删除用户"><span class="nav-number">8.</span> <span class="nav-text">8、删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、文件的权限"><span class="nav-number">9.</span> <span class="nav-text">9、文件的权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、文件的复制"><span class="nav-number">10.</span> <span class="nav-text">10、文件的复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、文件的删除"><span class="nav-number">11.</span> <span class="nav-text">11、文件的删除</span></a></li></ol></div>
             
 
           </div>
