@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python3," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="调用函数Python内置了很多有用的函数，可以直接调用 调用一个函数，需要知道函数的名称和产生参数1、abs()绝对值函数  直接使用abs(-20) 2、比较函数cmp()    直接使用cmp(x,y) 如果xy，返回值为1； 3、int()函数可以把其他数据类型转换为整数int(‘123’)        输出的是123int(12.34)        输出的是12 4、sum()求和函数">
-<meta name="keywords" content="Python3">
+<meta name="description" content="static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python之函数">
-<meta property="og:url" content="http://yoursite.com/2017/10/07/Python之什么是函数/index.html">
+<meta property="og:title" content="Java之static使用">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/Java之static使用/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="调用函数Python内置了很多有用的函数，可以直接调用 调用一个函数，需要知道函数的名称和产生参数1、abs()绝对值函数  直接使用abs(-20) 2、比较函数cmp()    直接使用cmp(x,y) 如果xy，返回值为1； 3、int()函数可以把其他数据类型转换为整数int(‘123’)        输出的是123int(12.34)        输出的是12 4、sum()求和函数">
+<meta property="og:description" content="static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T03:16:29.941Z">
+<meta property="og:updated_time" content="2018-08-13T11:25:18.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python之函数">
-<meta name="twitter:description" content="调用函数Python内置了很多有用的函数，可以直接调用 调用一个函数，需要知道函数的名称和产生参数1、abs()绝对值函数  直接使用abs(-20) 2、比较函数cmp()    直接使用cmp(x,y) 如果xy，返回值为1； 3、int()函数可以把其他数据类型转换为整数int(‘123’)        输出的是123int(12.34)        输出的是12 4、sum()求和函数">
+<meta name="twitter:title" content="Java之static使用">
+<meta name="twitter:description" content="static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/07/Python之什么是函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/Java之static使用/"/>
 
 
 
 
 
-  <title>Python之函数 | 诺铖的博客</title>
+  <title>Java之static使用 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/Python之什么是函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Java之static使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python之函数</h1>
+          <h1 class="post-title" itemprop="name headline">Java之static使用</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T19:44:11+08:00">
-                2017-10-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T19:24:29+08:00">
+                2018-08-13
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -352,22 +352,21 @@
       
 
       
-        <h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><p>Python内置了很多有用的函数，可以直接调用</p>
-<p>调用一个函数，需要知道函数的名称和产生参数<br>1、abs()绝对值函数  直接使用abs(-20)</p>
-<p>2、比较函数cmp()    直接使用cmp(x,y) 如果x<y，返回值为-1；如果x==y，返回值为0；如果x>y，返回值为1；</y，返回值为-1；如果x==y，返回值为0；如果x></p>
-<p>3、int()函数可以把其他数据类型转换为整数<br>int(‘123’)        输出的是123<br>int(12.34)        输出的是12</p>
-<p>4、sum()求和函数<br>例如<br>sum()函数接受一个list作为参数，并返回list所有元素之和。<br>请计算 1<em>1 + 2</em>2 + 3<em>3 + … + 100</em>100。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">l=[]</div><div class="line">x=<span class="number">1</span></div><div class="line"><span class="keyword">while</span> x&lt;=<span class="number">100</span>:</div><div class="line">	l.append(x*x)</div><div class="line">	x=x+<span class="number">1</span></div><div class="line"><span class="keyword">print</span> sum(l)</div></pre></td></tr></table></figure>
-<h3 id="编写函数"><a href="#编写函数" class="headerlink" title="编写函数"></a>编写函数</h3><p>在Python中，定义一个函数要使用def语句，<br>以此写出函数名、括号、括号中的参数和冒号：<br>然后在缩进块中编写函数体，函数的返回值用return语句返回<br>例如</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_abs</span><span class="params">(x)</span>:</span></div><div class="line">	<span class="keyword">if</span> x&gt;=<span class="number">0</span>:</div><div class="line">		<span class="keyword">return</span> x</div><div class="line">	<span class="keyword">else</span>:</div><div class="line">		<span class="keyword">return</span> -x</div></pre></td></tr></table></figure>
-<p>定义一个 square_of_sum 函数，它接受一个list，返回list中每个元素平方的和。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">square_of_sum</span><span class="params">(l)</span>:</span></div><div class="line">	sum=<span class="number">0</span></div><div class="line">	<span class="keyword">for</span> x <span class="keyword">in</span> l:</div><div class="line">		sum=sum+x*x</div><div class="line">	<span class="keyword">return</span> sum</div><div class="line"><span class="keyword">print</span> square_of_sum([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</div><div class="line"><span class="keyword">print</span> square_of_sum([<span class="number">-5</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">15</span>,<span class="number">25</span>])</div></pre></td></tr></table></figure>
-<h3 id="返回多值"><a href="#返回多值" class="headerlink" title="返回多值"></a>返回多值</h3><p>math包提供了sin() cos()函数，先用import引用它：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(x,y,step,angle)</span>:</span></div><div class="line">	nx=x+step*math.cos(angle)</div><div class="line">	ny=y-step*math.sin(angle)</div><div class="line">	<span class="keyword">return</span> nx,ny</div></pre></td></tr></table></figure>
-<p>一元二次方程的定义是：ax² + bx + c = 0<br>编写一个函数，返回一元二次方程的两个解。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> math</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">quadratic</span><span class="params">(a,b,c)</span>:</span></div><div class="line">	t=math.sqrt(b*b<span class="number">-4</span>*a*c)</div><div class="line">	<span class="keyword">return</span> (-b + t) / (<span class="number">2</span> * a),( -b - t )/ (<span class="number">2</span> * a)</div><div class="line"><span class="keyword">print</span> quadratic(<span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>)</div><div class="line"><span class="keyword">print</span> quadratic(<span class="number">1</span>, <span class="number">-6</span>, <span class="number">5</span>)</div></pre></td></tr></table></figure>
-<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>求阶乘 n！  用fact（n）表示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span> <span class="params">(n,a,b,c)</span>:</span></div><div class="line">	<span class="keyword">if</span> n==<span class="number">1</span>:</div><div class="line">		<span class="keyword">print</span> a,<span class="string">'--&gt;'</span>,c</div><div class="line">		<span class="keyword">return</span> </div><div class="line">	move(n<span class="number">-1</span>,a,c,b)</div><div class="line">	<span class="keyword">print</span> a,<span class="string">'--&gt;'</span>,c</div><div class="line">	move(n<span class="number">-1</span>,b,a,c)</div><div class="line">move(<span class="number">4</span>,<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)</div></pre></td></tr></table></figure>
+        <h3 id="static变量"><a href="#static变量" class="headerlink" title="static变量"></a>static变量</h3><p>public class Helloworld{<br>    static String name=”nuocheng”;<br>    String name3=”jiajia”;<br>    public static void print(){<br>        System.out.println(name);<br>        //但是这里的使用System.out.println(name3);<br>        //原因是静态方法中只能使用静态变量，不能使用非静态方法<br>        //那如何调用非静态变量呢<br>        Helloworld n=new Helloworld()<br>        System.out.println(n.name3);<br>    }<br>}</p>
+<h3 id="static-方法"><a href="#static-方法" class="headerlink" title="static 方法"></a>static 方法</h3><p>public class Helloworld{<br>    public static void print(){<br>        System.out.println(“这是静态函数”);<br>    }<br>    public void show(){<br>        System.out.println(“这是非静态函数”);<br>    }<br>    public static void main(String[] args){<br>        //静态函数<br>        print();<br>        //非静态函数<br>        Helloworld hello=new Helloworld();<br>        hello.show();</p>
+<pre><code>}
+</code></pre><p>}</p>
+<h3 id="static-使用静态初始化块"><a href="#static-使用静态初始化块" class="headerlink" title="static 使用静态初始化块"></a>static 使用静态初始化块</h3><p>静态初始化块只在类加载时执行，且只会执行一次，同时静态初始化块只能给静态变量赋值，不能初始化普通的成员变量</p>
+<p>public class Helloworld{<br>    int num1;<br>    int num2;<br>    static int num3;<br>    //构造法<br>    public Helloworld{<br>        num1=91;<br>        System.out.println(“构造方法给num1赋值”);<br>    }<br>    //初始化块<br>    {<br>        num2=74;<br>        System.out.println(“初始化方法给num2赋值”);<br>    }<br>    //静态初始化块<br>    static{<br>        num3=83;<br>        System.out.println(“静态初始化方法给num3赋值”);<br>    }</p>
+<pre><code>public static void main(String[] args){
+    Helloworld hello=new Helloworld();
+    System.out.println(&quot;num1:&quot;+hello.num1);
+    System.out.println(&quot;num2:&quot;+hello.num2);
+    System.out.println(&quot;num3:&quot;+num3);
+
+    Helloworld hello2=new Helloworld();
+}
+</code></pre><p>}</p>
 
       
     </div>
@@ -385,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python3/" rel="tag"><i class="fa fa-tag"></i> Python3</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -398,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/07/hosts文件修复/" rel="next" title="hosts文件修复">
-                <i class="fa fa-chevron-left"></i> hosts文件修复
+              <a href="/2018/08/10/Linux之用户添加及文件权限/" rel="next" title="Linux之用户添加及文件权限">
+                <i class="fa fa-chevron-left"></i> Linux之用户添加及文件权限
               </a>
             
           </div>
@@ -407,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/08/有序链表的建立/" rel="prev" title="有序链表的建立">
-                有序链表的建立 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数"><span class="nav-number">1.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写函数"><span class="nav-number">2.</span> <span class="nav-text">编写函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回多值"><span class="nav-number">3.</span> <span class="nav-text">返回多值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归函数"><span class="nav-number">4.</span> <span class="nav-text">递归函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#static变量"><span class="nav-number">1.</span> <span class="nav-text">static变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-方法"><span class="nav-number">2.</span> <span class="nav-text">static 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-使用静态初始化块"><span class="nav-number">3.</span> <span class="nav-text">static 使用静态初始化块</span></a></li></ol></div>
             
 
           </div>
