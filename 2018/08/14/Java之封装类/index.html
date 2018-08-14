@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="java封装的实现步骤(编程规范)修改属性的可见性        |        |创建getter/setter方法        |        |在getter/setter方法中加入属性控制语句  比如：void getScreen(){}      void setScreen(){} java中的包定义包：package包名  import com.imooc.music.MyMu">
+<meta name="description" content="java封装的实现步骤(编程规范)12345678修改属性的可见性		|		|创建getter/setter方法		|		|在getter/setter方法中加入属性控制语句  比如：void getScreen()&amp;#123;&amp;#125;      void setScreen()&amp;#123;&amp;#125; java中的包定义包：package包名  import com.imooc.music.">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java之封装类">
 <meta property="og:url" content="http://yoursite.com/2018/08/14/Java之封装类/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="java封装的实现步骤(编程规范)修改属性的可见性        |        |创建getter/setter方法        |        |在getter/setter方法中加入属性控制语句  比如：void getScreen(){}      void setScreen(){} java中的包定义包：package包名  import com.imooc.music.MyMu">
+<meta property="og:description" content="java封装的实现步骤(编程规范)12345678修改属性的可见性		|		|创建getter/setter方法		|		|在getter/setter方法中加入属性控制语句  比如：void getScreen()&amp;#123;&amp;#125;      void setScreen()&amp;#123;&amp;#125; java中的包定义包：package包名  import com.imooc.music.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-14T10:04:45.155Z">
+<meta property="og:updated_time" content="2018-08-14T10:08:05.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java之封装类">
-<meta name="twitter:description" content="java封装的实现步骤(编程规范)修改属性的可见性        |        |创建getter/setter方法        |        |在getter/setter方法中加入属性控制语句  比如：void getScreen(){}      void setScreen(){} java中的包定义包：package包名  import com.imooc.music.MyMu">
+<meta name="twitter:description" content="java封装的实现步骤(编程规范)12345678修改属性的可见性		|		|创建getter/setter方法		|		|在getter/setter方法中加入属性控制语句  比如：void getScreen()&amp;#123;&amp;#125;      void setScreen()&amp;#123;&amp;#125; java中的包定义包：package包名  import com.imooc.music.">
 
 
 
@@ -352,112 +352,14 @@
       
 
       
-        <h3 id="java封装的实现步骤-编程规范"><a href="#java封装的实现步骤-编程规范" class="headerlink" title="java封装的实现步骤(编程规范)"></a>java封装的实现步骤(编程规范)</h3><p>修改属性的可见性<br>        |<br>        |<br>创建getter/setter方法<br>        |<br>        |<br>在getter/setter方法中加入属性控制语句  比如：void getScreen(){}      void setScreen(){}</p>
+        <h3 id="java封装的实现步骤-编程规范"><a href="#java封装的实现步骤-编程规范" class="headerlink" title="java封装的实现步骤(编程规范)"></a>java封装的实现步骤(编程规范)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">修改属性的可见性</div><div class="line">		|</div><div class="line">		|</div><div class="line">创建getter/setter方法</div><div class="line">		|</div><div class="line">		|</div><div class="line">在getter/setter方法中加入属性控制语句  比如：void <span class="function"><span class="title">getScreen</span></span>()&#123;&#125;      void <span class="function"><span class="title">setScreen</span></span>()&#123;&#125;</div></pre></td></tr></table></figure>
 <h3 id="java中的包"><a href="#java中的包" class="headerlink" title="java中的包"></a>java中的包</h3><pre><code>定义包：package包名
 
 import com.imooc.music.MyMusicClass
-</code></pre><h3 id="java-中的内部类"><a href="#java-中的内部类" class="headerlink" title="java 中的内部类"></a>java 中的内部类</h3><pre><code>//外部类helloworld
-public class Helloworld{
-
-    //内部类inner,类inner在helloworld的内部
-    public class inner{
-        //内部类的方法
-        public void show(){
-            System.out.println(&quot;welcome to my home&quot;);
-        }
-    }
-
-    public static void main(String[] args){
-        //创建外部类对象
-        Helloworld hello=new Helloworld();
-
-        inner i=hello.new inner();
-        //调用内部类对象的方法
-        i.show();
-    }
-}
-
-
-
- 如果外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，如果要访问外部类的成员变量，可以使用 this 关键字。如：
-
- public class outer{
-    int b=1;
-    public class inner{
-        int b=2;
-        public void test(){
-            System.out.println(&quot;访问外部类中的b&quot;+outer.this.b);
-            System.out.println(&quot;访问内部类中的b&quot;+b);
-        }
-    }
- }
-</code></pre><h3 id="Java-中的静态内部类"><a href="#Java-中的静态内部类" class="headerlink" title="Java 中的静态内部类"></a>Java 中的静态内部类</h3><pre><code>静态内部类是 static 修饰的内部类，这种内部类的特点是：
-
-1、 静态内部类不能直接访问外部类的非静态成员，但可以通过 new 外部类().成员 的方式访问 
-
-2、 如果外部类的静态成员与内部类的成员名称相同，可通过“类名.静态成员”访问外部类的静态成员；如果外部类的静态成员与内部类的成员名称不相同，则可通过“成员名”直接调用外部类的静态成员
-
-3、 创建静态内部类的对象时，不需要外部类的对象，可以直接创建 内部类 对象名= new 内部类();
-
-//外部类
-</code></pre><p>public class HelloWorld {</p>
-<pre><code>// 外部类中的静态变量score
-private static int score = 84;
-
-// 创建静态内部类
-public  static  class SInner {
-    // 内部类中的变量score
-    int score = 91;
-
-    public void show() {
-        System.out.println(&quot;访问外部类中的score：&quot; + HelloWorld.score    );
-        System.out.println(&quot;访问内部类中的score：&quot; + score);
-    }
-}
-
-// 测试静态内部类
-public static void main(String[] args) {
-    // 直接创建内部类的对象
-    SInner si=new SInner();
-
-    // 调用show方法
-    si.show();
-}
-</code></pre><p>}</p>
-<h3 id="java中的方法内部类："><a href="#java中的方法内部类：" class="headerlink" title="java中的方法内部类："></a>java中的方法内部类：</h3><pre><code>//外部类
-</code></pre><p>public class HelloWorld {</p>
-<pre><code>private String name = &quot;爱慕课&quot;;
-
-// 外部类中的show方法
-public void show() { 
-    // 定义方法内部类
-    class MInner {
-        int score = 83;
-        public int getScore() {
-            return score + 10;
-        }
-    }
-
-    // 创建方法内部类的对象
-    MInner n=new MInner();
-
-    // 调用内部类的方法
-   int newScore=n.getScore();
-
-    System.out.println(&quot;姓名：&quot; + HelloWorld.this.name + &quot;\n加分后的成绩：&quot; + newScore);
-}
-
-// 测试方法内部类
-public static void main(String[] args) {
-
-    // 创建外部类的对象
-    HelloWorld mo=new HelloWorld();
-
-    // 调用外部类的方法
-    mo.show();
-}
-</code></pre><p>}</p>
-
+</code></pre><h3 id="java-中的内部类"><a href="#java-中的内部类" class="headerlink" title="java 中的内部类"></a>java 中的内部类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//外部类helloworld</div><div class="line">public class Helloworld&#123;</div><div class="line">	</div><div class="line">	//内部类inner,类inner在helloworld的内部</div><div class="line">	public class inner&#123;</div><div class="line">		//内部类的方法</div><div class="line">		public void <span class="function"><span class="title">show</span></span>()&#123;</div><div class="line">			System.out.println(<span class="string">"welcome to my home"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//创建外部类对象</div><div class="line">		Helloworld hello=new Helloworld();</div><div class="line">		</div><div class="line">		inner i=hello.new inner();</div><div class="line">		//调用内部类对象的方法</div><div class="line">		i.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>如果外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，如果要访问外部类的成员变量，可以使用 this 关键字。如：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">	 public class outer&#123;</div><div class="line">		int b=1;</div><div class="line">		public class inner&#123;</div><div class="line">			int b=2;</div><div class="line">			public void <span class="function"><span class="title">test</span></span>()&#123;</div><div class="line">				System.out.println(<span class="string">"访问外部类中的b"</span>+outer.this.b);</div><div class="line">				System.out.println(<span class="string">"访问内部类中的b"</span>+b);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	 &#125;</div><div class="line">```	 </div><div class="line">	 </div><div class="line"><span class="comment">### Java 中的静态内部类</span></div><div class="line">	静态内部类是 static 修饰的内部类，这种内部类的特点是：</div><div class="line"></div><div class="line">	1、 静态内部类不能直接访问外部类的非静态成员，但可以通过 new 外部类().成员 的方式访问 </div><div class="line"></div><div class="line">	2、 如果外部类的静态成员与内部类的成员名称相同，可通过“类名.静态成员”访问外部类的静态成员；如果外部类的静态成员与内部类的成员名称不相同，则可通过“成员名”直接调用外部类的静态成员</div><div class="line"></div><div class="line">	3、 创建静态内部类的对象时，不需要外部类的对象，可以直接创建 内部类 对象名= new 内部类();</div><div class="line">``` bash		</div><div class="line">	//外部类</div><div class="line">public class HelloWorld &#123;</div><div class="line">    </div><div class="line">    // 外部类中的静态变量score</div><div class="line">    private static int score = 84;</div><div class="line">    </div><div class="line">    // 创建静态内部类</div><div class="line">	public  static  class SInner &#123;</div><div class="line">        // 内部类中的变量score</div><div class="line">        int score = 91;</div><div class="line">        </div><div class="line">		public void <span class="function"><span class="title">show</span></span>() &#123;</div><div class="line">			System.out.println(<span class="string">"访问外部类中的score："</span> + HelloWorld.score    );</div><div class="line">			System.out.println(<span class="string">"访问内部类中的score："</span> + score);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 测试静态内部类</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// 直接创建内部类的对象</div><div class="line">        SInner si=new SInner();</div><div class="line">        </div><div class="line">        // 调用show方法</div><div class="line">		si.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="java中的方法内部类："><a href="#java中的方法内部类：" class="headerlink" title="java中的方法内部类："></a>java中的方法内部类：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">	//外部类</div><div class="line">public class HelloWorld &#123;</div><div class="line">    </div><div class="line">    private String name = <span class="string">"爱慕课"</span>;</div><div class="line">    </div><div class="line">    // 外部类中的show方法</div><div class="line">    public void <span class="function"><span class="title">show</span></span>() &#123; </div><div class="line">		// 定义方法内部类</div><div class="line">		class MInner &#123;</div><div class="line">			int score = 83;</div><div class="line">			public int <span class="function"><span class="title">getScore</span></span>() &#123;</div><div class="line">				<span class="built_in">return</span> score + 10;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">        </div><div class="line">		// 创建方法内部类的对象</div><div class="line">        MInner n=new MInner();</div><div class="line">        </div><div class="line">        // 调用内部类的方法</div><div class="line">	   int newScore=n.getScore();</div><div class="line">        </div><div class="line">		System.out.println(<span class="string">"姓名："</span> + HelloWorld.this.name + <span class="string">"\n加分后的成绩："</span> + newScore);</div><div class="line">	&#125;</div><div class="line">    </div><div class="line">	// 测试方法内部类</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">        </div><div class="line">		// 创建外部类的对象</div><div class="line">        HelloWorld mo=new HelloWorld();</div><div class="line">        </div><div class="line">        // 调用外部类的方法</div><div class="line">		mo.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -651,7 +553,7 @@ public static void main(String[] args) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java封装的实现步骤-编程规范"><span class="nav-number">1.</span> <span class="nav-text">java封装的实现步骤(编程规范)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java中的包"><span class="nav-number">2.</span> <span class="nav-text">java中的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-中的内部类"><span class="nav-number">3.</span> <span class="nav-text">java 中的内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-中的静态内部类"><span class="nav-number">4.</span> <span class="nav-text">Java 中的静态内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java中的方法内部类："><span class="nav-number">5.</span> <span class="nav-text">java中的方法内部类：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java封装的实现步骤-编程规范"><span class="nav-number">1.</span> <span class="nav-text">java封装的实现步骤(编程规范)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java中的包"><span class="nav-number">2.</span> <span class="nav-text">java中的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-中的内部类"><span class="nav-number">3.</span> <span class="nav-text">java 中的内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java中的方法内部类："><span class="nav-number">4.</span> <span class="nav-text">java中的方法内部类：</span></a></li></ol></div>
             
 
           </div>
