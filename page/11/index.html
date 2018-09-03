@@ -361,7 +361,7 @@ Push(&amp;s,e):进栈。将元素e插入到栈S中作为栈顶元素
 Pop(&amp;s,&amp;e):出栈，重栈s中退出栈顶元素，并将其值赋给e
 GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋给e
 */
-代码块123456789101112131415161718//顺序栈类型typedef struct &#
+代码块123456789101112131415161718//顺序栈类型typedef struct &#123;    int data[maxsize];    int top;&#125;SqStack;/*top总是指向栈顶元素，初始值为-1当top=maxsize-1时不能再进栈（栈满）进栈时t
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -510,7 +510,7 @@ GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋
         
           
           ####把头像变成圆形，并且鼠标停留在上面发生旋转效果    修改themes\next\source\css_common\components\sidebar\sidebar-author.styl:
-代码块1234567891011121314151617181920212223242526	      .site-author-image &#123;  display: block;  margin: 0 auto;  padding: $site-author-image-padding;  max-width: $site-author-image-width;  height:
+代码块1234567891011121314151617181920212223242526	      .site-author-image &#123;  display: block;  margin: 0 auto;  padding: $site-author-image-padding;  max-width: $site-author-image-width;  height: $site-author-image-height;  border: site-author-image-border-color;  /* start*/  border-radius: 50%
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -939,7 +939,7 @@ GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cjlkxai3e004hv42fgqjzbisr"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cjlm9ogoc004okc2fz1ro442j"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -947,7 +947,7 @@ GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjlkxai3e004hv42fgqjzbisr"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjlm9ogoc004okc2fz1ro442j"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -965,7 +965,8 @@ GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋
           ###需要的工具：node.js      git      hexo 
 ###安装顺序    1、node.js    2、安装git
 ###安装heox    在git shell输入    cd /    npm install hexo-cli -g
-###安装博客所需要的文件    cd /    hexo init hexo                                (这里是添加的一个文件，存放的是构建博客所要用到的所有的文件,这里的hexo是新建的文件名称）    cd hexo      (然后进入这个文件下）    npm intal     （安装依赖文
+###安装博客所需要的文件    cd /    hexo init hexo                                (这里是添加的一个文件，存放的是构建博客所要用到的所有的文件,这里的hexo是新建的文件名称）    cd hexo      (然后进入这个文件下）    npm intal     （安装依赖文件）    hexo g            （编译 hexo generate）    hexo s            （开启本地服务hexo sever）
+###部署到服务器上    在库中
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1095,7 +1096,10 @@ GetTop(s,&amp;e):去栈顶元素，返回当前的栈顶元素，并将其值赋
 Quick StartCreate a new post1$ hexo new "My New Post"
 More info: Writing
 Run server1$ hexo server
-More in
+More info: Server
+Generate static files1$ hexo generate
+More info: Generating
+Deploy to remote sites1$ hexo
           ...
           <!--noindex-->
           <div class="post-button text-center">

@@ -354,7 +354,7 @@
         
           
           类的使用以及this的使用
-123456789101112131415161718192021222324252627282930313233package com.imooc;import java.util.Scanner;class Person&#123;	int age;	String name;	Person()&#123;&#125;	Person(String mingzi,int nianling)	&#123;		this.name=mingzi;		this.age=nianling;	&#125;	public void show() &#123;		System.ou
+123456789101112131415161718192021222324252627282930313233package com.imooc;import java.util.Scanner;class Person&#123;	int age;	String name;	Person()&#123;&#125;	Person(String mingzi,int nianling)	&#123;		this.name=mingzi;		this.age=nianling;	&#125;	public void show() &#123;		System.out.println(name+":"+age);	&#125;	public boolean isSameAge(Person p1) &#123;		 return this.age==p1.age
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -524,6 +524,15 @@ public static int add(int a,int b)
 {
     return a+b;
 }
+public static int add(int a,int b,int c)
+{
+    return a+b+c;
+}
+
+在主函数中如何调用：
+add(a,b);
+add(a,b,c);
+这就
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -672,7 +681,7 @@ public static int add(int a,int b)
         
           
           今天发现html中有一个好玩的属性animation：名字 时间 运动时的速度 循环次数与@keyframes 名字
-接下来看一下代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106&lt;!DOCTYPE html&gt; 
+接下来看一下代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106&lt;!DOCTYPE html&gt;  &lt;html&gt;   &lt;head&gt;    &lt;title&gt; 飛天网事--纯CSS代码实现图片轮播 &lt;/title&gt;    &lt;meta charset=
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -821,7 +830,7 @@ public static int add(int a,int b)
         
           
           今天看见过一些比较吸引人的网页效果图，比如博客里的阴影部分，照片的翘角效果。。。今天来实现这些特效功能
-阴影部分：123456789101112131415161718192021222324252627282930313233343536&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&gt;散文&lt;/title&gt;&lt;style type="text/css"&gt;.wrap&#123; width:70%; height:2
+阴影部分：123456789101112131415161718192021222324252627282930313233343536&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&gt;散文&lt;/title&gt;&lt;style type="text/css"&gt;.wrap&#123; width:70%; height:200px; background:#fff;&#125;.effect&#123; position:relative; box-shadow:0px 1px 4px rgba(0,0,0,0.3),
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -969,7 +978,7 @@ public static int add(int a,int b)
       
         
           
-          相关HTML代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133
+          相关HTML代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281291301311321331341351361371381391401411421431441451461471481491501511521531541551561571581591601611621631641651661
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1126,7 +1135,9 @@ public static int add(int a,int b)
     $pattern=&quot;#this#i&quot;;     /*这里的#号是定界符  i表示的是忽略大小写(模式修正符)*/
 
     //$pattern=&quot;#\d#&quot;; 匹配0-9的数字；
-    //$pattern=&quot;#\n
+    //$pattern=&quot;#\n#&quot;;   匹配非打印字符；
+    //$pattern=&quot;#\d#&quot;;  匹配的是0-9的数字；
+    //$pattern=&quot;#[0-9]#&quot;
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1284,7 +1295,7 @@ find属性是将查找的第一个相关属性就停止了
 例如
 find.all(&apos;a&apos;)[&apos;href&apos;]表示的是获取文本中a标签   并从a标签下获取href这个属性；
 find.all(&apos;a&apos;).get_text() 表示的是获取a标签的内容
-代码演示：123456789101112131415161718192021222324252627from bs4 import BeautifulSoupimport rehtml_
+代码演示：123456789101112131415161718192021222324252627from bs4 import BeautifulSoupimport rehtml_doc = """&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse's story&lt;/title&gt;&lt;/head&gt;&lt;bod
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1441,7 +1452,12 @@ find.all(&apos;a&apos;).get_text() 表示的是获取a标签的内容
 等价于
 String good=new String(&quot;avfg&quot;);
 
-#### 
+#### (2)、得出字符串的长度：
+int len=good.length();
+
+#### (3)、在字符串中指定索引位置的字符：
+String str=&quot;nuo cheng&quot;;
+cha
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1589,7 +1605,7 @@ String good=new String(&quot;avfg&quot;);
       
         
           
-          主界面是获取数据库里的相关内容：123456789101112131415161718192021222324&lt;?phpheader("content-type:text/html;charset=utf-8");$line = mysqli_connect("localhost","root","");if(!$line)&#123;	exit("open my_sql is false");&#125;mysqli_set_charset($line,"utf8");$res=mysqli_select_db($line,"acc");$str="select * from pro1
+          主界面是获取数据库里的相关内容：123456789101112131415161718192021222324&lt;?phpheader("content-type:text/html;charset=utf-8");$line = mysqli_connect("localhost","root","");if(!$line)&#123;	exit("open my_sql is false");&#125;mysqli_set_charset($line,"utf8");$res=mysqli_select_db($line,"acc");$str="select * from pro1";$result=mysqli_query($line,$str);echo '&lt;table width="600" border="1"&gt;';	echo '&lt;th&gt;编号&l
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1740,7 +1756,8 @@ String good=new String(&quot;avfg&quot;);
           mysql中如何将两个表关联查询；或者是3个表关联查询：/数据库中如何查两张表/select user.name ,goods.price from user join goods on user.gid=goods.gid;
 select  from user where gid in (select gid grom goods);select  from user where gid in (1,2,3);
 /数据库中，三张表/有表:学生表(学号,姓名,性别,年龄),课程表(课程号,课程名),修课表(学号,课程号,成绩)
-SELECT 姓名,课程名,成绩  FROM 学生表 JOIN 修
+SELECT 姓名,课程名,成绩  FROM 学生表 JOIN 修课表 ON 学生表.学号=修课表.学号       JOIN 课程表 ON 课程表.课程号=修课表.课程号      WHERE 成绩&gt;80
+PHP连接数据库一共有8步：1 连接数据库：$lin
           ...
           <!--noindex-->
           <div class="post-button text-center">

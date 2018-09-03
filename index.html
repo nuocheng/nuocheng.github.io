@@ -365,7 +365,11 @@ E remove(int index)
 protected void removeRange(int start, int end)
 删除链表中从某一个位置开始到某一个位置结束的元素。
 获取链表中的元素E get(int index)
-获取
+获取链表中指定位置处的元素.
+Object[] toArray()
+获取一个数组，数组中所有元素是链表中的元素.（即将链表转换为一个数组）
+修改某个元素
+E set(int index, E elemen
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -513,7 +517,7 @@ protected void removeRange(int start, int end)
       
         
           
-          输入框的验证主要是利用了两个属性onfocus(焦点的获得)与onblur(焦点失去)。输入框里的判断：如要是利用正则表达式来判断的，也就是在输入完即焦点的失去的那一刻进行判断，并进行提醒。下面的代码只是一个简单的验证：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;h
+          输入框的验证主要是利用了两个属性onfocus(焦点的获得)与onblur(焦点失去)。输入框里的判断：如要是利用正则表达式来判断的，也就是在输入完即焦点的失去的那一刻进行判断，并进行提醒。下面的代码只是一个简单的验证：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;head&gt;		&lt;meta charset="UTF-8"&gt;		&lt;title&gt;&lt;/title&gt;		&lt;script&gt;						window.onloa
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -665,7 +669,7 @@ protected void removeRange(int start, int end)
 java中的包定义包：package包名
 
 import com.imooc.music.MyMusicClass
-java 中的内部类1234567891011121314151617181920//外部类helloworldpublic class Helloworld&#123;		
+java 中的内部类1234567891011121314151617181920//外部类helloworldpublic class Helloworld&#123;		//内部类inner,类inner在helloworld的内部	public class inner&#123;		//内部类的方法		public void show()&#123;			Syste
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -813,7 +817,8 @@ java 中的内部类1234567891011121314151617181920//外部类helloworldpublic c
       
         
           
-          static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);        //原因是静态方法中只能使用静态变量，不能使用非静态方法        //那如何调用非静态变量呢        Helloworld n=new Helloworld()       
+          static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);        //原因是静态方法中只能使用静态变量，不能使用非静态方法        //那如何调用非静态变量呢        Helloworld n=new Helloworld()        System.out.println(n.name3);    }}
+static 方法public class Helloworld{    public static void print(){
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -974,7 +979,8 @@ chmod 600 file
 就会在该路径下创建对应的demo_1.txt demo_2.txt demo_3.txt demo_4.txt
 
 创建一个文件夹mkdir 文件名       直接创建一个树链mkdir -p father/son/grandson
-
+2、查看当前的路径 :pwd3、查看用户： who am i  或者 who mom likes4、创建用户①。su &lt;user&gt; 可以切换到用户user
+②。sudo &lt;cmd&g
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1133,7 +1139,7 @@ chmod 600 file
 
 再执行：pip install flask_sqlalchemy
 flask_sqlalchemy 数据库的使用1.使用：
-12345678from flask_sqlalchemy import SQLAlchemyapp.c
+12345678from flask_sqlalchemy import SQLAlchemyapp.config['SQLALCHEMY_DATABASE_URI']='mysql://root:@127.0.0.1/flask_sql_demo'app.config['SQLALCHEMY_TRAC
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1296,7 +1302,12 @@ flask_sqlalchemy 数据库的使用1.使用：
 
 4.查找
 
-    find_all(name,attr,recursive,s
+    find_all(name,attr,recursive,string,**kwargs)
+    这里的name就是HTML中的标签
+    attrs就是标签里的相关属性
+
+    当然也可以直接通过属性来查找：
+    find_all(attr=&qu
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1463,8 +1474,10 @@ flask_sqlalchemy 数据库的使用1.使用：
 {m}: 表示匹配m次
 {m,}：表示至少匹配m次
 {m,n}：表示匹配m到n次
+例子：简单匹配手机号码(单纯的匹配前两位与位数)
+re.match(&quot;1[3578][0-9]{9}&quot;,&quot;17854495690&quot;)
 
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/04/Python之正则表达式/#more" rel="contents">
@@ -1611,7 +1624,7 @@ flask_sqlalchemy 数据库的使用1.使用：
       
         
           
-          在登录界面时候出现提示性做用Flask request render_template,flash,abort12345678910111213141516171819202122232425from flask import Flask,request,render_template,flash,abortfrom flask import url_forapp=Flask(__name__)app.secret_key='123sdfasdff'#secret_key是进行消息加密@app.route('/login',methods=['POST'])def login_url():	f
+          在登录界面时候出现提示性做用Flask request render_template,flash,abort12345678910111213141516171819202122232425from flask import Flask,request,render_template,flash,abortfrom flask import url_forapp=Flask(__name__)app.secret_key='123sdfasdff'#secret_key是进行消息加密@app.route('/login',methods=['POST'])def login_url():	form=request.form	username=form.get('username')	password=form.get('password')		if not username:		flas
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1759,7 +1772,7 @@ flask_sqlalchemy 数据库的使用1.使用：
       
         
           
-          flask的路由1234567891011121314151617181920212223from flask import Flask,requestfrom flask import url_forapp=Flask(__name__)@app.route('/',methods=['GET','POST'])def index():    return '这是首页'@app.route('/logo/&lt;id&gt;')def showid(id):    return '输入的id号为'+id@app.route('/show')def show_id():    id=reque
+          flask的路由1234567891011121314151617181920212223from flask import Flask,requestfrom flask import url_forapp=Flask(__name__)@app.route('/',methods=['GET','POST'])def index():    return '这是首页'@app.route('/logo/&lt;id&gt;')def showid(id):    return '输入的id号为'+id@app.route('/show')def show_id():    id=request.args.get('id')    return '通过request得到的id'+id@app.route('/query_url')def query_url():    return 's
           ...
           <!--noindex-->
           <div class="post-button text-center">

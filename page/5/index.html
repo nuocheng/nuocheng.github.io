@@ -353,7 +353,7 @@
       
         
           
-          登录表达后的信息（实现表单交互requests的post方法）：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120import requestsu
+          登录表达后的信息（实现表单交互requests的post方法）：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120import requestsurl="https://www.douban.com/accounts/login"params=&#123;    'source':'index_nav',    'form_email':'**
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -502,7 +502,7 @@
         
           
           单进程的收集数据浪费的时间较长，这时候我们可以多开几个进程去访问那些网站，提高了效率
-多进程的使用方法：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859		from multiprocessing import Pool		pool=Pool(processes=4)		pool.map(func,iterable)``` ### 实例（爬取糗事网站）``` bashimport reimport timefrom multi
+多进程的使用方法：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859		from multiprocessing import Pool		pool=Pool(processes=4)		pool.map(func,iterable)``` ### 实例（爬取糗事网站）``` bashimport reimport timefrom multiprocessing import Poolimport requestsheaders=&#123;    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -651,7 +651,7 @@
         
           
           每一个网站中无缝滚动是常用到的一个特效，自己写了一个简单的无缝滚动（最简单的那种）；代码如下：
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;meta charset="utf-8"&gt;&lt;style&gt;*&#123;	margin:0;	padding:0;&#125;#div1&#123;	wid
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;meta charset="utf-8"&gt;&lt;style&gt;*&#123;	margin:0;	padding:0;&#125;#div1&#123;	width:712px;	height:108px;	margin:100px auto;	position:relative;	overflow:hidden;&#125;#div1 ul&#123;	p
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -800,7 +800,7 @@
         
           
           延时框的使用经常是用于导航栏的使用，下面是一个简单例子：
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;style&gt;div&#123;	float:left;	margin:10px;&#125;#div1&#123;	width:50px;	height:50px;	background:red;&#125;#div2&#123;	width:
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;style&gt;div&#123;	float:left;	margin:10px;&#125;#div1&#123;	width:50px;	height:50px;	background:red;&#125;#div2&#123;	width:250px;	height:250px;	background:gray;	display:none;&#125;&lt;/style&gt;&lt;script&gt;window.onload=f
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -949,7 +949,7 @@
         
           
           今天即兴的学了一会JavaScript的先关东西setinterval（定时器的使用）经常会用到图片的无缝滚动。。。下面是一个时间的设置
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&lt;html&gt;&lt;head&gt;	&lt;title&gt;&lt;/title&gt;	&lt;meta charset="utf-8"&gt;&lt;/head&gt;&lt;script&gt;function toDou(n)&#123;	if(n
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&lt;html&gt;&lt;head&gt;	&lt;title&gt;&lt;/title&gt;	&lt;meta charset="utf-8"&gt;&lt;/head&gt;&lt;script&gt;function toDou(n)&#123;	if(n&lt;10)		&#123;			return '0'+n;		&#125;		else		&#123;			return ''+n;		&#125;&#125;window.onload=func
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1107,7 +1107,11 @@
     print(s.split(&apos;.&apos;,1))                 #表示的是分割一次
     输出的是：[&apos;www&apos;, &apos;google.com&apos;]
 
-    print(
+    print(s.split(&apos;.&apos;,2)[1]                #表示的是分割2次取索引位置1的那一部分
+    输出的是：google
+
+    经典案例
+    s=&apo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1269,7 +1273,8 @@ headers={
 def get_into(url):
 
     # 获取html的页面，发送请求
-
+    wb_data=requests.get(url,headers=headers)           #headers的设置是给服务器一个证明 我们是浏览器
+    soup=Beautif
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1429,6 +1434,13 @@ $   匹配输入字符串的结束位置 例如：12$  表示的是以12结尾
     er\b        匹配的是teacher里的er
     er\B        匹配的是verb里的er
 （3）、个数/次数*    匹配前面的子表达式零次或者多次
++    匹配前面的子表达式一次或者多次
+？   匹配前面的子表达式零次或一次
+{n}   n是一个非负整数
+{n,}  n是一个非负整数
+{n,m}  m和n均为非负整数，其中n&lt;=m
+
+例
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1582,7 +1594,9 @@ pip install beautifulsoup4
 pip install lxml
 
 问题：bs4模块的添加file-&gt;settings……-&gt;project interpreter(右侧)-&gt;pip(双击)-&gt;输入bs4-&gt;点击下面的install
-问题：运行的时候出现cannot import name ‘HTMLParseError’找到Python35\Lib\site-packages\bs4\builder_ht
+问题：运行的时候出现cannot import name ‘HTMLParseError’找到Python35\Lib\site-packages\bs4\builder_htmlparser.py文件打开，把HTMLParseError注释掉就可以了
+导入bs4库：from bs4 import BeautifulSoup     //大小写一定要注意
+相关属性：（1）、
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1731,7 +1745,7 @@ pip install lxml
         
           
           刚了解到爬虫的一些相关知识，之前弄了一个框架，现在把代码发出来
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273import requestsimport jsonurl='http://httpbin.org/get'url1='http://httpbin.org/post'url2='http://httpbin.org/cookies'r=requests.get
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273import requestsimport jsonurl='http://httpbin.org/get'url1='http://httpbin.org/post'url2='http://httpbin.org/cookies'r=requests.get(url)print("the first:")print(r.url)print("\n")payload=&#123;    'the':'second'&#125;d=requests.get(
           ...
           <!--noindex-->
           <div class="post-button text-center">

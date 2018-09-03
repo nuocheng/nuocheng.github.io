@@ -362,7 +362,14 @@ print(r.cookies)         //打印coolie信息
 print(r.text)             //以文本方式打印网页源码
 
 基本的get请求（1）、无参数：
-impr
+improt requests     //引入request
+r=requests.get('网址')   //配置url
+print(r.url);
+
+（2）、有参数：
+第一种直接将参数放在url内
+
+i
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -516,7 +523,12 @@ impr
                                 //如果不加参数，直接读取到结尾
 4、f.tell();                    //表示的是此时指针所在的位置。
 5、f.seek(offset,start);        //seek表示的是让指针指向所在的位置
-                                //offset是指针移动
+                                //offset是指针移动的次数
+                                //start是从什么地方开始移动
+
+6、将文件的内容一行一行的显示出来：
+    line=list(f);
+    for 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -832,7 +844,14 @@ for i in range(len(com)):
 
 temp=com[1];
 com[1]=com[0];
-com
+com[0]=temp;
+for i in range(len(com)):
+print(com[i]);
+
+全局变量的调用：global 变量名
+创建函数：def 函数名():
+    函数体；
+内嵌函数
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -989,7 +1008,15 @@ com
 
 输出的是I love you
 
-如果是str=&apos;c:
+如果是str=&apos;c:\now&apos;
+        print(str)
+
+        输出的是：
+        c
+        ow
+
+        str=r&apos;c:\now&apos;
+ 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1117,7 +1144,7 @@ com
           
           在结构体中使用中，自己和一个同学因为这个执不执行问题吵了起来。。。。。
 void (*fn)(void)函数指针fn为一个指针类型的变量，此指针类型指向一个函数
-下面写记几个程序，来观察是否执行123456789101112131415161718192021222324252627#include &lt;iostream&gt;using namespace std;typedef struct node&#123;    void (*fn)(void);    struct node *next;&#125;Node,*bnode;void show()&#123;    cout&l
+下面写记几个程序，来观察是否执行123456789101112131415161718192021222324252627#include &lt;iostream&gt;using namespace std;typedef struct node&#123;    void (*fn)(void);    struct node *next;&#125;Node,*bnode;void show()&#123;    cout&lt;&lt;"11111\n";&#125;void show2(void (*fn)(void))&#123;    cout&lt;&lt;"22222\n";&#125;int main()&#
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1273,7 +1300,10 @@ accfile&lt;&lt;str1&lt;&lt;endl;    //这里是在文件里写str1代表的东�
 ofstream accfile;
 accfile.write((char *)a,sizeof(a));     //这里的char *相当于装换成字符串类型，后面的是a的长度；
 accfile.close();
-二、在频现中现实文件里的内容if
+二、在频现中现实文件里的内容ifstream accfile(&quot;打开的文件名&quot;);
+accfile&gt;&gt;name;    //将文件中的文字赋值给name
+
+accfile&gt;&gt;passwor
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1421,7 +1451,7 @@ accfile.close();
       
         
           
-          这是在提交平台上的练习题的代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980#include &lt;bits/stdc++.h&gt;#define INF 0x3f3f3f3f#define N 1100using namespace std;int mp[N][N]; //邻接矩阵存储图int dis[N];   //标记数组int v
+          这是在提交平台上的练习题的代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980#include &lt;bits/stdc++.h&gt;#define INF 0x3f3f3f3f#define N 1100using namespace std;int mp[N][N]; //邻接矩阵存储图int dis[N];   //标记数组int vis[N];   //用来记录当前生成树到每个节点的距离int sum, n, m;//n代表节点数  sum保存生成树的权值总和void prim()&#123;    sum=0;    //最小
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1587,7 +1617,13 @@ describe 表名；
 3、删除表：
 drop table 表名
 4、修改表名：
-alter tab
+alter table 旧名 rename 新名；
+三、表内列的命令1、查看表：
+describe 表名；
+2、添加列：
+alter table 表名 add 列名 数据类型；
+3、删除列：
+alter table 表
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1738,7 +1774,8 @@ alter tab
           如何删除下载的MySQL
 1、控制面板里的增加删除程序内进行删除2、开始-&gt;运行-&gt; regedit 看看注册表里这几个地方删除没有　　HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL 目录删除 
 　　HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL 目录删除 
-　　HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Event
+　　HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL 目录删除（我卸载的时候没有找到，略过后仍达到完全卸载的目的。） 
+3、这一条是很关键的 删除文件夹C:\Users\All Users\Applicatio
           ...
           <!--noindex-->
           <div class="post-button text-center">
