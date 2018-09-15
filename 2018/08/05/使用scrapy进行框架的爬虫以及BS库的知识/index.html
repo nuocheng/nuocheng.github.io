@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="BeautifulSoup库的使用：1.解析HTML代码：     &amp;lt;p class=&amp;quot;title&amp;quot;&amp;gt; adfasdfasd&amp;lt;/p&amp;gt;      这里的class=&amp;quot;title&amp;quot; 是attributes     这里的p是name  2.进行准确查找：     soup.body.contents[1]  3.爬取网站进行标签树的遍历：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-05T09:32:04.330Z">
+<meta property="og:updated_time" content="2018-09-15T06:42:43.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用scrapy进行框架的爬虫以及BS库的知识">
 <meta name="twitter:description" content="BeautifulSoup库的使用：1.解析HTML代码：     &amp;lt;p class=&amp;quot;title&amp;quot;&amp;gt; adfasdfasd&amp;lt;/p&amp;gt;      这里的class=&amp;quot;title&amp;quot; 是attributes     这里的p是name  2.进行准确查找：     soup.body.contents[1]  3.爬取网站进行标签树的遍历：">
@@ -373,6 +373,7 @@
 
     当然也可以直接通过属性来查找：
     find_all(attr=&quot;name&quot;)
+    find_all(&apos;a&apos;,attrs={&apos;class&apos;:&apos;cp-feedback&apos;})
 </code></pre><h3 id="Scrapy爬虫框架（重用命令以及类）："><a href="#Scrapy爬虫框架（重用命令以及类）：" class="headerlink" title="Scrapy爬虫框架（重用命令以及类）："></a>Scrapy爬虫框架（重用命令以及类）：</h3><pre><code>1.命令格式：
     scrapy &lt;command&gt; [options] [args]
 
