@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="re模块常用的方法：/match()方法，从字符串头部开始匹配/ 使用match匹配，第一个参数为正则表达式，第二个是要匹配的字符串 group()是用来输出匹配的内容 span()是用来输出匹配的位置  1234567891011121314151617import recontent=&apos;The 123456 is my one phone number.&apos;print(len(content))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-21T05:39:14.694Z">
+<meta property="og:updated_time" content="2018-10-21T05:48:55.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python之re模块的使用">
 <meta name="twitter:description" content="re模块常用的方法：/match()方法，从字符串头部开始匹配/ 使用match匹配，第一个参数为正则表达式，第二个是要匹配的字符串 group()是用来输出匹配的内容 span()是用来输出匹配的位置  1234567891011121314151617import recontent=&apos;The 123456 is my one phone number.&apos;print(len(content))">
@@ -375,6 +375,13 @@ result=contents.findall(html.text) 表示的是从HTML中查找contents里的内
 
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line"><span class="string">&lt;div id="songs-list"&gt;</span></div><div class="line"><span class="string">&lt;h2 class="title"&gt;歌单&lt;/h2&gt;</span></div><div class="line"><span class="string">&lt;p class="introduction"&gt;歌单列表&lt;/p&gt;</span></div><div class="line"><span class="string">&lt;ul id="list" class="list-group"&gt;</span></div><div class="line"><span class="string">&lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;li data-view="7"&gt;</span></div><div class="line"><span class="string">&lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></div><div class="line"><span class="string">&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;li data-view="4" class="active"&gt;</span></div><div class="line"><span class="string">&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></div><div class="line"><span class="string">&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="程慧玲"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;li data-veiw="5"&gt;</span></div><div class="line"><span class="string">&lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></div><div class="line"><span class="string">&lt;/li&gt;</span></div><div class="line"><span class="string">&lt;/ul&gt;</span></div><div class="line"><span class="string">&lt;/div&gt;</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line">result = re.findall(<span class="string">'&lt;li.*?href="(.*?)".*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>, html, re.S)</div><div class="line"><span class="keyword">if</span> result:</div><div class="line">	print(result)</div><div class="line">	<span class="keyword">for</span> res <span class="keyword">in</span> result:</div><div class="line">		print(res[<span class="number">0</span>], res[<span class="number">1</span>], res[<span class="number">2</span>])</div></pre></td></tr></table></figure>
+
+
+### 文件的简单操作：
+import os
+# os.path.exists(path)  判断一个目录是否存在
+#os.makedirs(path) 多层创建目录
+#os.mkdir(path) 创建目录
 </code></pre>
       
     </div>
