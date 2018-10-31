@@ -97,14 +97,14 @@
 <meta name="description" content="static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java之static使用">
-<meta property="og:url" content="http://yoursite.com/2018/08/13/Java之static使用/index.html">
+<meta property="og:title" content="Java之static使用之final的使用">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/Java之static使用之final的使用/index.html">
 <meta property="og:site_name" content="诺铖的博客">
 <meta property="og:description" content="static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T11:25:18.962Z">
+<meta property="og:updated_time" content="2018-10-31T07:14:15.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java之static使用">
+<meta name="twitter:title" content="Java之static使用之final的使用">
 <meta name="twitter:description" content="static变量public class Helloworld{    static String name=”nuocheng”;    String name3=”jiajia”;    public static void print(){        System.out.println(name);        //但是这里的使用System.out.println(name3);">
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/13/Java之static使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/Java之static使用之final的使用/"/>
 
 
 
 
 
-  <title>Java之static使用 | 诺铖的博客</title>
+  <title>Java之static使用之final的使用 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Java之static使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Java之static使用之final的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java之static使用</h1>
+          <h1 class="post-title" itemprop="name headline">Java之static使用之final的使用</h1>
         
 
         <div class="post-meta">
@@ -367,7 +367,17 @@
     Helloworld hello2=new Helloworld();
 }
 </code></pre><p>}</p>
-
+<h3 id="final的使用规范："><a href="#final的使用规范：" class="headerlink" title="final的使用规范："></a>final的使用规范：</h3><pre><code>1.final定义的类不能被继承
+2.final定义的数据成员不能被更改
+3.final定义的方法不能被重写
+</code></pre><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><pre><code>A类是B类的父类
+{
+    A a;
+    B b=new B();
+    a=b;
+}
+(用父类引用指向子类，a不能引用B类中新方法，如果A类（父类）的方法被B类（子类）重写，a可以作用到重写的方法上)
+</code></pre>
       
     </div>
     
@@ -565,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#static变量"><span class="nav-number">1.</span> <span class="nav-text">static变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-方法"><span class="nav-number">2.</span> <span class="nav-text">static 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-使用静态初始化块"><span class="nav-number">3.</span> <span class="nav-text">static 使用静态初始化块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#static变量"><span class="nav-number">1.</span> <span class="nav-text">static变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-方法"><span class="nav-number">2.</span> <span class="nav-text">static 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-使用静态初始化块"><span class="nav-number">3.</span> <span class="nav-text">static 使用静态初始化块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final的使用规范："><span class="nav-number">4.</span> <span class="nav-text">final的使用规范：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">5.</span> <span class="nav-text">注意点</span></a></li></ol></div>
             
 
           </div>
