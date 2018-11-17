@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了 下面是我利用百度云写的程序：解释：configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）1234567891011121314151617181920212223242526272829fro">
+<meta name="description" content="今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了 下面是我利用百度云写的程序：解释：configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）0000000000000000000000123456789101112131415161718192">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python之图片内的文字识别">
 <meta property="og:url" content="http://yoursite.com/2018/11/05/python之图片内的文字识别/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了 下面是我利用百度云写的程序：解释：configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）1234567891011121314151617181920212223242526272829fro">
+<meta property="og:description" content="今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了 下面是我利用百度云写的程序：解释：configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）0000000000000000000000123456789101112131415161718192">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-05T13:24:29.359Z">
+<meta property="og:updated_time" content="2018-11-05T13:48:38.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python之图片内的文字识别">
-<meta name="twitter:description" content="今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了 下面是我利用百度云写的程序：解释：configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）1234567891011121314151617181920212223242526272829fro">
+<meta name="twitter:description" content="今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了 下面是我利用百度云写的程序：解释：configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）0000000000000000000000123456789101112131415161718192">
 
 
 
@@ -353,7 +353,7 @@
 
       
         <p>今天写书上的一篇文章，有很多的字，而却最让人伤心的事就是，里面有很多字我不认识，然后我就利用百度里api进行的图片识别，果然效率很高，很快的就完工了</p>
-<p>下面是我利用百度云写的程序：<br>解释：<br>configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipOcr</div><div class="line"><span class="keyword">import</span> configparser</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiDuAPI</span>:</span></div><div class="line">    <span class="string">"""调用百度云的api实现图片文字识别"""</span></div><div class="line">    <span class="comment">#初始化函数，将开始运行的数值传入，并进行信息的提交</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        target=configparser.ConfigParser()</div><div class="line">        target.read(<span class="string">'password.ini'</span>)</div><div class="line">        APPID=target.get(<span class="string">'我的工单'</span>,<span class="string">'APPID'</span>)</div><div class="line">        APIKey=target.get(<span class="string">'我的工单'</span>,<span class="string">'APIKEY'</span>)</div><div class="line">        SecretKey=target.get(<span class="string">'我的工单'</span>,<span class="string">'SECRETKEY'</span>)</div><div class="line">        <span class="comment">#类内都可用</span></div><div class="line">        self.client=AipOcr(APPID,APIKey,SecretKey)</div><div class="line">    <span class="comment">#实例方法、普通方法</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">picture2Text</span><span class="params">(self,filePath)</span>:</span></div><div class="line">        <span class="comment">#读取图片</span></div><div class="line">        image=self.getPicture(filePath)</div><div class="line">        <span class="comment">#识别图片</span></div><div class="line">        text=self.client.basicGeneral(image)</div><div class="line">        print(text)</div><div class="line">    <span class="comment">#读取图片</span></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPicture</span><span class="params">(filePath)</span>:</span></div><div class="line">        <span class="keyword">with</span> open(filePath,<span class="string">'rb'</span>) <span class="keyword">as</span> fp:</div><div class="line">            <span class="keyword">return</span> fp.read()</div><div class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</div><div class="line">    baiduapi=BaiDuAPI()</div><div class="line">    baiduapi.picture2Text(<span class="string">'1.jpg'</span>)</div></pre></td></tr></table></figure></p>
+<p>下面是我利用百度云写的程序：<br>解释：<br>configparser是用来读取配置文件的（在该文件中含有你存储百度云里的秘钥信息：[我的工单]是文件的开始）0000000000000000000000<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipOcr</div><div class="line"><span class="keyword">import</span> configparser</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiDuAPI</span>:</span></div><div class="line">    <span class="string">"""调用百度云的api实现图片文字识别"""</span></div><div class="line">    <span class="comment">#初始化函数，将开始运行的数值传入，并进行信息的提交</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        target=configparser.ConfigParser()</div><div class="line">        target.read(<span class="string">'password.ini'</span>)</div><div class="line">        APPID=target.get(<span class="string">'我的工单'</span>,<span class="string">'APPID'</span>)</div><div class="line">        APIKey=target.get(<span class="string">'我的工单'</span>,<span class="string">'APIKEY'</span>)</div><div class="line">        SecretKey=target.get(<span class="string">'我的工单'</span>,<span class="string">'SECRETKEY'</span>)</div><div class="line">        <span class="comment">#类内都可用</span></div><div class="line">        self.client=AipOcr(APPID,APIKey,SecretKey)</div><div class="line">    <span class="comment">#实例方法、普通方法</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">picture2Text</span><span class="params">(self,filePath)</span>:</span></div><div class="line">        <span class="comment">#读取图片</span></div><div class="line">        image=self.getPicture(filePath)</div><div class="line">        <span class="comment">#识别图片</span></div><div class="line">        text=self.client.basicGeneral(image)</div><div class="line">        print(text)</div><div class="line">    <span class="comment">#读取图片</span></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPicture</span><span class="params">(filePath)</span>:</span></div><div class="line">        <span class="keyword">with</span> open(filePath,<span class="string">'rb'</span>) <span class="keyword">as</span> fp:</div><div class="line">            <span class="keyword">return</span> fp.read()</div><div class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</div><div class="line">    baiduapi=BaiDuAPI()</div><div class="line">    baiduapi.picture2Text(<span class="string">'1.jpg'</span>)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -393,6 +393,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/17/数据可视化/" rel="prev" title="数据可视化">
+                数据可视化 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,7 +487,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">113</span>
+                <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -525,7 +529,7 @@
         
         
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=414586175&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=451629443&auto=1&height=66"></iframe>
 
       </section>
 
