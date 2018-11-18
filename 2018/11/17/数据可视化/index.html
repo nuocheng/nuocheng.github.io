@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="视图相关知识点：‘’’python import matplotlib.pyplot as plt #曲线图input_values=[1,2,3,4,5]squares=[1,4,9,6,25] #设置线条的plt.plot(input_values,squares,linewidth=5) #设置图标标题，并给坐标轴加上标签plt.title(“salery of the year”,font">
+<meta name="description" content="视图相关知识点：12345678910111213141516171819202122import matplotlib.pyplot as plt#曲线图input_values=[1,2,3,4,5]squares=[1,4,9,6,25]#设置线条的plt.plot(input_values,squares,linewidth=5)#设置图标标题，并给坐标轴加上标签plt.title(&quot;sa">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据可视化">
 <meta property="og:url" content="http://yoursite.com/2018/11/17/数据可视化/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="视图相关知识点：‘’’python import matplotlib.pyplot as plt #曲线图input_values=[1,2,3,4,5]squares=[1,4,9,6,25] #设置线条的plt.plot(input_values,squares,linewidth=5) #设置图标标题，并给坐标轴加上标签plt.title(“salery of the year”,font">
+<meta property="og:description" content="视图相关知识点：12345678910111213141516171819202122import matplotlib.pyplot as plt#曲线图input_values=[1,2,3,4,5]squares=[1,4,9,6,25]#设置线条的plt.plot(input_values,squares,linewidth=5)#设置图标标题，并给坐标轴加上标签plt.title(&quot;sa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-17T11:15:56.695Z">
+<meta property="og:updated_time" content="2018-11-18T11:45:54.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据可视化">
-<meta name="twitter:description" content="视图相关知识点：‘’’python import matplotlib.pyplot as plt #曲线图input_values=[1,2,3,4,5]squares=[1,4,9,6,25] #设置线条的plt.plot(input_values,squares,linewidth=5) #设置图标标题，并给坐标轴加上标签plt.title(“salery of the year”,font">
+<meta name="twitter:description" content="视图相关知识点：12345678910111213141516171819202122import matplotlib.pyplot as plt#曲线图input_values=[1,2,3,4,5]squares=[1,4,9,6,25]#设置线条的plt.plot(input_values,squares,linewidth=5)#设置图标标题，并给坐标轴加上标签plt.title(&quot;sa">
 
 
 
@@ -352,34 +352,9 @@
       
 
       
-        <p>视图相关知识点：<br>‘’’python</p>
-<p>import matplotlib.pyplot as plt</p>
-<p>#曲线图<br>input_values=[1,2,3,4,5]<br>squares=[1,4,9,6,25]</p>
-<p>#设置线条的<br>plt.plot(input_values,squares,linewidth=5)</p>
-<p>#设置图标标题，并给坐标轴加上标签<br>plt.title(“salery of the year”,fontsize=24)<br>plt.xlabel(“year”,fontsize=14)<br>plt.ylabel(“salery”,fontsize=14)</p>
-<p>#设置刻度标记的大小<br>plt.show()</p>
-<p>#散点图</p>
-<p>#plt.scatter(2,4)</p>
-<p>#plt.show()</p>
-<p>#导入多个点<br>x=list(range(1,20))<br>y=[n**2 for n in x]<br>plt.scatter(x,y,s=10,c=y,cmap=plt.cm.Reds)<br>plt.show()<br>‘’’</p>
-<p>将数据存入.csv文件里<br>‘’’python<br>import pandas as pd #数据框导入数据.to_csv</p>
-<p>import matplotlib.pyplot as plt #绘图</p>
-<p>import matplotlib as mpl  #配置字体</p>
-<p>mpl.rcParams[“font.sans-serif”]=[“SimHei”]    #绘图中文字符解决</p>
-<p>将爬取下来的数据进行保存到本地的方法之一<br>import pandas as pd</p>
-<p>通过数组里的中，含有数组类型的<br>data=pd.DataFrame(arr)<br>data.to_csv(‘d:/show_data/lagou_python.csv’,header=True,index=False,mode=”a+”)<br>这个表示的是创建csv文件(to_csv(‘路径’,是否保留头标记，是否保留列标记,a+表示文件会继续添加数据，不覆盖之前的数据))</p>
-<p>#读取文件<br>data3=pd.read_csv(‘D:/show_Date/lagou_python.csv’)</p>
-<p>#表示的是数据的前几（10）行<br>data3.head(10)</p>
-<p>#表示数据的后几行(后10行)<br>data3.tail(10)</p>
-<p>#表示第几列,表示的是第2列<br>data3.iloc[:,2]</p>
-<p>#统计每一列中相同名称的个数 kind表示形式bar是直的，barh表示但是横向的<br>data3[‘学历要求’].value_counts().plot(kind=’bar’)<br>plt.title(“学历要求”,fontsize=24)<br>plt.show()</p>
-<p>#统计工作时的工作经验<br>data3[‘工作经历’].value_counts().plot(kind=’barh’)<br>plt.title(“工作经历”,fontsize=24)<br>plt.show()</p>
-<p>#饼状图<br>data3[‘工作地区’].value_counts().plot(kind=’pie’,autopct=’%1.2f%%’)<br>plt.title(“工作地区”,fontsize=24)<br>plt.show()</p>
-<p>‘’’</p>
-<p>存入的数据形式<br>‘’’python<br> info={<br>            ‘公司代号’:rs[‘companyId’],<br>            ‘公司名字’:rs[‘companyFullName’],<br>            ‘职位’:rs[‘positionName’],<br>            ‘工资待遇’:rs[‘salary’],<br>            ‘学历要求’:rs[‘education’],<br>            ‘工作地区’:rs[‘city’],<br>            ‘工作经历’:rs[‘workYear’]<br>        }</p>
-<pre><code># print(info)
- arr.append(info)
-</code></pre><p>‘’’</p>
+        <h3 id="视图相关知识点："><a href="#视图相关知识点：" class="headerlink" title="视图相关知识点："></a>视图相关知识点：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="comment">#曲线图</span></div><div class="line">input_values=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</div><div class="line">squares=[<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">25</span>]</div><div class="line"><span class="comment">#设置线条的</span></div><div class="line">plt.plot(input_values,squares,linewidth=<span class="number">5</span>)</div><div class="line"><span class="comment">#设置图标标题，并给坐标轴加上标签</span></div><div class="line">plt.title(<span class="string">"salery of the year"</span>,fontsize=<span class="number">24</span>)</div><div class="line">plt.xlabel(<span class="string">"year"</span>,fontsize=<span class="number">14</span>)</div><div class="line">plt.ylabel(<span class="string">"salery"</span>,fontsize=<span class="number">14</span>)</div><div class="line"><span class="comment">#设置刻度标记的大小</span></div><div class="line">plt.show()</div><div class="line"></div><div class="line"><span class="comment">#散点图</span></div><div class="line"><span class="comment">#plt.scatter(2,4)</span></div><div class="line"><span class="comment">#plt.show()</span></div><div class="line"><span class="comment">#导入多个点</span></div><div class="line">x=list(range(<span class="number">1</span>,<span class="number">20</span>))</div><div class="line">y=[n**<span class="number">2</span> <span class="keyword">for</span> n <span class="keyword">in</span> x]</div><div class="line">plt.scatter(x,y,s=<span class="number">10</span>,c=y,cmap=plt.cm.Reds)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<h3 id="将数据存入-csv文件里"><a href="#将数据存入-csv文件里" class="headerlink" title="将数据存入.csv文件里"></a>将数据存入.csv文件里</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd <span class="comment">#数据框导入数据.to_csv</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt <span class="comment">#绘图</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl  <span class="comment">#配置字体</span></div><div class="line"></div><div class="line">mpl.rcParams[<span class="string">"font.sans-serif"</span>]=[<span class="string">"SimHei"</span>]    <span class="comment">#绘图中文字符解决</span></div><div class="line"></div><div class="line">将爬取下来的数据进行保存到本地的方法之一</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line">通过数组里的中，含有数组类型的</div><div class="line">data=pd.DataFrame(arr)</div><div class="line">data.to_csv(<span class="string">'d:/show_data/lagou_python.csv'</span>,header=<span class="keyword">True</span>,index=<span class="keyword">False</span>,mode=<span class="string">"a+"</span>)</div><div class="line">这个表示的是创建csv文件(to_csv(<span class="string">'路径'</span>,是否保留头标记，是否保留列标记,a+表示文件会继续添加数据，不覆盖之前的数据))</div><div class="line"></div><div class="line"><span class="comment">#读取文件</span></div><div class="line">data3=pd.read_csv(<span class="string">'D:/show_Date/lagou_python.csv'</span>)</div><div class="line"></div><div class="line"><span class="comment">#表示的是数据的前几（10）行</span></div><div class="line">data3.head(<span class="number">10</span>)</div><div class="line"><span class="comment">#表示数据的后几行(后10行)</span></div><div class="line">data3.tail(<span class="number">10</span>)</div><div class="line"><span class="comment">#表示第几列,表示的是第2列</span></div><div class="line">data3.iloc[:,<span class="number">2</span>]</div><div class="line"></div><div class="line"><span class="comment">#统计每一列中相同名称的个数 kind表示形式bar是直的，barh表示但是横向的</span></div><div class="line">data3[<span class="string">'学历要求'</span>].value_counts().plot(kind=<span class="string">'bar'</span>)</div><div class="line">plt.title(<span class="string">"学历要求"</span>,fontsize=<span class="number">24</span>)</div><div class="line">plt.show()</div><div class="line"></div><div class="line"><span class="comment">#统计工作时的工作经验</span></div><div class="line">data3[<span class="string">'工作经历'</span>].value_counts().plot(kind=<span class="string">'barh'</span>)</div><div class="line">plt.title(<span class="string">"工作经历"</span>,fontsize=<span class="number">24</span>)</div><div class="line">plt.show()</div><div class="line"></div><div class="line"><span class="comment">#饼状图</span></div><div class="line">data3[<span class="string">'工作地区'</span>].value_counts().plot(kind=<span class="string">'pie'</span>,autopct=<span class="string">'%1.2f%%'</span>)</div><div class="line">plt.title(<span class="string">"工作地区"</span>,fontsize=<span class="number">24</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<h3 id="存入的数据形式"><a href="#存入的数据形式" class="headerlink" title="存入的数据形式"></a>存入的数据形式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">info=&#123;</div><div class="line">           <span class="string">'公司代号'</span>:rs[<span class="string">'companyId'</span>],</div><div class="line">           <span class="string">'公司名字'</span>:rs[<span class="string">'companyFullName'</span>],</div><div class="line">           <span class="string">'职位'</span>:rs[<span class="string">'positionName'</span>],</div><div class="line">           <span class="string">'工资待遇'</span>:rs[<span class="string">'salary'</span>],</div><div class="line">           <span class="string">'学历要求'</span>:rs[<span class="string">'education'</span>],</div><div class="line">           <span class="string">'工作地区'</span>:rs[<span class="string">'city'</span>],</div><div class="line">           <span class="string">'工作经历'</span>:rs[<span class="string">'workYear'</span>]</div><div class="line">       &#125;</div><div class="line">      <span class="comment"># print(info)</span></div><div class="line">       arr.append(info)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -493,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/2.jpg"
@@ -555,6 +539,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#视图相关知识点："><span class="nav-number">1.</span> <span class="nav-text">视图相关知识点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将数据存入-csv文件里"><span class="nav-number">2.</span> <span class="nav-text">将数据存入.csv文件里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存入的数据形式"><span class="nav-number">3.</span> <span class="nav-text">存入的数据形式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
