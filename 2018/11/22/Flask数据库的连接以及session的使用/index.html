@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构," />
+  <meta name="keywords" content="Python3," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{     vertextype vexs[maxsize];     vrtype arc[maxsize][maxsize];     int vexnum,arcnum;     }Mgraph;  邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v">
-<meta name="keywords" content="数据结构">
+<meta name="description" content="Flask与MySQL的连接1234567891011121314151617181920212223242526272829303132import MySQLfrom flask import Flaskfrom flask import render_templatefrom flask import flashfrom flask import sessionimport os#第一步连接">
+<meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图的表示">
-<meta property="og:url" content="http://yoursite.com/2017/11/25/图的表示/index.html">
+<meta property="og:title" content="Flask数据库的连接以及session的使用">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/Flask数据库的连接以及session的使用/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{     vertextype vexs[maxsize];     vrtype arc[maxsize][maxsize];     int vexnum,arcnum;     }Mgraph;  邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v">
+<meta property="og:description" content="Flask与MySQL的连接1234567891011121314151617181920212223242526272829303132import MySQLfrom flask import Flaskfrom flask import render_templatefrom flask import flashfrom flask import sessionimport os#第一步连接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T03:11:52.947Z">
+<meta property="og:updated_time" content="2018-11-22T13:45:29.091Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图的表示">
-<meta name="twitter:description" content="图的数组表示法 组成顶点数组vexs邻接矩阵arcs顶点数图的类型弧（数） 结构代码typedef struct{     vertextype vexs[maxsize];     vrtype arc[maxsize][maxsize];     int vexnum,arcnum;     }Mgraph;  邻接表表示法为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v">
+<meta name="twitter:title" content="Flask数据库的连接以及session的使用">
+<meta name="twitter:description" content="Flask与MySQL的连接1234567891011121314151617181920212223242526272829303132import MySQLfrom flask import Flaskfrom flask import render_templatefrom flask import flashfrom flask import sessionimport os#第一步连接">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/25/图的表示/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/22/Flask数据库的连接以及session的使用/"/>
 
 
 
 
 
-  <title>图的表示 | 诺铖的博客</title>
+  <title>Flask数据库的连接以及session的使用 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/图的表示/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/Flask数据库的连接以及session的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图的表示</h1>
+          <h1 class="post-title" itemprop="name headline">Flask数据库的连接以及session的使用</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T16:44:50+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T20:58:45+08:00">
+                2018-11-22
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/Python3/" itemprop="url" rel="index">
+                    <span itemprop="name">Python3</span>
                   </a>
                 </span>
 
@@ -352,32 +352,8 @@
       
 
       
-        <p>图的数组表示法</p>
-<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p>顶点数组vexs<br>邻接矩阵arcs<br>顶点数<br>图的类型<br>弧（数）</p>
-<h3 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h3><pre><code class="bash">typedef struct{
-    vertextype vexs[maxsize];
-    vrtype arc[maxsize][maxsize];
-    int vexnum,arcnum;
-    }Mgraph;
-</code></pre>
-<p>邻接表表示法<br>为图G的每一个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点v1的边</p>
-<h3 id="结构代码-1"><a href="#结构代码-1" class="headerlink" title="结构代码"></a>结构代码</h3><pre><code class="bash">typedef struct ArcNode{     //表结点类型定义，对网需要加权值属性
-    int adjvex;             //顶点位置编号
-    struct ArcNode *next;   //下一个表结点指针
-    infotype *info;
-    }ArcNode;
-
-typedef struct VNode{       //头结点及其数组类型定义
-        Vertextype data;    //顶点信息
-        ArcNode *firstarc;    //指向第一条弧
-        }VNode ,AdjList[maxsize];
-
-
-typedef struct {            //邻接表的类型定义
-    AdjList vertices;        //头结点数组
-    int vexnum,arcnum;        //顶点数、弧数
-    }ALGraph;
-</code></pre>
+        <h3 id="Flask与MySQL的连接"><a href="#Flask与MySQL的连接" class="headerlink" title="Flask与MySQL的连接"></a>Flask与MySQL的连接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> MySQL</div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> flash</div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> session</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="comment">#第一步连接数据库</span></div><div class="line">con=MySQL.connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">''</span>,<span class="string">'demo'</span>,charset=<span class="string">'utf8'</span>)</div><div class="line"><span class="comment">#这里面的函数参数表示1.数据库的位置，2.用户名 3.密码 4.数据库名  5.解决中文乱码问题</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#创建一个游标</span></div><div class="line">cur=con.cursor()</div><div class="line"></div><div class="line"><span class="comment">#添加数据</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">adduser</span><span class="params">(username,password)</span>:</span></div><div class="line">	sql=<span class="string">"insert into admin(username,password) values (%s,%s)"</span>%(username,password)</div><div class="line">	</div><div class="line">	<span class="comment">#发送sql语句</span></div><div class="line">	cur.execute(sql)</div><div class="line">	con.commit() <span class="comment">#提交</span></div><div class="line">	con.close()</div><div class="line">	</div><div class="line"><span class="comment">#查看信息是否存在</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">isExisted</span><span class="params">(username,password)</span>:</span></div><div class="line">	sql=<span class="string">"select * from admin where username='%s' and password='%s'"</span>%(username,password)</div><div class="line">    cur.execute(sql)</div><div class="line">    results=cur.fetchall()	<span class="comment">#将得到的数据进行保存在results中</span></div><div class="line">    <span class="keyword">if</span> len(results)==<span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h3 id="session的使用（创建于销毁）"><a href="#session的使用（创建于销毁）" class="headerlink" title="session的使用（创建于销毁）"></a>session的使用（创建于销毁）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,session</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> timedelta</div><div class="line">app=Flask(__name__)</div><div class="line">app.config[<span class="string">'SECRET_KEY'</span>]=os.urandom(<span class="number">24</span>) <span class="comment">#进行session数据的加密</span></div><div class="line"><span class="number">3</span>app.config[<span class="string">'PERMANENT_SESSION_LIFETIME'</span>]=timedelta(days=<span class="number">7</span>)</div><div class="line"><span class="comment">#这里是将session的保质期变为7天</span></div><div class="line"><span class="comment">#添加数据到session中</span></div><div class="line"><span class="comment">#操作session的时候，跟操作字典是一样的</span></div><div class="line"><span class="meta">@app.route('/user')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></div><div class="line">    session[<span class="string">'username'</span>]=<span class="string">'nuocheng'</span></div><div class="line">	<span class="comment">#如果没有设置session过期时间，那么关闭浏览器后就会自动结束</span></div><div class="line">	<span class="comment">#如果设置permanent过期时间为true那么一个月后就会自动过期（记住我勾选的内容）</span></div><div class="line">	session.permanent=<span class="keyword">True</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span></div><div class="line"></div><div class="line"><span class="meta">@app.route('/get')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">()</span>:</span></div><div class="line">    <span class="comment">#session['username']</span></div><div class="line">    <span class="comment">#这种方式提取username：如果username不存在就会抛出异常</span></div><div class="line"></div><div class="line">    <span class="comment">#session.get('username')</span></div><div class="line">    <span class="comment">#这种方式提取username的话，如果username不存在就会返回none</span></div><div class="line">    <span class="keyword">return</span> session.get(<span class="string">'username'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#删除session</span></div><div class="line"><span class="meta">@app.route('/delete')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">()</span>:</span></div><div class="line">    print(session.get(<span class="string">'username'</span>))</div><div class="line">    session.clear()<span class="comment">#删除session中的所有数据</span></div><div class="line">    print(session.get(<span class="string">'username'</span>))</div><div class="line">    <span class="keyword">return</span> <span class="string">'success'</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</div><div class="line">    app.run(port=<span class="number">80801</span>,debug=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -395,7 +371,7 @@ typedef struct {            //邻接表的类型定义
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+            <a href="/tags/Python3/" rel="tag"><i class="fa fa-tag"></i> Python3</a>
           
         </div>
       
@@ -408,8 +384,8 @@ typedef struct {            //邻接表的类型定义
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/C-常用模板/" rel="next" title="C++常用模板">
-                <i class="fa fa-chevron-left"></i> C++常用模板
+              <a href="/2018/11/17/数据可视化/" rel="next" title="数据可视化">
+                <i class="fa fa-chevron-left"></i> 数据可视化
               </a>
             
           </div>
@@ -417,10 +393,6 @@ typedef struct {            //邻接表的类型定义
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/15/电脑文件删除不了的状况/" rel="prev" title="电脑文件删除不了的状况">
-                电脑文件删除不了的状况 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -576,7 +548,7 @@ typedef struct {            //邻接表的类型定义
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#组成"><span class="nav-number">1.</span> <span class="nav-text">组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构代码"><span class="nav-number">2.</span> <span class="nav-text">结构代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构代码-1"><span class="nav-number">3.</span> <span class="nav-text">结构代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Flask与MySQL的连接"><span class="nav-number">1.</span> <span class="nav-text">Flask与MySQL的连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session的使用（创建于销毁）"><span class="nav-number">2.</span> <span class="nav-text">session的使用（创建于销毁）</span></a></li></ol></div>
             
 
           </div>
