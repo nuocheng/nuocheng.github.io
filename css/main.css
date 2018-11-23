@@ -1825,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8f0e;
+  background: #26598b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2964,7 +2964,7 @@ hr {
 }
 .site-author-name {
   margin: 48px 0 0;
-  color: #080808;
+  color: #2e293c;
   font-family: 'Comic Sans MS', sans-serif;
   font-weight: bold;
   font-size: 20px;
@@ -2983,8 +2983,8 @@ hr {
   color: #649ab6;
 }
 .sidebar {
-  box-shadow: inset 2px 2px 40px #bdb2b2;
-  background: url("http://ow7ncmjow.bkt.clouddn.com/0909qlwmhsxzsjbz5.jpg") no-repeat;
+  box-shadow: inset 2px 2px 40px #686868;
+  background: url("https://img.aiji66.com/45/a2/b6/92/e0/32fa1caf-95e9-11e7-aca6-9fc8693113c5.png") no-repeat;
 }
 .sidebar a {
   color: #649ab6;
