@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/1.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="继承1、继承构造函数：    super(参数) 2、父类与子类的使用：    父类：class A；    子类：class B extends A；    使用：     A a；     B b；     a=new B();     //这里a使用的使用只用调用A（父）类中的方法，以及在B(子)类中重写A（父）类的方法 抽象类（具有扩展性）1、抽象类的声明(abstract)：    pu">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java之继承、抽象类、接口、异常">
+<meta property="og:url" content="http://yoursite.com/2018/12/16/Java之继承、抽象类、接口、异常/index.html">
+<meta property="og:site_name" content="诺铖的博客">
+<meta property="og:description" content="继承1、继承构造函数：    super(参数) 2、父类与子类的使用：    父类：class A；    子类：class B extends A；    使用：     A a；     B b；     a=new B();     //这里a使用的使用只用调用A（父）类中的方法，以及在B(子)类中重写A（父）类的方法 抽象类（具有扩展性）1、抽象类的声明(abstract)：    pu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-16T02:19:54.701Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java之继承、抽象类、接口、异常">
+<meta name="twitter:description" content="继承1、继承构造函数：    super(参数) 2、父类与子类的使用：    父类：class A；    子类：class B extends A；    使用：     A a；     B b；     a=new B();     //这里a使用的使用只用调用A（父）类中的方法，以及在B(子)类中重写A（父）类的方法 抽象类（具有扩展性）1、抽象类的声明(abstract)：    pu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/16/Java之继承、抽象类、接口、异常/"/>
+
+
+
+
+
+  <title>Java之继承、抽象类、接口、异常 | 诺铖的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">诺铖的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/16/Java之继承、抽象类、接口、异常/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java之继承、抽象类、接口、异常</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T10:19:22+08:00">
+                2018-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>1、继承构造函数：<br>    super(参数)</p>
+<p>2、父类与子类的使用：<br>    父类：class A；<br>    子类：class B extends A；<br>    使用：<br>     A a；<br>     B b；<br>     a=new B();     //这里a使用的使用只用调用A（父）类中的方法，以及在B(子)类中重写A（父）类的方法</p>
+<h3 id="抽象类（具有扩展性）"><a href="#抽象类（具有扩展性）" class="headerlink" title="抽象类（具有扩展性）"></a>抽象类（具有扩展性）</h3><p>1、抽象类的声明(abstract)：<br>    public abstract class A{}<br>2、抽象类中的方法的声明（只需要写方法名就行，不需要写方法体）：<br>    public abstract String get_name();<br>3、使用抽象类(extends):<br>    抽象类的使用，类似于类的继承<br>    但是只要继承抽象类后，子类就必须重写抽象类全部里的方法<br>    例如：<br>    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public abstract class A&#123;</div><div class="line">	public abstract void show();</div><div class="line">&#125;</div><div class="line">public class B extends A&#123;</div><div class="line"><span class="meta">	@Override</span></div><div class="line">	public void show()&#123;</div><div class="line">		System.out.println(<span class="string">"这里是重写抽象类（A类）的方法体"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="接口（用于解决单继承的方式）"><a href="#接口（用于解决单继承的方式）" class="headerlink" title="接口（用于解决单继承的方式）"></a>接口（用于解决单继承的方式）</h3><p>1、接口的声明(interface 只写方法，不写方法体)：<br>    public interface A{<br>        public void show();<br>        public abstract void show2();<br>    }<br>2、接口的使用(implements)：<br>    public class B implements A{<br>        @Override<br>        public void show(){<br>            System.out.println(“这里是重写A类的方法体”);<br>        }<br>        @Override<br>        public void show2(){<br>            System.out.println(“这里是重写A类的方法体”);<br>        }<br>    }</p>
+<h3 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h3><p>1、自定义抛出异常(继承于Exception)：<br>    public class AException extends Exception{<br>        //包含构造函数，toStirng方法<br>    }<br>2、使用异常：<br>    在另一个类中的某一个方法（判断是否符合标准）<br>    public void B(int a) throws AException{<br>        if(a&lt;0){<br>            throw new AException();<br>        }<br>    }<br>    表示在使用这个方法的时候需要try catch</p>
+<pre><code>例如：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">	DangerException.java</div><div class="line">public class DangerException extends Exception &#123;</div><div class="line">	   String message;</div><div class="line">	   public DangerException() &#123;</div><div class="line">	       message = <span class="string">"危险品!"</span>;</div><div class="line">	   &#125;</div><div class="line">	   public void toShow() &#123;</div><div class="line">	       System.out.print(message+<span class="string">" "</span>);</div><div class="line">	   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Goods.java</div><div class="line">public class Goods &#123;</div><div class="line">	   boolean isDanger;</div><div class="line">	   String name;</div><div class="line">	   public void setIsDanger(boolean boo) &#123;</div><div class="line">	      isDanger = boo;</div><div class="line">	   &#125;</div><div class="line">	   public boolean isDanger() &#123;</div><div class="line">	      <span class="keyword">return</span> isDanger;  </div><div class="line">	   &#125;</div><div class="line">	   public void setName(String s) &#123;</div><div class="line">	      name = s;</div><div class="line">	   &#125;</div><div class="line">	   public String getName() &#123;</div><div class="line">	      <span class="keyword">return</span> name;</div><div class="line">	   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"> Machine.java</div><div class="line">public class Machine &#123;</div><div class="line">		   boolean isDanger;</div><div class="line">		   String name;</div><div class="line">		   public void setIsDanger(boolean boo) &#123;</div><div class="line">		      isDanger = boo;</div><div class="line">		   &#125;</div><div class="line">		   public boolean isDanger() &#123;</div><div class="line">		          <span class="keyword">return</span> isDanger;// 【代码<span class="number">1</span>】   </div><div class="line">		   &#125;</div><div class="line">		   public void checkBag(Goods goods) throws DangerException&#123;</div><div class="line">			   <span class="keyword">if</span>(goods.isDanger==true)</div><div class="line">				   	throw new DangerException();</div><div class="line">			</div><div class="line">		   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Check.java</div><div class="line">public class Check &#123;</div><div class="line">	   public static void main(String args[]) &#123;</div><div class="line">	      Machine machine = new Machine();</div><div class="line">	      String name[] =&#123;<span class="string">"苹果"</span>,<span class="string">"炸药"</span>,<span class="string">"西服"</span>,<span class="string">"硫酸"</span>,<span class="string">"手表"</span>,<span class="string">"硫磺"</span>&#125;;</div><div class="line">	      Goods [] goods = new Goods[name.length]; //检查<span class="number">6</span>件物品  </div><div class="line">	      <span class="keyword">for</span>(int i= <span class="number">0</span>;i&lt;name.length;i++) &#123;</div><div class="line">	         goods[i] = new Goods();</div><div class="line">	         <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>) &#123;</div><div class="line">	            goods[i].setIsDanger(false);</div><div class="line">	            goods[i].setName(name[i]);</div><div class="line">	         &#125;</div><div class="line">	         <span class="keyword">else</span> &#123;</div><div class="line">	            goods[i].setIsDanger(true);</div><div class="line">	            goods[i].setName(name[i]);</div><div class="line">	         &#125; </div><div class="line">	      &#125;</div><div class="line">	      <span class="keyword">for</span>(int i= <span class="number">0</span>;i&lt;goods.length;i++) &#123;</div><div class="line">	        <span class="keyword">try</span> &#123; machine.checkBag(goods[i]);</div><div class="line">	            System.out.println(goods[i].getName()+<span class="string">"检查通过"</span>);</div><div class="line">	        &#125;</div><div class="line">	        catch(DangerException e) &#123;</div><div class="line">	        	e.toShow();//【代码<span class="number">2</span>】 e调用toShow()方法</div><div class="line">	            System.out.println(goods[i].getName()+<span class="string">"被禁止!"</span>); </div><div class="line">	        &#125;</div><div class="line">	      &#125;     </div><div class="line">	   &#125; </div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/22/Flask数据库的连接以及session的使用/" rel="next" title="Flask数据库的连接以及session的使用">
+                <i class="fa fa-chevron-left"></i> Flask数据库的连接以及session的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/16/Python之flask项目目录以及代码/" rel="prev" title="Python之flask项目目录以及代码">
+                Python之flask项目目录以及代码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/2.jpg"
+               alt="张程东" />
+          <p class="site-author-name" itemprop="name">张程东</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=500686033&auto=1&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类（具有扩展性）"><span class="nav-number">2.</span> <span class="nav-text">抽象类（具有扩展性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口（用于解决单继承的方式）"><span class="nav-number">3.</span> <span class="nav-text">接口（用于解决单继承的方式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抛出异常"><span class="nav-number">4.</span> <span class="nav-text">抛出异常</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张程东</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" color="158,185,244" opacity='0.6' zIndex="-2" count="90" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+<!--卖萌-->
+<script type="text/javascript" src="/js/src/dytitle.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

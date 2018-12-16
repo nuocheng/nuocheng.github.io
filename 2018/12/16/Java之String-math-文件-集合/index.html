@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/1.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="String字符串类型的使用：1.将一个字符串（string）转化为一个char类型的数组：    String a=”1234567”;    char[] b=a.toCharArray(); 2.Stringbuffer    进行字符的连接用到Stringbuffer s,通过s.append()进行连接 3.Stringbuffer与String进行相互转化    String a=ne">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java之String,math,文件,集合">
+<meta property="og:url" content="http://yoursite.com/2018/12/16/Java之String-math-文件-集合/index.html">
+<meta property="og:site_name" content="诺铖的博客">
+<meta property="og:description" content="String字符串类型的使用：1.将一个字符串（string）转化为一个char类型的数组：    String a=”1234567”;    char[] b=a.toCharArray(); 2.Stringbuffer    进行字符的连接用到Stringbuffer s,通过s.append()进行连接 3.Stringbuffer与String进行相互转化    String a=ne">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-16T03:00:04.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java之String,math,文件,集合">
+<meta name="twitter:description" content="String字符串类型的使用：1.将一个字符串（string）转化为一个char类型的数组：    String a=”1234567”;    char[] b=a.toCharArray(); 2.Stringbuffer    进行字符的连接用到Stringbuffer s,通过s.append()进行连接 3.Stringbuffer与String进行相互转化    String a=ne">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/16/Java之String-math-文件-集合/"/>
+
+
+
+
+
+  <title>Java之String,math,文件,集合 | 诺铖的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">诺铖的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/16/Java之String-math-文件-集合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java之String,math,文件,集合</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T10:59:37+08:00">
+                2018-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="String字符串类型的使用："><a href="#String字符串类型的使用：" class="headerlink" title="String字符串类型的使用："></a>String字符串类型的使用：</h3><p>1.将一个字符串（string）转化为一个char类型的数组：<br>    String a=”1234567”;<br>    char[] b=a.toCharArray();</p>
+<p>2.Stringbuffer<br>    进行字符的连接用到Stringbuffer s,通过s.append()进行连接</p>
+<p>3.Stringbuffer与String进行相互转化<br>    String a=new String(b)  与 Stringbuffer b=new Stringbuffer(a)</p>
+<p>4.字符串数组进行排序：<br>    char[] c;<br>    Arrays.sort(c);<br>5.大小写字母的转化<br>    toUpperCase()<br>    toLowerCaese()<br>6.其他<br>    将string类型的字符串进行分割用到的方法是.split(“分割标志”)<br>    StringBuffer下的reverse方法之将字符串进行反向输出</p>
+<h3 id="java-math"><a href="#java-math" class="headerlink" title="java.math.*:"></a>java.math.*:</h3><p>长整数的加减乘除余数操作<br> import java.math.*;<br> BigInteger a，b类型<br> 进行加a.add(b) 减a.subtract(b) 乘a.multiply(b)  除a.divide(b)  余数a.remainder(b)</p>
+<h3 id="文件（java-io-）"><a href="#文件（java-io-）" class="headerlink" title="文件（java.io.*）"></a>文件（java.io.*）</h3><p>1.判断路径是否存在：File file =new File(‘路径\文件名’) file.exists();<br>如果不存在: File p=file.getParentFile(); 判断该路径是否存在 p.exists()<br>如果不存在进行创建路径:p.mkdirs();<br>创建文件:file.createNewFile();</p>
+<p>使用BufferedWriter是建立在File 与FileWriter的基础上实现的<br>步骤是：<br>File f=new File(‘路径\文件名’);<br>FileWriter fw=new FileWriter(file);<br>BufferedWriter bw=new BufferedWriter(fw);<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">Test.java</div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line">public class Test &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">	</div><div class="line">		String s;</div><div class="line">		InputStreamReader isr=new InputStreamReader(System.<span class="keyword">in</span>);</div><div class="line">		BufferedReader br=new BufferedReader(isr);</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			File file=new File(<span class="string">"d:/demo12/test.txt"</span>);</div><div class="line">			<span class="keyword">if</span>(!file.exists())&#123;</div><div class="line">				File parent=file.getParentFile();</div><div class="line">				<span class="keyword">if</span>(!parent.exists())&#123;</div><div class="line">					parent.mkdirs();</div><div class="line">				&#125;</div><div class="line">				file.createNewFile();</div><div class="line">			&#125;</div><div class="line">			FileWriter fw=new FileWriter(file);</div><div class="line">			BufferedWriter bw=new BufferedWriter(fw);</div><div class="line">			s=br.readLine();</div><div class="line">			<span class="keyword">while</span>(s!=null)&#123;</div><div class="line">				<span class="keyword">if</span>(s.equalsIgnoreCase(<span class="string">"exit"</span>))&#123;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">				bw.write(s);</div><div class="line">				bw.newLine();</div><div class="line">				s=br.readLine();</div><div class="line">			&#125;</div><div class="line">			br.close();</div><div class="line">			bw.flush();</div><div class="line">			bw.close();</div><div class="line">		&#125;catch(IOException e)&#123;</div><div class="line">			System.out.println(<span class="string">"输入输出异常"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>1.泛型集合的使用 在java.util.*这个包中<br>List&lt;类型名&gt; 集合名=new ArrayList&lt;类型名&gt;();<br>add添加 get获得，得到 remove删除 contains是否存在<br>ArrayList是方便于查找。</p>
+<p>2.<br>LinkedList是指针类型的集合 他的父级是List 方便增删<br>LinkedList的方式是增加：addFirst() addLast() 删除：removerFirst() removerLast() 获取：getFirst() getLast()</p>
+<p>3.Map<br>声明的方式Map m= HashMap()<br>m.put(key，value)进行添加<br>这里的value也可以是List下面的集合ArrayList LinkedList<br>如何获取值：m.get(key)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">Student.java</div><div class="line">public class Student &#123;</div><div class="line">	private String name;</div><div class="line">	public Student(String name)&#123;</div><div class="line">		this.name=name;</div><div class="line">	&#125;</div><div class="line">	public void show()&#123;</div><div class="line">		System.out.println(this.name);</div><div class="line">	&#125;</div><div class="line">	public String toString() &#123;</div><div class="line">		<span class="keyword">return</span> this.name;</div><div class="line">	&#125;</div><div class="line">	/*set get方法*/</div><div class="line">	public String getName() &#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line">	public void setName(String name) &#123;</div><div class="line">		this.name = name;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">Test.java</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line">public class Test &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Map student=new HashMap();</div><div class="line">		Student s1=new Student(<span class="string">"小明"</span>);</div><div class="line">		Student s2=new Student(<span class="string">"小红"</span>);</div><div class="line">		Student s3=new Student(<span class="string">"小蓝"</span>);</div><div class="line">		Student s4=new Student(<span class="string">"小资"</span>);</div><div class="line">		Student s5=new Student(<span class="string">"小黑"</span>);</div><div class="line">		ArrayList&lt;Student&gt; slt1=new ArrayList&lt;Student&gt;();</div><div class="line">		slt1.add(s1);</div><div class="line">		slt1.add(s3);</div><div class="line">		slt1.add(s5);</div><div class="line">		ArrayList&lt;Student&gt; slt2=new ArrayList&lt;Student&gt;();</div><div class="line">		slt2.add(s2);</div><div class="line">		slt2.add(s4);</div><div class="line">		student.put(<span class="string">"计算机学院"</span>, slt1);</div><div class="line">		student.put(<span class="string">"外国语学院"</span>, slt2);</div><div class="line">		System.out.println(<span class="string">"计算机学院:"</span>+student.get(<span class="string">"计算机学院"</span>).toString());</div><div class="line">		System.out.println(<span class="string">"外国语学院:"</span>+student.get(<span class="string">"外国语学院"</span>).toString());</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/16/Python之flask项目目录以及代码/" rel="next" title="Python之flask项目目录以及代码">
+                <i class="fa fa-chevron-left"></i> Python之flask项目目录以及代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/2.jpg"
+               alt="张程东" />
+          <p class="site-author-name" itemprop="name">张程东</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=500686033&auto=1&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String字符串类型的使用："><span class="nav-number">1.</span> <span class="nav-text">String字符串类型的使用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-math"><span class="nav-number">2.</span> <span class="nav-text">java.math.*:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件（java-io-）"><span class="nav-number">3.</span> <span class="nav-text">文件（java.io.*）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">4.</span> <span class="nav-text">集合</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张程东</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" color="158,185,244" opacity='0.6' zIndex="-2" count="90" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+<!--卖萌-->
+<script type="text/javascript" src="/js/src/dytitle.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
