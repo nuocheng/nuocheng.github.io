@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="今天通过爬虫，爬取了一些东西，这次爬了一个个性签名的网站，然后就做了一个个性签名的小工具 需要pip 的工具包有pip install pillow pip install requests 代码部分有：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
+<meta name="description" content="语音合成，通过接收文字，利用接口来实现语音的合成12345678910111213141516171819202122232425# coding=gbkimport configparserfrom aip import AipSpeechclass Baidu():    def __init__(self):        target=configparser.ConfigParser()">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="爬虫之个性签名的设计">
-<meta property="og:url" content="http://yoursite.com/2018/05/25/爬虫之个性签名的设计/index.html">
+<meta property="og:title" content="Python之语音合成">
+<meta property="og:url" content="http://yoursite.com/2018/12/30/Python之语音合成/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="今天通过爬虫，爬取了一些东西，这次爬了一个个性签名的网站，然后就做了一个个性签名的小工具 需要pip 的工具包有pip install pillow pip install requests 代码部分有：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
+<meta property="og:description" content="语音合成，通过接收文字，利用接口来实现语音的合成12345678910111213141516171819202122232425# coding=gbkimport configparserfrom aip import AipSpeechclass Baidu():    def __init__(self):        target=configparser.ConfigParser()">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-25T11:49:32.521Z">
+<meta property="og:updated_time" content="2018-12-30T07:29:36.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爬虫之个性签名的设计">
-<meta name="twitter:description" content="今天通过爬虫，爬取了一些东西，这次爬了一个个性签名的网站，然后就做了一个个性签名的小工具 需要pip 的工具包有pip install pillow pip install requests 代码部分有：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
+<meta name="twitter:title" content="Python之语音合成">
+<meta name="twitter:description" content="语音合成，通过接收文字，利用接口来实现语音的合成12345678910111213141516171819202122232425# coding=gbkimport configparserfrom aip import AipSpeechclass Baidu():    def __init__(self):        target=configparser.ConfigParser()">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/25/爬虫之个性签名的设计/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/30/Python之语音合成/"/>
 
 
 
 
 
-  <title>爬虫之个性签名的设计 | 诺铖的博客</title>
+  <title>Python之语音合成 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/爬虫之个性签名的设计/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/30/Python之语音合成/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">爬虫之个性签名的设计</h1>
+          <h1 class="post-title" itemprop="name headline">Python之语音合成</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T18:39:48+08:00">
-                2018-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T15:25:29+08:00">
+                2018-12-30
               </time>
             
 
@@ -352,10 +352,8 @@
       
 
       
-        <p>今天通过爬虫，爬取了一些东西，这次爬了一个个性签名的网站，<br>然后就做了一个个性签名的小工具</p>
-<h3 id="需要pip-的工具包有"><a href="#需要pip-的工具包有" class="headerlink" title="需要pip 的工具包有"></a>需要pip 的工具包有</h3><pre><code>pip install pillow
-pip install requests
-</code></pre><h3 id="代码部分有："><a href="#代码部分有：" class="headerlink" title="代码部分有："></a>代码部分有：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">	from tkinter import *</div><div class="line">import requests</div><div class="line">from PIL import Image ,ImageTk</div><div class="line">from tkinter import messagebox</div><div class="line"></div><div class="line">def download():</div><div class="line">    startUrl=<span class="string">"http://www.uustv.com/"</span></div><div class="line">    name=entry.get()</div><div class="line">    name=name.strip()</div><div class="line">    <span class="keyword">if</span> name ==<span class="string">''</span>:</div><div class="line">        messagebox.showinfo(<span class="string">'提示:'</span>,<span class="string">'请输入名字'</span>)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        data=&#123;</div><div class="line">            <span class="string">'word'</span>: name,</div><div class="line">            <span class="string">'sizes'</span>: 60,</div><div class="line">            <span class="string">'fonts'</span>: <span class="string">'jfcs.ttf'</span>,</div><div class="line">            <span class="string">'fontcolor'</span>: <span class="string">'#000000'</span></div><div class="line">        &#125;</div><div class="line">        result=requests.post(startUrl,data=data)</div><div class="line">        result.encoding=<span class="string">'utf-8'</span></div><div class="line">        html=result.text</div><div class="line">        reg=<span class="string">'&lt;div class="tu"&gt;﻿&lt;img src="(.*?)"/&gt;&lt;/div&gt;'</span></div><div class="line">        imagePath=re.findall(reg,html)</div><div class="line">        imgUrl=startUrl+imagePath[0]</div><div class="line">        response=requests.get(imgUrl).content</div><div class="line">        <span class="built_in">print</span>(response)</div><div class="line">        f=open(<span class="string">'&#123;&#125;.gif'</span>.format(name),<span class="string">'wb'</span>)</div><div class="line">        f.write(response)</div><div class="line">        bm = ImageTk.PhotoImage(file=<span class="string">'&#123;&#125;.gif'</span>.format(name))</div><div class="line">        label2=Label(root,image=bm)</div><div class="line">        label2.bm=bm</div><div class="line">        label2.grid(row=2,columnspan=2)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#先创建一个窗口</span></div><div class="line">root=Tk()</div><div class="line"></div><div class="line"><span class="comment">#标题</span></div><div class="line">root.title(<span class="string">'签名设计'</span>)</div><div class="line"></div><div class="line">root.geometry(<span class="string">'600x300'</span>)</div><div class="line"></div><div class="line">root.geometry(<span class="string">'+500+300'</span>)</div><div class="line"><span class="comment">#签名</span></div><div class="line">label=Label(root,text=<span class="string">"签名"</span>,font=(<span class="string">'华文行楷'</span>,20),<span class="built_in">fg</span>=<span class="string">"red"</span>)</div><div class="line"></div><div class="line">label.grid(row=0,column=0)</div><div class="line"></div><div class="line"><span class="comment">#输入框</span></div><div class="line">entry=Entry(root,font=(<span class="string">'微软雅黑'</span>,20))</div><div class="line"></div><div class="line">entry.grid(row=0,column=1)</div><div class="line"></div><div class="line"><span class="comment">#点击按钮</span></div><div class="line">button=Button(root,text=<span class="string">"设计签名"</span>,font=(<span class="string">'微软雅黑'</span>,20),<span class="built_in">command</span>=download)</div><div class="line">button.grid(row=1,column=1)</div><div class="line"><span class="comment">#消息循环， 显示窗口</span></div><div class="line"></div><div class="line">root.mainloop()</div></pre></td></tr></table></figure>
+        <p>语音合成，通过接收文字，利用接口来实现语音的合成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># coding=gbk</span></div><div class="line"><span class="keyword">import</span> configparser</div><div class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipSpeech</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Baidu</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        target=configparser.ConfigParser()</div><div class="line">        target.read(<span class="string">"password.ini"</span>)</div><div class="line">        AppID=target.get(<span class="string">'我的工单'</span>,<span class="string">'AppID'</span>)</div><div class="line">        APIkey=target.get(<span class="string">'我的工单'</span>,<span class="string">'APIKey'</span>)</div><div class="line">        SecretKey=target.get(<span class="string">'我的工单'</span>,<span class="string">'SecretKey'</span>)</div><div class="line">        self.client=AipSpeech(AppID,APIkey,SecretKey)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combition_voice</span><span class="params">(self)</span>:</span></div><div class="line">        result=self.client.synthesis(<span class="string">"诺铖，诺铖，我爱你，么么哒，mua"</span>,<span class="string">"zh"</span>,<span class="number">1</span>,&#123;</div><div class="line">            <span class="string">'vol'</span>:<span class="number">5</span>, <span class="comment">#音量</span></div><div class="line">            <span class="string">'spd'</span>:<span class="number">3</span>, <span class="comment">#语速</span></div><div class="line">            <span class="string">'pit'</span>:<span class="number">4</span>, <span class="comment">#语调</span></div><div class="line">            <span class="string">'per'</span>:<span class="number">5</span>, <span class="comment">#萝莉音</span></div><div class="line">        &#125;)</div><div class="line">        <span class="keyword">with</span> open(<span class="string">"1.mp3"</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">            f.write(result)</div><div class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</div><div class="line">    baidu=Baidu()</div><div class="line">    baidu.combition_voice()</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -385,8 +383,8 @@ pip install requests
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/23/thinkphp之数据库里的操作/" rel="next" title="thinkphp之数据库里的操作">
-                <i class="fa fa-chevron-left"></i> thinkphp之数据库里的操作
+              <a href="/2018/12/16/Java之String-math-文件-集合/" rel="next" title="Java之String,math,文件,集合">
+                <i class="fa fa-chevron-left"></i> Java之String,math,文件,集合
               </a>
             
           </div>
@@ -394,10 +392,6 @@ pip install requests
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/26/thinkphp5基础知识总结/" rel="prev" title="thinkphp5基础知识总结">
-                thinkphp5基础知识总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,17 +466,8 @@ pip install requests
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/2.jpg"
@@ -543,22 +528,6 @@ pip install requests
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要pip-的工具包有"><span class="nav-number">1.</span> <span class="nav-text">需要pip 的工具包有</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码部分有："><span class="nav-number">2.</span> <span class="nav-text">代码部分有：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
