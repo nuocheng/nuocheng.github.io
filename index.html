@@ -353,7 +353,12 @@
       
         
           
-          计算机视觉，这是第二天的学习笔记（颜色空间的类型，主要是hsv（h:色调   s:饱和度 v:明度）；色彩空间的转换，颜色的过滤，颜色通道的合并）1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#色彩空间的使用# rgb hsv his ycrcb yuv (常见的色彩空间)import cv2 as cvimport numpy as npclass Color_space():    def init_image(self,path):        self.src=cv.imread(path)    def close_cv(self):        cv.waitKey(0)        cv.destor
+          计算机视觉，这是第二天的学习笔记（颜色空间的类型，主要是hsv（h:色调   s:饱和度 v:明度）；色彩空间的转换，颜色的过滤，颜色通道的合并）
+色彩空间的转换cv.cvtColor(src,cv.COLOR_BGR2HSV)
+色彩通道的分离b,g,r=cv.split(src)
+通道的合并src=cv.merge([b,g,r])
+追踪或者过滤某一种颜色 ①先将每一帧视频转化成hsv ②设置最小值与最大值  通过hsv实例表进行查找 lower=np.array([h_low,s_low,v_low]) higher=np.array([h_high,s_high,v_high]) 通过inRange接口进行实现 cv.inRange(hsv,lowerb=lower,upperb=higher)
+12345678910111213141516171819202122232425262
           ...
           <!--noindex-->
           <div class="post-button text-center">
