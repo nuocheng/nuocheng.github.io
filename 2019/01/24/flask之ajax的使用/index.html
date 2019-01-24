@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 一.mysql提取数值形式设置：1234#连接数据库self.con=MySQLdb.connect(&apos;localhost&apos;,&apos;root&apos;,&apos;&apos;,&apos;demo2&apos;,charset=&apos;utf8&apos;)#是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MyS">
+<meta name="description" content="Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 一.mysql提取数值形式设置：#连接数据库self.con=MySQLdb.connect(‘localhost’,’root’,’’,’demo2’,charset=’utf8’) #是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MySQLd">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flask之ajax的使用">
 <meta property="og:url" content="http://yoursite.com/2019/01/24/flask之ajax的使用/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 一.mysql提取数值形式设置：1234#连接数据库self.con=MySQLdb.connect(&apos;localhost&apos;,&apos;root&apos;,&apos;&apos;,&apos;demo2&apos;,charset=&apos;utf8&apos;)#是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MyS">
+<meta property="og:description" content="Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 一.mysql提取数值形式设置：#连接数据库self.con=MySQLdb.connect(‘localhost’,’root’,’’,’demo2’,charset=’utf8’) #是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MySQLd">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-24T08:56:07.405Z">
+<meta property="og:updated_time" content="2019-01-24T08:59:35.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask之ajax的使用">
-<meta name="twitter:description" content="Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 一.mysql提取数值形式设置：1234#连接数据库self.con=MySQLdb.connect(&apos;localhost&apos;,&apos;root&apos;,&apos;&apos;,&apos;demo2&apos;,charset=&apos;utf8&apos;)#是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MyS">
+<meta name="twitter:description" content="Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 一.mysql提取数值形式设置：#连接数据库self.con=MySQLdb.connect(‘localhost’,’root’,’’,’demo2’,charset=’utf8’) #是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MySQLd">
 
 
 
@@ -353,7 +353,8 @@
 
       
         <p>Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
-<h3 id="一-mysql提取数值形式设置："><a href="#一-mysql提取数值形式设置：" class="headerlink" title="一.mysql提取数值形式设置："></a>一.mysql提取数值形式设置：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#连接数据库</span></div><div class="line">self.con=MySQLdb.connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">''</span>,<span class="string">'demo2'</span>,charset=<span class="string">'utf8'</span>)</div><div class="line"><span class="comment">#是提取出来的数据以字典的形式出现DictCursor</span></div><div class="line">self.cur=self.con.cursor(cursorclass=MySQLdb.cursors.DictCursor)</div></pre></td></tr></table></figure>
+<h3 id="一-mysql提取数值形式设置："><a href="#一-mysql提取数值形式设置：" class="headerlink" title="一.mysql提取数值形式设置："></a>一.mysql提取数值形式设置：</h3><p>#连接数据库<br>self.con=MySQLdb.connect(‘localhost’,’root’,’’,’demo2’,charset=’utf8’)</p>
+<p>#是提取出来的数据以字典的形式出现DictCursor<br>self.cur=self.con.cursor(cursorclass=MySQLdb.cursors.DictCursor)</p>
 <h3 id="二-数据的查询并返回"><a href="#二-数据的查询并返回" class="headerlink" title="二.数据的查询并返回"></a>二.数据的查询并返回</h3><h3 id="三-HTML中ajax部分"><a href="#三-HTML中ajax部分" class="headerlink" title="三.HTML中ajax部分"></a>三.HTML中ajax部分</h3><p>1.get形式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var data=&#123;</div><div class="line">	<span class="string">'name'</span>:<span class="string">'诺铖'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">	type:<span class="string">'GET'</span>,</div><div class="line">	<span class="keyword">async</span>:true,</div><div class="line">	url:&#123;&#123;url_for(<span class="string">"home.ajax"</span>)&#125;&#125;,</div><div class="line">	data:data,</div><div class="line">	contentType:<span class="string">'application/json;charset=UTF-8'</span>,</div><div class="line">	dataType:<span class="string">'json'</span>,</div><div class="line">	success:function(data)&#123;</div><div class="line">		alert(data)</div><div class="line">	&#125;,</div><div class="line">	error:function()&#123;</div><div class="line">			alert(<span class="string">"失败"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>2.post形式：</p>
