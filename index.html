@@ -354,15 +354,8 @@
         
           
           Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
-一.mysql提取数值形式设置：#连接数据库self.con=MySQLdb.connect(‘localhost’,’root’,’’,’demo2’,charset=’utf8’)
-#是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-二.数据的查询并返回三.HTML中ajax部分1.get形式：    var data={        ‘name’:’诺铖’    }
-$.ajax({
-    type:&apos;GET&apos;,
-    async:true,
-    url:{{url_for("home.ajax")}},
-    data:data,
-    cont
+一.mysql提取数值形式设置：1234#连接数据库self.con=MySQLdb.connect('localhost','root','','demo2',charset='utf8')#是提取出来的数据以字典的形式出现DictCursorself.cur=self.con.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+二.数据的查询并返回三.HTML中ajax部分1.get形式：12345678910111213141516171819var data=&#123;	'name':'诺铖'&#125;$.ajax(&#123;	type:'GET',	async:true,	url:&#123;&#123;url_for("home.ajax")&#125;&#
           ...
           <!--noindex-->
           <div class="post-button text-center">
