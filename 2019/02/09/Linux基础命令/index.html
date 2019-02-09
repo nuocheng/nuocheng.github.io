@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/1.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="查看目录下的所有文件lsls  ls  -l  ll ls 路径&amp;gt;file.txt  将查询出来的结果保存或者是覆盖在file.txt中 ls 路径&amp;gt;&amp;gt;file.txt 将查询出的结果添加在末尾 切换工作目录cdcd 创建文件夹/创建多层目录/创建文件mkdir file_name     创建文件夹 mkdir -p first_file/second_file/     创建">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基础命令">
+<meta property="og:url" content="http://yoursite.com/2019/02/09/Linux基础命令/index.html">
+<meta property="og:site_name" content="诺铖的博客">
+<meta property="og:description" content="查看目录下的所有文件lsls  ls  -l  ll ls 路径&amp;gt;file.txt  将查询出来的结果保存或者是覆盖在file.txt中 ls 路径&amp;gt;&amp;gt;file.txt 将查询出的结果添加在末尾 切换工作目录cdcd 创建文件夹/创建多层目录/创建文件mkdir file_name     创建文件夹 mkdir -p first_file/second_file/     创建">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-09T07:09:51.984Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基础命令">
+<meta name="twitter:description" content="查看目录下的所有文件lsls  ls  -l  ll ls 路径&amp;gt;file.txt  将查询出来的结果保存或者是覆盖在file.txt中 ls 路径&amp;gt;&amp;gt;file.txt 将查询出的结果添加在末尾 切换工作目录cdcd 创建文件夹/创建多层目录/创建文件mkdir file_name     创建文件夹 mkdir -p first_file/second_file/     创建">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/09/Linux基础命令/"/>
+
+
+
+
+
+  <title>Linux基础命令 | 诺铖的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">诺铖的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/09/Linux基础命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张程东">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="诺铖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux基础命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-09T13:39:04+08:00">
+                2019-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="查看目录下的所有文件ls"><a href="#查看目录下的所有文件ls" class="headerlink" title="查看目录下的所有文件ls"></a>查看目录下的所有文件ls</h3><pre><code>ls 
+ls  -l 
+ll
+ls 路径&gt;file.txt  将查询出来的结果保存或者是覆盖在file.txt中
+ls 路径&gt;&gt;file.txt 将查询出的结果添加在末尾
+</code></pre><h3 id="切换工作目录cd"><a href="#切换工作目录cd" class="headerlink" title="切换工作目录cd"></a>切换工作目录cd</h3><pre><code>cd
+</code></pre><h3 id="创建文件夹-创建多层目录-创建文件"><a href="#创建文件夹-创建多层目录-创建文件" class="headerlink" title="创建文件夹/创建多层目录/创建文件"></a>创建文件夹/创建多层目录/创建文件</h3><pre><code>mkdir file_name     创建文件夹
+mkdir -p first_file/second_file/     创建多层目录
+touch 文件
+</code></pre><h3 id="复制cp"><a href="#复制cp" class="headerlink" title="复制cp"></a>复制cp</h3><pre><code>cp 被复制的文档 文档复制到的路径            复制文件
+cp -r 被复制的文件夹 复制到的路径            复制文件夹
+</code></pre><h3 id="文件的移动或文件的重命名mv"><a href="#文件的移动或文件的重命名mv" class="headerlink" title="文件的移动或文件的重命名mv"></a>文件的移动或文件的重命名mv</h3><pre><code>mv 需要移动的文档 需要保存的文件路径
+mv 需要移动文件夹 需要保存的位置
+mv 需要重名的文件 新名字
+</code></pre><h3 id="删除rm"><a href="#删除rm" class="headerlink" title="删除rm"></a>删除rm</h3><pre><code>rm -f 文件               强制删除文件
+rm -rf 文件夹             强制删除文件夹
+</code></pre><h3 id="查看文本命令"><a href="#查看文本命令" class="headerlink" title="查看文本命令"></a>查看文本命令</h3><pre><code>cat 要查看的文件名 
+cat 要查看的文件名 -n      前几行的内容
+more 文件名（按空格按照一页一页的往下翻   q是退出）
+less 文件名（与more相同并添加了 /查找的关键词  pgup是向上翻页）
+</code></pre><h3 id="创建软-硬连接（window中快捷方式）ln"><a href="#创建软-硬连接（window中快捷方式）ln" class="headerlink" title="创建软/硬连接（window中快捷方式）ln"></a>创建软/硬连接（window中快捷方式）ln</h3><pre><code>ln -s [源文件] [目标文件]
+ln -s /etc/issue /tmp/issue.soft    创建软连接  相当于快捷方式，源文件进行修改后，同步更新。如果源文件不存在后，软连接失效
+ln /etc/issue /tmp/issue.soft    创建硬链接 源文件修改后，可以同步更新，源文件不存在后，硬链接依然有效
+</code></pre><h3 id="更改文件的权限："><a href="#更改文件的权限：" class="headerlink" title="更改文件的权限："></a>更改文件的权限：</h3><pre><code>chmod [{ugoa}{+-=}{rwx}]   u表示所有者g表示所属组o其他人a所有人
+r--4   w--2   x--
+也可以是chmod 640 filename
+</code></pre><h3 id="用户的创建"><a href="#用户的创建" class="headerlink" title="用户的创建"></a>用户的创建</h3><pre><code>用户的创建：useradd nuocheng
+用户密码的设置：passwd nuocheng
+当前有哪些有登录用户who 或者是 w
+查看linux连续运行的时间以及负载均衡是多少 uptime
+</code></pre><h3 id="压缩文件与解压命令"><a href="#压缩文件与解压命令" class="headerlink" title="压缩文件与解压命令"></a>压缩文件与解压命令</h3><pre><code>.gz压缩文件
+gzip 文件
+gunzip 解压文件
+
+
+.tar文件
+tar -cvf 打包后的文件 要打包的文件  cvf本别是create view file
+
+
+.tar.gz文件
+tar -cvf 打包后的文件 要打包的文件  gzip文件
+或者是tar -zcf 压缩包的文件名.tar.gz 要压缩的文件
+解压命令
+tar -zxf 压缩包的名字
+</code></pre><p>.zip文件<br>zip -r 文件名.zip 文件夹<br>解压unzip</p>
+<h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><pre><code>last查看登录用户的登录信息
+lastlog 查看所有用户的登录信息
+
+给在线用户写信：
+write 用户名
+进行消息的编写（delete是删除  ctrl+D表示保存并退出）
+
+给所有在线用户发消息：
+wall 信息
+
+不管该用户是否在线进行文件的发送
+mail 用户名
+
+查看邮件：mail 
+输入邮件的编号
+
+修改网络地址 ifconfig eth0 ip地址
+重启网络服务 service network restart
+</code></pre><h3 id="关机与重启命令"><a href="#关机与重启命令" class="headerlink" title="关机与重启命令"></a>关机与重启命令</h3><pre><code>shutdown -h now 关机
+shutdown -r now 重启
+shutdown -c 取消前一个命令
+</code></pre><h3 id="设置分辨率"><a href="#设置分辨率" class="headerlink" title="设置分辨率"></a>设置分辨率</h3><pre><code>xrandr 查看支持的分辨率是多少
+xrandr --size 1366x768
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/24/flask之ajax的使用/" rel="next" title="flask之ajax的使用">
+                <i class="fa fa-chevron-left"></i> flask之ajax的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/2.jpg"
+               alt="张程东" />
+          <p class="site-author-name" itemprop="name">张程东</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">123</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=106184&auto=1&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看目录下的所有文件ls"><span class="nav-number">1.</span> <span class="nav-text">查看目录下的所有文件ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换工作目录cd"><span class="nav-number">2.</span> <span class="nav-text">切换工作目录cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建文件夹-创建多层目录-创建文件"><span class="nav-number">3.</span> <span class="nav-text">创建文件夹/创建多层目录/创建文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制cp"><span class="nav-number">4.</span> <span class="nav-text">复制cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的移动或文件的重命名mv"><span class="nav-number">5.</span> <span class="nav-text">文件的移动或文件的重命名mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除rm"><span class="nav-number">6.</span> <span class="nav-text">删除rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文本命令"><span class="nav-number">7.</span> <span class="nav-text">查看文本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建软-硬连接（window中快捷方式）ln"><span class="nav-number">8.</span> <span class="nav-text">创建软/硬连接（window中快捷方式）ln</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改文件的权限："><span class="nav-number">9.</span> <span class="nav-text">更改文件的权限：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户的创建"><span class="nav-number">10.</span> <span class="nav-text">用户的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩文件与解压命令"><span class="nav-number">11.</span> <span class="nav-text">压缩文件与解压命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络命令"><span class="nav-number">12.</span> <span class="nav-text">网络命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关机与重启命令"><span class="nav-number">13.</span> <span class="nav-text">关机与重启命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置分辨率"><span class="nav-number">14.</span> <span class="nav-text">设置分辨率</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张程东</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" color="158,185,244" opacity='0.6' zIndex="-2" count="90" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+<!--卖萌-->
+<script type="text/javascript" src="/js/src/dytitle.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
