@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="php中常用到的函数header(“content-type:text/html;charset=utf-8”);    echo “———–函数————“;    function name(){        echo “this is function“;    }    name();    echo “————————-“;    function sum($s,$d){     ech">
-<meta name="keywords" content="PHP">
+<meta name="description" content="javaee 浏览次数(servletContext)12345678910ServletContext sc=request.getServletContext();Object o=sc.getAttribute(&quot;count&quot;);if(o!=null&amp;amp;&amp;amp;o instancefo Integer)&amp;#123;	o=((Integer)o)+1;	response.getWrit">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP之数组的遍历">
-<meta property="og:url" content="http://yoursite.com/2018/03/29/PHP之数组的遍历/index.html">
+<meta property="og:title" content="Javaee基础部分总结">
+<meta property="og:url" content="http://yoursite.com/2019/04/16/Javaee基础部分总结/index.html">
 <meta property="og:site_name" content="诺铖的博客">
-<meta property="og:description" content="php中常用到的函数header(“content-type:text/html;charset=utf-8”);    echo “———–函数————“;    function name(){        echo “this is function“;    }    name();    echo “————————-“;    function sum($s,$d){     ech">
+<meta property="og:description" content="javaee 浏览次数(servletContext)12345678910ServletContext sc=request.getServletContext();Object o=sc.getAttribute(&quot;count&quot;);if(o!=null&amp;amp;&amp;amp;o instancefo Integer)&amp;#123;	o=((Integer)o)+1;	response.getWrit">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-29T03:17:11.585Z">
+<meta property="og:updated_time" content="2019-04-16T07:36:22.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP之数组的遍历">
-<meta name="twitter:description" content="php中常用到的函数header(“content-type:text/html;charset=utf-8”);    echo “———–函数————“;    function name(){        echo “this is function“;    }    name();    echo “————————-“;    function sum($s,$d){     ech">
+<meta name="twitter:title" content="Javaee基础部分总结">
+<meta name="twitter:description" content="javaee 浏览次数(servletContext)12345678910ServletContext sc=request.getServletContext();Object o=sc.getAttribute(&quot;count&quot;);if(o!=null&amp;amp;&amp;amp;o instancefo Integer)&amp;#123;	o=((Integer)o)+1;	response.getWrit">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/29/PHP之数组的遍历/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/16/Javaee基础部分总结/"/>
 
 
 
 
 
-  <title>PHP之数组的遍历 | 诺铖的博客</title>
+  <title>Javaee基础部分总结 | 诺铖的博客</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/29/PHP之数组的遍历/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/Javaee基础部分总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张程东">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHP之数组的遍历</h1>
+          <h1 class="post-title" itemprop="name headline">Javaee基础部分总结</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T11:06:22+08:00">
-                2018-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-16T15:34:18+08:00">
+                2019-04-16
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -352,37 +352,41 @@
       
 
       
-        <h3 id="php中常用到的函数"><a href="#php中常用到的函数" class="headerlink" title="php中常用到的函数"></a>php中常用到的函数</h3><p>header(“content-type:text/html;charset=utf-8”);<br>    echo “———–函数————<br>“;<br>    function name(){<br>        echo “this is function<br>“;<br>    }<br>    name();<br>    echo “————————-<br>“;<br>    function sum($s,$d){</p>
-<pre><code>    echo gettype($s).&quot;&lt;br/&gt;&quot;;
-    echo gettype($d).&quot;&lt;br/&gt;&quot;;
-    return $s+$d;
-}
-var_dump (sum(&apos;1&apos;,&apos;2&apos;));
-echo &quot;-------------------------&lt;br/&gt;&quot;;
-$num=5.56;
-echo ceil($num).&quot;&lt;br/&gt;&quot;;  /*向上取整*/
-echo &quot;-------------------------&lt;br/&gt;&quot;;
-$arr=[15,56,8,3,5,48];
-echo max($arr).&quot;&lt;br/&gt;&quot;;
-echo &quot;-------------------------&lt;br/&gt;&quot;;
-$dfs=&apos; ASDdafDdfa &apos;;
-echo &quot;全部转化成小写的：&quot;.strtolower($dfs).&quot;&lt;br/&gt;&quot;;
-echo &quot;全部转化成大写的：&quot;.strtoupper($dfs).&quot;&lt;br/&gt;&quot;;
-echo &quot;去掉两边的空格:&quot;.trim($dfs).&quot;&lt;br/&gt;&quot;;
-echo &quot;-------------------------&lt;br/&gt;&quot;;
-echo &quot;-------------------------&lt;br/&gt;&quot;;
-echo &quot;-------------------------&lt;br/&gt;&quot;;
-</code></pre><h3 id="php-中有关数组建立"><a href="#php-中有关数组建立" class="headerlink" title="php 中有关数组建立"></a>php 中有关数组建立</h3><p>echo “———–数组——–<br>“;<br>    $arr=[1,2,3,4,4,5,6,7];<br>    var_dump($arr);<br>    echo “———————<br>“;<br>    $arr1=array(1,2,3,4,5,6,7,8);<br>    var_dump($arr1);<br>    echo “——-关联数组———-<br>“;<br>    $arr2=[<br>        ‘java’=&gt;’大数据’,<br>        ‘html’=&gt;’页面’,<br>        ‘php’=&gt;’mysql’,<br>        ‘js’=&gt;’效果’<br>    ];<br>    var_dump($arr2);<br>    echo “——-二维数组———-<br>“;<br>    $arr3=[<br>        ‘php’=&gt;[<br>            ‘html’=&gt;’页面’,<br>            ‘php’=&gt;’mysql’<br>        ],<br>        ‘python’=&gt;[<br>            ‘java’=&gt;’大数据’,<br>            ‘js’=&gt;’效果’<br>        ]<br>    ];<br>    echo $arr3[‘php’][‘html’];<br>    var_dump($arr3);<br>    echo “——-数组的增删改查———-<br>“;<br>    $arr4=[‘a’,’b’,’c’,’d’];<br>    var_dump($arr4);<br>    echo “——-添加一个值———-<br>“;<br>    $arr4[4]=’g’;<br>    echo $arr4[4].”<br>“;<br>    echo “——-删除一个值———-<br>“;<br>    unset($arr4[2]);<br>    var_dump($arr4);<br>    echo “——-修改一个值———-<br>“;<br>    $arr4[0]=’aaaaaaa’;<br>    var_dump($arr4);<br>    echo $arr4[0];</p>
-<h3 id="php-中有关数组遍历的"><a href="#php-中有关数组遍历的" class="headerlink" title="php 中有关数组遍历的"></a>php 中有关数组遍历的</h3><p>header(“content-type:text/html;charset=utf-8”);<br>echo “———-数组的遍历———-<br>“;<br>echo “———-foreach遍历———-<br>“;<br>$arr=[‘a’=&gt;’aaa’,’b’=&gt;’bbbbb’,’c’=&gt;’ccc’];<br>var_dump($arr);<br>foreach ($arr as $key=&gt;$value){<br>    echo “这是数组的键:”.$key.”<br>“;<br>    echo “这是数组的值:”.$arr[$key].”<br>“;</p>
-<pre><code>echo &quot;直接通过key与value来实现键值:&quot;.$key.&quot;=&gt;&quot;.$value.&quot;&lt;br/&gt;&quot;;
-</code></pre><p>}<br>echo “———-each遍历———-<br>“;<br>$arr2=[‘a’,’c’,’v’,’s’,’d’,’f’];<br>var_dump(each($arr2));<br>var_dump(each($arr2));<br>var_dump(each($arr2));<br>echo “each是打印一次，就往下移动一个<br>“;</p>
-<p>while(list($key,$val)=each($arr2)){</p>
-<pre><code>echo $key.&quot;---&gt;&quot;.$val.&quot;&lt;br/&gt;&quot;;
-</code></pre><p>}<br>echo “each是打印一次，就往下移动一个<br>“;<br>$arr3=[‘a’=&gt;’aaa’,’b’=&gt;’bbbbb’,’c’=&gt;’ccc’];<br>while(list($key,$var)=each($arr3)){<br>    echo $key.”———“.$var.”<br>“;<br>}<br>?&gt;</p>
-<h3 id="php-中有关时间的相关信息"><a href="#php-中有关时间的相关信息" class="headerlink" title="php 中有关时间的相关信息"></a>php 中有关时间的相关信息</h3><p>&lt;?php<br>/<em>时间的设置</em>/<br>echo time().”<br>“;<br>$time=time();<br>echo date(‘Y-m-d H:i:s’,$time).”<br>“;<br>date_default_timezone_set(‘PRC’);</p>
-<pre><code>$time2=time();
-echo date(&quot;Y-m-d H:i:s&quot;,$time);
+        <p>javaee</p>
+<h3 id="浏览次数-servletContext"><a href="#浏览次数-servletContext" class="headerlink" title="浏览次数(servletContext)"></a>浏览次数(servletContext)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ServletContext sc=request.getServletContext();</div><div class="line">Object o=sc.getAttribute(<span class="string">"count"</span>);</div><div class="line"><span class="keyword">if</span>(o!=null&amp;&amp;o instancefo Integer)&#123;</div><div class="line">	o=((Integer)o)+<span class="number">1</span>;</div><div class="line">	response.getWriter.write(<span class="string">"访问次数为"</span>+o);</div><div class="line">	sc.setAttribute(<span class="string">"count"</span>,o);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	sc.setAttribute(<span class="string">"count"</span>,<span class="number">1</span>);</div><div class="line">	response.getWriter.write(<span class="string">"访问次数为1"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="post与get请求参数的接收"><a href="#post与get请求参数的接收" class="headerlink" title="post与get请求参数的接收"></a>post与get请求参数的接收</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">HTML中text以及password的属性：</div><div class="line"></div><div class="line">String name=request.getParameter(<span class="string">"username"</span>);</div><div class="line"></div><div class="line">HTML中checkbox属性：</div><div class="line">String[] hobby=request.getParameterValues(<span class="string">"hobby"</span>);</div></pre></td></tr></table></figure>
+<h3 id="请求在servlet的转发："><a href="#请求在servlet的转发：" class="headerlink" title="请求在servlet的转发："></a>请求在servlet的转发：</h3><pre><code class="python">RequestDispatcher rd=request.getRequestDispatcher(<span class="string">"/servlet02?id="</span><span class="number">1</span>);
+
+rd.include(request,response);
+或者是
+rd.forward(request.response);
 </code></pre>
+<h3 id="cookie与session会话请求"><a href="#cookie与session会话请求" class="headerlink" title="cookie与session会话请求"></a>cookie与session会话请求</h3><pre><code class="python">从服务器想客户端添加cookie
+    Cookie cookie=new Cookie(<span class="string">"键"</span>,<span class="string">"值"</span>)
+    cookie.setMaxAge(cookie最大的存在时间);
+    response.addCookie(cookie)
+
+获得cookie
+    Cookie[] cookie=request.getCookies();
+
+使用cookie
+    cookie.getName()
+    cookie.getValue()
+
+
+创建或获取session
+    HttpSession session=request.getSession();
+
+读取session值
+    session.getAttribute(<span class="string">"键"</span>);
+
+添加session元素：
+    session.setAttribute(<span class="string">"属性名"</span>,<span class="string">"属性值"</span>);
+
+删除
+    session.removeAttribute(<span class="string">"属性"</span>)
+</code></pre>
+
       
     </div>
     
@@ -399,7 +403,7 @@ echo date(&quot;Y-m-d H:i:s&quot;,$time);
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag"><i class="fa fa-tag"></i> PHP</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -412,8 +416,8 @@ echo date(&quot;Y-m-d H:i:s&quot;,$time);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/爬虫之BeautifulSoup/" rel="next" title="爬虫之BeautifulSoup">
-                <i class="fa fa-chevron-left"></i> 爬虫之BeautifulSoup
+              <a href="/2019/04/15/Python之弹幕满天飞/" rel="next" title="Python之弹幕满天飞">
+                <i class="fa fa-chevron-left"></i> Python之弹幕满天飞
               </a>
             
           </div>
@@ -421,10 +425,6 @@ echo date(&quot;Y-m-d H:i:s&quot;,$time);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/29/PHP与数据库的连接以及操作/" rel="prev" title="PHP与数据库的连接以及操作">
-                PHP与数据库的连接以及操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +580,7 @@ echo date(&quot;Y-m-d H:i:s&quot;,$time);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#php中常用到的函数"><span class="nav-number">1.</span> <span class="nav-text">php中常用到的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-中有关数组建立"><span class="nav-number">2.</span> <span class="nav-text">php 中有关数组建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-中有关数组遍历的"><span class="nav-number">3.</span> <span class="nav-text">php 中有关数组遍历的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-中有关时间的相关信息"><span class="nav-number">4.</span> <span class="nav-text">php 中有关时间的相关信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览次数-servletContext"><span class="nav-number">1.</span> <span class="nav-text">浏览次数(servletContext)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post与get请求参数的接收"><span class="nav-number">2.</span> <span class="nav-text">post与get请求参数的接收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求在servlet的转发："><span class="nav-number">3.</span> <span class="nav-text">请求在servlet的转发：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie与session会话请求"><span class="nav-number">4.</span> <span class="nav-text">cookie与session会话请求</span></a></li></ol></div>
             
 
           </div>
